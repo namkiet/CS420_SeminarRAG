@@ -1,0 +1,16 @@
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local credentials and editor settings
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Temporary PDF renders and local working files
+tmp/
+*.tmp

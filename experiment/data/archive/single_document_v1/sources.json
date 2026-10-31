@@ -1,0 +1,40 @@
+[
+  {
+    "doc_id": "D01",
+    "title": "Quy chế đào tạo trình độ đại học năm 2026",
+    "publisher": "Trường Đại học Khoa học tự nhiên, ĐHQG-HCM",
+    "decision_number": "3087/QĐ-KHTN",
+    "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+    "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+    "version_or_issue_date": "2026-09-29",
+    "publication_date": "2026-10-16",
+    "accessed_date": "2026-10-31",
+    "usage_basis": "Văn bản quy chế/quyết định do Trường công bố công khai; lưu nguồn và trích dẫn phục vụ seminar học thuật. Không suy diễn giấy phép mở cho toàn bộ website.",
+    "selected_pdf_pages": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      21
+    ],
+    "selected_printed_pages": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      20
+    ],
+    "source_total_pages": 21,
+    "raw_path": "data/raw/D01_quy_che_dao_tao_2026.pdf",
+    "processed_path": "data/processed/D01_corpus.md",
+    "page_data_path": "data/processed/D01_pages.json",
+    "sha256": "3e80be3ddf51c72bfc778d197523e33281c0bf43fae74518dbda23bde86c140e",
+    "scope": "Các loại học phần, tín chỉ, thời gian đào tạo, tổ chức đào tạo, kế hoạch và đăng ký học tập; Điều 25–27 để giữ trọn trang nguồn và điều khoản chuyển tiếp.",
+    "application_note": "Bộ câu hỏi hỏi theo Quy chế 2026; riêng Q20 kiểm tra Điều 27. Không mặc định mọi nội dung áp dụng nguyên trạng cho khóa cũ.",
+    "extraction_method": "Chép sạch từ ảnh 6 trang PDF; đối chiếu trực quan vì lớp OCR gốc có nhiều lỗi dấu/ký tự.",
+    "verified": true,
+    "human_review_status": "pending"
+  }
+]

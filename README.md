@@ -34,6 +34,25 @@ The goal of this seminar topic is to:
 - **Presentation Slides:** 8–12 content slides for a 15-minute seminar presentation + 5-minute Q&A.
 - **Worked Examples & Code:** Complete end-to-end question-answering workflow with retrieval evaluation and failure analysis.
 
+## Experiment Data — G2 Tasks 1–2
+
+The prepared corpus and reference questions are in [`experiment/`](experiment/README.md).
+
+- **Original sources:** four complete PDFs, 51 pages in total, in `experiment/data/raw/`.
+- **Processed corpus:** selected excerpts from 25 source pages; the full 51 pages have not been transcribed into clean text.
+- **Evaluation set:** 20 questions with reference answers and 30 evidence spans. Independent team review is still pending.
+- **Source catalog:** [document links, versions, and scope](experiment/data/CORPUS_4_TAI_LIEU.md).
+- **Retrieval input:** `experiment/data/processed/corpus_pages.json`. Keep reference answers outside the retrieval index.
+
+This is an expanded corpus beyond the assignment's suggested 5–10 pages. Retrieval experiments and full-text corpus expansion remain separate work.
+
+To rebuild the prepared dataset from the repository root:
+
+```powershell
+python -m pip install -r experiment/requirements.txt
+python experiment/scripts/build_multi_document_dataset.py
+```
+
 ## References
 - **Lewis, P. et al. (2020).** *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* NeurIPS 2020. [Paper Link](https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html)
 - **Schneider, J. (2024).** *Explainable Generative AI (GenXAI): a survey, conceptualization, and research agenda.* Artificial Intelligence Review 57, 289. [DOI](https://doi.org/10.1007/s10462-024-10916-x)

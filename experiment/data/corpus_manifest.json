@@ -1,0 +1,18 @@
+{
+  "corpus_version": "multi_document_v2",
+  "updated_date": "2026-11-01",
+  "source_document_count": 4,
+  "raw_pdf_pages": 51,
+  "selected_source_page_count": 25,
+  "processed_coverage": "selected_excerpts_not_full_51_pages",
+  "retrieval_input": "data/processed/corpus_pages.json",
+  "question_count": 20,
+  "evidence_spans": 30,
+  "doc_evidence_counts": {
+    "D01": 7,
+    "D02": 5,
+    "D03": 9,
+    "D04": 9
+  },
+  "human_review_status": "pending"
+}
