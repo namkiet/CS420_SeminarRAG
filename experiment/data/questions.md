@@ -1,10 +1,8 @@
-# Bộ 20 câu hỏi — corpus 4 tài liệu HCMUS
+# Bộ 20 câu hỏi tham chiếu — corpus đầy đủ 51 trang
 
-Phiên bản: multi_document_v2. Bộ câu hỏi cũ một nguồn được giữ tại `archive/single_document_v1/`. Không so sánh trực tiếp điểm số của hai bộ như cùng một benchmark.
+Phiên bản corpus: `full_document_v3`. Đây là 20 câu hỏi đã có, được kiểm tra lại bằng chứng với corpus toàn bộ; không phải bộ câu hỏi bao phủ hết mọi điều khoản của 51 trang.
 
-Tất cả câu hỏi có bằng chứng trong corpus trích chọn. Đã được trợ lý đọc ảnh và kiểm tra tính nhất quán; nhóm chưa được ghi nhận đã tự kiểm chứng.
-
-D02 là phiên bản PDF 2020 + sửa đổi 2023; câu hỏi về D02 có ghi rõ phiên bản, không mặc định là quy định mới nhất năm 2026.
+Câu hỏi D02 cố định ở bản PDF 2020 kèm sửa đổi 2023. Giữ phân biệt phiên bản, khóa, chương trình và năm học.
 
 ## Q01. Theo Quy chế 2026, học phần tiên quyết khác học phần học trước như thế nào?
 

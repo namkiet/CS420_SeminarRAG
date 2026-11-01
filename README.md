@@ -36,17 +36,15 @@ The goal of this seminar topic is to:
 
 ## Experiment Data — G2 Tasks 1–2
 
-The prepared corpus and reference questions are in [`experiment/`](experiment/README.md).
+The dataset is in [`experiment/`](experiment/README.md).
 
-- **Original sources:** four complete PDFs, 51 pages in total, in `experiment/data/raw/`.
-- **Processed corpus:** selected excerpts from 25 source pages; the full 51 pages have not been transcribed into clean text.
-- **Evaluation set:** 20 questions with reference answers and 30 evidence spans. Independent team review is still pending.
-- **Source catalog:** [document links, versions, and scope](experiment/data/CORPUS_4_TAI_LIEU.md).
-- **Retrieval input:** `experiment/data/processed/corpus_pages.json`. Keep reference answers outside the retrieval index.
+- Four original PDFs and text for **all 51/51 pages**: training/graduation, conduct scores, tuition, and English requirements.
+- Page completeness and OCR accuracy are tracked separately: 22 pages have visual transcriptions/table reconstruction; 29 OCR pages still need independent review.
+- [Full corpus](experiment/data/processed/corpus_all.md), [source catalog](experiment/data/CORPUS_4_TAI_LIEU.md), and [page coverage report](experiment/data/coverage_report.json).
+- Twenty reference questions with 30 evidence spans remain available; this benchmark is not exhaustive coverage of all 51 pages.
+- Retrieval input: `experiment/data/processed/corpus_pages.json`. Keep reference answers and historical/OCR copies outside the index.
 
-This is an expanded corpus beyond the assignment's suggested 5–10 pages. Retrieval experiments and full-text corpus expansion remain separate work.
-
-To rebuild the prepared dataset from the repository root:
+Rebuild from the repository root:
 
 ```powershell
 python -m pip install -r experiment/requirements.txt

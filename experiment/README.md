@@ -1,25 +1,35 @@
-# Thực nghiệm RAG — corpus và bộ câu hỏi tham chiếu (G2 Task 1–2)
+# Thực nghiệm RAG — corpus toàn bộ 51 trang
 
-## Bắt đầu đọc
+Phần chuẩn bị dữ liệu và bộ câu hỏi cho G2 Task 1–2.
 
-- [Danh sách bốn tài liệu, link nguồn và phạm vi corpus](data/CORPUS_4_TAI_LIEU.md).
-- [Corpus sạch gộp](data/processed/corpus_all.md).
-- [20 câu hỏi, đáp án chuẩn và bằng chứng](data/questions.md).
+## Sản phẩm hiện tại
 
-## Dữ liệu hiện có
+| Tài liệu | Trang gốc | Trang có trong corpus |
+|---|---:|---:|
+| D01 — Quy chế đào tạo, gồm điều kiện tốt nghiệp | 21 | 21 |
+| D02 — Điểm rèn luyện, phụ lục và sửa đổi 2023 | 16 | 16 |
+| D03 — Học phí 2026–2027 | 5 | 5 |
+| D04 — Học ngoại ngữ và chuẩn ngoại ngữ tốt nghiệp | 9 | 9 |
+| **Tổng** | **51** | **51** |
 
-| Phần | Vị trí | Nội dung |
-|---|---|---|
-| PDF gốc | `data/raw/` | 4 PDF, tổng 51 trang: đào tạo/tốt nghiệp, điểm rèn luyện, học phí, ngoại ngữ tốt nghiệp |
-| Corpus sạch | `data/processed/corpus_pages.json` | Trích chọn nội dung từ 25 trang nguồn; không phải toàn văn 51 trang |
-| Nguồn | `data/sources.json` | URL, phiên bản, đối tượng áp dụng, vị trí file và SHA-256 |
-| Bộ đánh giá | `data/questions.json` | 20 câu hỏi và 30 đoạn bằng chứng, phiên bản `multi_document_v2` |
-| Thống kê | `data/corpus_manifest.json` | Số tài liệu, trang nguồn và bằng chứng |
-| Bản đầu | `data/archive/single_document_v1/` | Dữ liệu một nguồn cũ; script sử dụng làm đầu vào tái tạo, không index |
+- [Danh sách nguồn và phạm vi corpus](data/CORPUS_4_TAI_LIEU.md).
+- [Corpus toàn bộ để đọc](data/processed/corpus_all.md).
+- [Corpus theo trang để index](data/processed/corpus_pages.json).
+- [Kiểm tra thiếu/trùng trang và chất lượng](data/coverage_report.json).
+- [20 câu hỏi kèm đáp án và bằng chứng](data/questions.md).
 
-Phần sạch hiện tại là **bản trích chọn**. Mong muốn dùng toàn bộ nội dung có ý nghĩa của 51 trang vẫn cần bước chép sạch/kiểm chứng bổ sung. Việc copy vào repo không thay đổi mức độ hoàn thiện này.
+**Độ phủ đủ 51/51 trang; chất lượng OCR chưa được kiểm chứng hoàn toàn.** Có 22 trang đã chép/khôi phục bảng từ ảnh và 29 trang OCR cần kiểm tra độc lập. Mọi trang vẫn giữ trạng thái nhóm tự kiểm chứng là `pending`. Đã phục hồi các bảng/công thức quan trọng mà OCR tự động làm mất hoặc lệch, không chỉ tạo 51 mục metadata rỗng.
 
-## Tái tạo output
+## Quy trình chuẩn bị
+
+1. Giữ nguyên bốn PDF gốc và metadata nguồn, phiên bản, phạm vi áp dụng, SHA-256.
+2. OCR mọi trang với Tesseract Việt/Anh chạy cục bộ qua PyMuPDF; không bỏ trang theo câu hỏi.
+3. Giữ bản OCR nguyên trạng trong `data/extracted/`; chép lại các bảng khó và sửa các đoạn đã đối chiếu trong bản Markdown.
+4. Giữ mốc trang, thứ tự điều, căn cứ, phụ lục, công thức và cả bản gốc lẫn sửa đổi. Metadata `revision_role` phân biệt vùng 2020/2023 của D02.
+5. Tạo JSON theo trang, corpus gộp, báo cáo độ phủ và bộ câu hỏi. Script kiểm tra đủ 21+16+5+9 trang, không trùng/thiếu và mọi đoạn bằng chứng còn trong corpus.
+6. Nhóm kiểm chứng tiếp các trang OCR và các số liệu quan trọng trước khi dùng làm kết luận nghiên cứu.
+
+## Chạy script build
 
 Từ thư mục gốc repo:
 
@@ -28,45 +38,50 @@ python -m pip install -r experiment/requirements.txt
 python experiment/scripts/build_multi_document_dataset.py
 ```
 
-Script xác định thư mục dữ liệu theo vị trí của chính nó, nên không phụ thuộc working directory. Nó dùng PDF và Markdown đã có trong repo, không cần gọi mạng hay LLM để chạy. Script ghi lại `sources.json`, các JSON theo trang, corpus gộp và bộ câu hỏi; nếu sửa thủ công output thì cần cập nhật đầu vào/script trước khi chạy lại.
+Script này không phải hệ thống RAG. Nó tái tạo output từ bản Markdown toàn văn và các đầu vào độc lập:
 
-## Quy trình chuẩn bị và bàn giao
+- `data/source_catalog.json`: nguồn tài liệu.
+- `data/page_review.json`: trạng thái OCR/kiểm chứng từng trang.
+- `data/questions.reference.json`: câu hỏi, đáp án và bằng chứng tham chiếu.
+- `data/processed/D01_corpus.md` đến `D04_corpus.md`: văn bản toàn bộ, là đầu vào có thể chỉnh sửa.
+- `data/extracted/*_ocr_pages.json`: bản OCR gốc để xác minh nguồn trích xuất.
 
-1. **Chọn miền dữ liệu:** hỏi đáp quy định sinh viên HCMUS với bốn văn bản về đào tạo/tốt nghiệp, điểm rèn luyện, học phí và ngoại ngữ tốt nghiệp.
-2. **Thu thập:** theo liên kết công bố trên website HCMUS; lưu đủ PDF gốc, URL, phiên bản và checksum.
-3. **Kiểm tra phiên bản:** ghi năm học, khóa tuyển và chương trình áp dụng. Trong D02, phân biệt quy chế 2020 với sửa đổi 2023; không xem cả bốn tài liệu là một bộ quy định đồng nhất mới nhất.
-4. **Chuẩn hóa:** trích chọn các phần đã đối chiếu ảnh PDF; giữ số liệu, điều kiện và ngoại lệ, chuyển bảng học phí thành Markdown. Bản gốc được giữ nguyên.
-5. **Tạo tham chiếu:** soạn 20 câu hỏi, đáp án chuẩn, các ý cần có và đoạn bằng chứng. Các phép tính minh họa được ghi rõ là do nhóm xây dựng.
-6. **Kiểm tra:** script xác nhận mọi đoạn bằng chứng tồn tại trên đúng trang của bản sạch; ảnh PDF được trợ lý đọc riêng. Nhóm cần tự kiểm chứng trước khi nộp và khai báo công cụ AI theo yêu cầu môn học.
-7. **Bàn giao Task 3–4:** dùng `data/processed/corpus_pages.json` làm đầu vào retrieval và giữ `data/questions.json` ở phía đánh giá. Gán nhãn chunks sau khi đã xác định cách chia tài liệu.
+Script không gọi mạng/LLM, không cần model OCR. Nếu sửa câu hỏi, sửa `questions.reference.json`; nếu sửa văn bản, sửa đúng Markdown và cập nhật trạng thái trang, rồi build. Không chỉ sửa các JSON output vì chạy lại sẽ ghi đè chúng.
 
-## Dùng cho Task 3–4
+## Chạy lại OCR (tùy chọn)
 
-Chỉ index nội dung trường `text` trong `data/processed/corpus_pages.json`, giữ metadata `doc_id`, `pdf_page`, `section` và phiên bản. Không quét index toàn bộ thư mục `data/` vì có đáp án chuẩn, archive và tài liệu hướng dẫn.
+Tải `vie.traineddata` và `eng.traineddata` từ kho chính thức [tesseract-ocr/tessdata_best](https://github.com/tesseract-ocr/tessdata_best) vào một thư mục ngoài dữ liệu index, sau đó:
 
-`relevant_chunk_ids` đang rỗng vì chưa chia chunks. Cần ánh xạ bằng chứng sang chunk ID theo từng cấu hình rồi mới tính Recall@k. Với bảng học phí, mỗi chunk phải có tiêu đề/ý nghĩa cột.
+```powershell
+python experiment/scripts/extract_full_pdf_ocr.py --tessdata C:/path/to/tessdata --workers 3
+```
 
-## Giới hạn và kiểm chứng
+Đây là đường dẫn mẫu, phải thay bằng thư mục model thật. Output OCR thô nằm trong `experiment/tmp/full_ocr/`, không tự ghi đè bản đã chỉnh sửa. Cần đối chiếu ảnh và hợp nhất sửa lỗi trước khi cập nhật Markdown. Các file model và ảnh kiểm tra tạm không cần push lên Git.
+
+## Bàn giao Task 3–4
+
+Chỉ index trường `text` trong `data/processed/corpus_pages.json`. Giữ `doc_id`, `pdf_page`, `section`, phiên bản, `revision_role` và trạng thái chất lượng ở metadata.
+
+- Không index câu hỏi/đáp án, các bản OCR thô hoặc bản sửa bảng riêng lần nữa.
+- Bảng phải mang theo tiêu đề cột; câu nối qua trang cần được giữ ngữ cảnh.
+- Giữ cả bản cũ và sửa đổi để bảo toàn tài liệu, nhưng khi trả lời theo bản sau sửa đổi phải ưu tiên đúng văn bản; tránh trả lời bằng khoản đã bị thay thế.
+- `relevant_chunk_ids` đang rỗng vì chưa chia chunks; cần gán theo mỗi cấu hình trước khi tính Recall@k.
+- 20 câu hỏi hiện có vẫn có đủ bằng chứng nhưng chưa bao phủ toàn bộ 51 trang.
+
+## Giới hạn và công việc tiếp theo
 
 - Chưa có retrieval, bảng Recall@k hoặc kết quả sinh câu trả lời.
-- `human_review_status: pending`: chưa ghi nhận thành viên nhóm tự kiểm chứng độc lập.
-- Điểm rèn luyện D02 cố định ở PDF 2020 kèm sửa đổi 2023, không khẳng định đây là toàn bộ quy định mới nhất năm 2026.
-- Năm học, khóa tuyển và chương trình áp dụng phải được giữ khi trả lời.
-- Bộ mở rộng này lớn hơn gợi ý corpus khoảng 5–10 trang trong đề; cần ghi đúng phạm vi thực nghiệm của nhóm.
-- Bộ câu hỏi hiện đều có bằng chứng; chưa có bộ câu hỏi không có đáp án để đánh giá khả năng từ chối.
-- Kết quả từ bộ dữ liệu nhỏ này không đủ chứng minh RAG loại bỏ hallucination trong mọi tình huống.
-- Đạt điều kiện riêng như ngoại ngữ không đồng nghĩa đã đủ mọi điều kiện tốt nghiệp trong quy chế đào tạo.
+- Đủ trang không đồng nghĩa OCR đúng mọi chữ/số; cần đọc lại 29 trang còn gắn nhãn OCR và kiểm chứng độc lập toàn bộ dữ liệu theo yêu cầu môn học.
+- Bộ bốn PDF không được mặc định là mọi quy định mới nhất của Trường: D02 là bản 2020 kèm sửa đổi 2023, và các văn bản khác có khóa/năm học/chương trình riêng.
+- Bản đầy đủ lớn hơn gợi ý 5–10 trang của đề; báo cáo đúng quy mô thực tế, không gọi 51 trang là corpus 5–10 trang.
+- Bộ nhỏ do nhóm xây dựng chưa đủ chứng minh RAG loại bỏ hallucination trong mọi tình huống.
 
-## Nội dung tham khảo cho báo cáo
+## Mô tả tham khảo cho báo cáo
 
-> Nhóm xây dựng thư viện tài liệu hỏi đáp về các quy định sinh viên tại Trường Đại học Khoa học tự nhiên, ĐHQG-HCM, gồm bốn tệp PDF gốc với tổng cộng 51 trang. Các tài liệu bao phủ quy chế đào tạo và điều kiện tốt nghiệp, đánh giá điểm rèn luyện, học phí năm học 2026–2027 và chuẩn ngoại ngữ tốt nghiệp. Từ thư viện này, nhóm chuẩn bị corpus sạch bằng cách trích chọn nội dung từ 25 trang nguồn, giữ thông tin mã tài liệu, trang PDF, điều/khoản và phạm vi áp dụng. Nhóm xây dựng bộ 20 câu hỏi có đáp án tham chiếu và 30 đoạn bằng chứng. Các văn bản có phiên bản và đối tượng áp dụng khác nhau được ghi rõ trong metadata và câu hỏi; riêng tài liệu điểm rèn luyện cố định ở bản PDF 2020 kèm sửa đổi 2023. Việc đánh giá retrieval và chất lượng sinh câu trả lời được thực hiện riêng ở bước thực nghiệm tiếp theo.
+> Nhóm thu thập bốn tệp PDF từ các trang công bố chính thức của HCMUS, gồm 51 trang về quy chế đào tạo, đánh giá điểm rèn luyện, học phí và ngoại ngữ tốt nghiệp. Toàn bộ trang được đưa vào quy trình trích xuất, giữ điều khoản, phụ lục và các văn bản sửa đổi. Văn bản được OCR cục bộ bằng model Việt/Anh, kết hợp bản chép và khôi phục bảng từ ảnh; trạng thái kiểm chứng được lưu riêng theo trang. Bộ 20 câu hỏi tham chiếu kèm 30 đoạn bằng chứng được giữ để đánh giá, đồng thời kiểm tra lại vị trí bằng chứng trong corpus toàn bộ. Nhóm phân biệt độ phủ trang với độ chính xác nhận dạng và cần kiểm chứng độc lập dữ liệu trước khi báo cáo kết quả thực nghiệm.
 
-Đoạn này mô tả sản phẩm đã chuẩn bị với trợ lý AI. Khi đưa vào báo cáo, cần điều chỉnh theo công việc nhóm thực sự thực hiện; không ghi đã tự kiểm chứng nếu chưa hoàn tất.
+Chỉnh đoạn này đúng với công việc nhóm thực sự đã thực hiện và khai báo công cụ AI theo đề.
 
-## Công việc tiếp theo
+## Prompt tái sử dụng
 
-- Tự kiểm tra nguồn và đáp án; cập nhật `human_review_status` khi hoàn tất.
-- Thống nhất metadata, cách xử lý bảng và nhãn chunk liên quan với người thực hiện Task 3–4.
-- Hoàn thiện bản sạch toàn văn nếu dùng toàn bộ nội dung có ý nghĩa của 51 trang.
-- Chuẩn bị giải thích cách chọn bốn nguồn và phân biệt thư viện gốc với corpus sạch.
-- Chuẩn bị một ví dụ tìm bằng chứng đúng và một ví dụ dễ nhầm do phiên bản, chương trình hoặc tiêu đề cột.
+[Yêu cầu trích xuất đầy đủ, không tóm tắt hoặc chọn bỏ điều](docs/FULL_CORPUS_PROMPT.md).

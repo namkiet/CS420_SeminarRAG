@@ -1,82 +1,71 @@
-# Corpus hỏi đáp quy định HCMUS — 4 tài liệu
+# Corpus HCMUS — 4 tài liệu, đủ 51/51 trang
 
-Phiên bản hiện tại: `multi_document_v2`, cập nhật 01/11/2026. Mở rộng phạm vi corpus từ một quy chế sang nhiều văn bản. Chưa thu thập syllabus.
+Phiên bản hiện tại: `full_document_v3`. Mọi trang của bốn PDF đã có văn bản trong corpus; không chọn bỏ điều, khoản hoặc phụ lục theo bộ câu hỏi.
 
-## Bộ tài liệu gốc đã tải
+## Tài liệu và nguồn
 
-| Mã | Chủ đề và phiên bản | File gốc | Số trang PDF |
-|---|---|---|---:|
-| D01 | Quy chế đào tạo, QĐ3087 ngày 29/09/2026; có Điều 19 về điều kiện tốt nghiệp và Điều 27 về chuyển tiếp | [Mở PDF](raw/D01_quy_che_dao_tao_2026.pdf) | 21 |
-| D02 | Điểm rèn luyện: quy chế 2020 kèm quyết định sửa đổi 2739 ngày 12/12/2023; PDF ghép gồm cả phụ lục | [Mở PDF](raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf) | 16 |
-| D03 | Học phí 2026–2027, QĐ3317 ngày 14/10/2026, chính quy đại trà khóa 2022–2026 | [Mở PDF](raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf) | 5 |
-| D04 | Ngoại ngữ trong quá trình học và khi tốt nghiệp, QĐ2464 ngày 11/08/2026, đại trà/tài năng từ khóa 2022 | [Mở PDF](raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf) | 9 |
-| **Tổng** | **4 file PDF gốc, giữ nguyên đầy đủ** | | **51** |
+| Mã | Văn bản | Trang PDF trong corpus | PDF gốc |
+|---|---|---|---|
+| D01 | Quy chế đào tạo 2026, QĐ3087 ngày 29/09/2026 | 1–21 (21/21) | [Mở PDF](raw/D01_quy_che_dao_tao_2026.pdf) |
+| D02 | Quy chế điểm rèn luyện 2020, phụ lục và sửa đổi QĐ2739 ngày 12/12/2023 | 1–16 (16/16) | [Mở PDF](raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf) |
+| D03 | Học phí 2026–2027, QĐ3317 ngày 14/10/2026, khóa 2022–2026 | 1–5 (5/5) | [Mở PDF](raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf) |
+| D04 | Học ngoại ngữ và chuẩn ngoại ngữ tốt nghiệp, QĐ2464 ngày 11/08/2026 | 1–9 (9/9) | [Mở PDF](raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf) |
+| **Tổng** | **4 tài liệu** | **51/51** | |
 
-Nguồn công bố chính thức:
+Nguồn công bố:
 
 - D01: https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/
 - D02: https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/
 - D03: https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/
 - D04: https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/
 
-Metadata, URL PDF gốc, ngày truy cập, SHA-256 và phạm vi áp dụng được lưu trong [sources.json](sources.json).
+## Đọc và dùng dữ liệu
 
-## Phân biệt thư viện gốc và corpus sạch
+- [Corpus gộp toàn bộ](processed/corpus_all.md).
+- [D01 toàn bộ](processed/D01_corpus.md), [D02 toàn bộ](processed/D02_corpus.md), [D03 toàn bộ](processed/D03_corpus.md), [D04 toàn bộ](processed/D04_corpus.md).
+- [Đầu vào retrieval theo trang](processed/corpus_pages.json): `doc_id`, `pdf_page`, `section`, `text`, URL, phiên bản và trạng thái chất lượng.
+- [Báo cáo độ phủ](coverage_report.json): danh sách trang của từng PDF, kiểm tra thiếu/trùng và trạng thái kiểm chứng.
+- [Metadata nguồn](sources.json), [thống kê](corpus_manifest.json).
+- [20 câu hỏi và bằng chứng](questions.md), [JSON đánh giá](questions.json).
 
-**51 trang là dung lượng bốn PDF gốc, không phải 51 trang đã được chép sạch toàn văn.**
+Mọi điều của quy chế đào tạo, kể cả các Điều 1–2, 8–24 từng bị loại, đã được đưa trở lại. Giữ cả phụ lục gốc, bản sửa đổi điểm rèn luyện, căn cứ văn bản, bảng và công thức; không tóm tắt để thay thế nội dung các trang. Dấu mộc/chữ ký hình ảnh vẫn có trong PDF gốc, không được chuyển thành nội dung quy định mới.
 
-Corpus dùng được ngay cho bộ câu hỏi hiện tại là bản trích chọn nội dung từ **25 trang nguồn** của bốn tài liệu. Không phải toàn bộ nội dung của cả 25 trang đều được giữ: có trang chỉ trích một số khoản, có bảng được chuyển sang Markdown. Tất cả phần được giữ đều có mốc trang PDF và mô tả điều/khoản. Bản gốc đầy đủ vẫn có trong `raw/` để mở rộng tiếp nếu cần.
+## Độ phủ và chất lượng là hai việc khác nhau
 
-| Mã | Trang PDF có nội dung trích chọn | Nội dung sạch |
-|---|---|---|
-| D01 | 4, 5, 6, 7, 8, 17, 18, 21 | [Học vụ](processed/D01_corpus.md), [điều kiện tốt nghiệp](processed/D01_tot_nghiep.md) |
-| D02 | 3, 5, 6, 7, 14, 15, 16 | [Điểm rèn luyện và sửa đổi](processed/D02_corpus.md) |
-| D03 | 1–5 | [Học phí và toàn bộ bảng 27 ngành](processed/D03_corpus.md) |
-| D04 | 1, 5, 6, 7, 8 | [Chuẩn ngoại ngữ và hồ sơ](processed/D04_corpus.md) |
+**Đủ 51 trang không có nghĩa mọi ký tự OCR đã được kiểm chứng chính xác.**
 
-- Đọc gộp: [corpus_all.md](processed/corpus_all.md).
-- Đầu vào đề xuất cho Task 3: [corpus_pages.json](processed/corpus_pages.json), gồm `doc_id`, `pdf_page`, `section`, `text` và URL nguồn.
-- Thống kê có thể đọc bằng chương trình: [corpus_manifest.json](corpus_manifest.json).
-- Tệp `D01_corpus.txt` vẫn chỉ là phần học vụ cũ, **không phải corpus đầy đủ của phiên bản bốn nguồn**.
+- 22 trang đã có bản chép/khôi phục bảng theo ảnh, gắn `assistant_visual_transcription`.
+- 29 trang có OCR toàn trang và một số sửa đoạn tham chiếu, gắn `ocr_needs_independent_review`. Có thể còn lỗi dấu tiếng Việt, khoảng trắng, số hoặc ký tự nhận dạng sai.
+- Cả 51 trang vẫn có `human_review_status: pending`: chưa ghi nhận nhóm tự kiểm chứng độc lập.
+- Bản OCR nguyên trạng của từng trang nằm trong `extracted/D01_ocr_pages.json` đến `D04_ocr_pages.json`, phục vụ đối chiếu, không đưa vào chỉ mục cùng bản chính vì gây lặp.
+- Các bảng khó đã được chép lại trong `corrections/`: phụ lục rèn luyện, quy đổi điểm/xếp loại và kế hoạch/đánh giá Anh văn. Bảng học phí 27 ngành tiếp tục dùng bản đã đối chiếu.
 
-## Bộ câu hỏi đi kèm
+Nhóm cần đối chiếu số liệu/điều kiện quan trọng với PDF khi làm thí nghiệm. `text_accuracy_fully_reviewed` hiện là `false`, không gắn nhãn dữ liệu đã sạch hoàn toàn.
 
-[questions.md](questions.md) / [questions.json](questions.json) hiện chứa **20 câu hỏi bao phủ cả bốn tài liệu**, có đáp án chuẩn, ý cần có và 30 đoạn bằng chứng. Có câu hỏi kết hợp hai tài liệu, câu hỏi về bảng học phí và phép tính minh họa.
+## Phiên bản và các điều bị thay thế
 
-Bộ cũ một tài liệu được giữ trong `archive/single_document_v1/`. ID Q01–Q20 của hai phiên bản không có cùng nội dung; chỉ dùng bộ câu hỏi với đúng `corpus_version` của nó. Không đưa thư mục archive hoặc câu hỏi/đáp án vào chỉ mục.
-
-## Quy tắc phiên bản và phạm vi
-
-- D01: cần đọc Điều 27 khi hỏi về khóa 2025 trở về trước. Không mặc định mọi quy định mới áp dụng nguyên trạng cho khóa cũ.
-- D02: đây là **snapshot PDF 2020 + sửa đổi 2023**, không khẳng định là mọi quy định hiện hành mới nhất năm 2026. Website Sổ tay sinh viên có bài [trích lược theo Thông tư 40/2026](https://stsv.hcmus.edu.vn/quy-che-diem-ren-luyen) có ngưỡng phân loại khác; chưa đưa bài đó vào corpus. Câu hỏi D02 phải ghi rõ phiên bản. Trong phạm vi snapshot, phần sửa đổi 2023 thay thế các khoản tương ứng của bản 2020; bản sạch đã dùng nội dung sửa đổi ở các khoản được chọn.
-- D02: văn bản sửa đổi ghi số quyết định gốc 1208, khác số 1028 trên trang đầu file. Đã ghi nhận khác biệt nguồn; không tự chỉnh bản PDF hoặc suy đoán số đúng.
-- D03: chỉ năm học 2026–2027 và các khóa/chương trình ghi trong văn bản. **Tín chỉ học phí** dựa trên số tiết, khác cách hiểu thông thường về tín chỉ học tập. Định mức bốn năm trong bảng được tính tại năm học nêu trong nguồn, không bảo đảm mọi đơn giá bất biến bốn năm.
-- D04: phân biệt chuẩn trong quá trình học với chuẩn đầu ra. Tách chương trình đại trà/tài năng và khóa tuyển; không dùng cho chương trình có quyết định ngoại ngữ riêng.
-
-## Công việc tiếp theo
-
-1. Mở bốn PDF gốc để hiểu cấu trúc và phiên bản.
-2. Đọc corpus sạch, kiểm tra các đoạn nguồn quan trọng; đối chiếu cả tiêu đề cột khi kiểm tra học phí.
-3. Kiểm tra 20 câu hỏi và các đáp án, sau đó cập nhật `human_review_status` khi nhóm tự kiểm chứng.
-4. Bàn giao `corpus_pages.json`, `sources.json` và `questions.json` cho Task 3–4.
-
-Mọi trường `human_review_status` hiện là `pending`: đã có trợ lý đọc ảnh và kiểm tra tính nhất quán, chưa ghi nhận thành viên nhóm tự kiểm chứng độc lập. `verified: true` không có nghĩa là đã xác minh mọi văn bản là quy định mới nhất đang có hiệu lực.
-
-## Lưu ý cho Task 3–4
-
-- Chỉ index nội dung corpus sạch đã chọn. Giữ `doc_id`, trang PDF, điều/khoản và phiên bản trong metadata của mỗi chunk.
-- Bảng học phí dùng ký hiệu C1–C7: khi chia chunks phải mang theo chú giải cột. Nếu chỉ lấy dòng số mà thiếu tiêu đề cột thì không đủ bằng chứng xác định loại đơn giá.
-- Không index README, tài liệu bàn giao, archive, bộ câu hỏi hoặc đáp án chuẩn.
-- Gán `relevant_chunk_ids` riêng theo từng cấu hình chunking. Hiện để rỗng vì Task 3 chưa tạo chunks.
-- Dùng Hit@k hoặc Recall@k ở cấp chunk/đoạn; với câu cần nhiều bằng chứng hoặc nhiều tài liệu, báo cáo thêm việc có đủ toàn bộ bằng chứng. Có một chunk đúng không đồng nghĩa đủ trả lời.
-- Chưa có code retrieval, kết quả Recall@k hay đánh giá sinh câu trả lời trong phần Task 1–2 này.
+- D01: giữ Điều 27 để xác định chuyển tiếp cho các khóa 2025 trở về trước.
+- D02: trang 1–13 là quyết định, quy chế và phụ lục 2020; trang 14–16 là sửa đổi 2023. Giữ cả hai, không xóa bản gốc; khi hỏi theo phiên bản sau sửa đổi phải ưu tiên khoản được sửa. Metadata `revision_role` phân biệt hai vùng. Đây không phải văn bản hợp nhất chính thức.
+- D02 có khác biệt số văn bản trong nguồn: trang đầu là 1028, phần sửa đổi dẫn chiếu 1208. Không tự sửa sự khác biệt này thành một con số duy nhất.
+- D02 không được mặc định là mọi quy định mới nhất năm 2026. Sổ tay trực tuyến có bài trích lược theo Thông tư 40/2026 khác một số nội dung, nằm ngoài bộ bốn PDF này.
+- D03: chỉ áp dụng năm học, chương trình và khóa nêu trong quyết định. Phân biệt tín chỉ học phí với tín chỉ học tập, và giữ ý nghĩa cột C1–C7 khi chia bảng.
+- D04: phân biệt chuẩn trong quá trình học với chuẩn đầu ra; giữ chương trình và khóa tuyển.
 
 ## Tái tạo dữ liệu
 
-Chạy tại thư mục experiment/: `python scripts/build_multi_document_dataset.py` (cần PyMuPDF).
+Từ thư mục gốc repo:
 
-Script đọc các bản chép sạch Markdown và dữ liệu bản đầu đã lưu, kiểm tra quote trên đúng trang, tạo lại metadata, JSON corpus và bộ câu hỏi. Nó không tải nguồn hoặc tự OCR toàn bộ PDF. Chạy lại sẽ ghi đè các output JSON/câu hỏi; nếu sửa đáp án bằng tay cần cập nhật script tương ứng trước khi chạy lại.
+```powershell
+python -m pip install -r experiment/requirements.txt
+python experiment/scripts/build_multi_document_dataset.py
+```
 
-## Quy mô so với đề seminar
+Entry point cũ chuyển tới `build_full_document_dataset.py`. Script đọc bốn bản Markdown toàn văn, `source_catalog.json`, `page_review.json`, `questions.reference.json` và bản OCR lưu lại để kiểm tra. Không gọi mạng hoặc LLM, không cần model OCR khi chỉ build lại output. Script sẽ dừng nếu thiếu/trùng trang, PDF đổi hash hoặc mất bằng chứng.
 
-Với phạm vi mở rộng, thư viện gốc hiện lớn hơn quy mô khoảng 5–10 trang trong đề. Bộ 4 tài liệu có thể dùng cho hướng thực nghiệm mở rộng. Nếu nhóm muốn có thêm một cấu hình nhỏ đúng quy mô gợi ý của đề, cần chọn rõ tập con 5–10 trang và dùng bộ câu hỏi có bằng chứng trong đúng tập con đó; không báo cáo 51 trang là corpus 5–10 trang.
+Muốn chạy OCR lại từ PDF, xem hướng dẫn trong `experiment/README.md`. Không chạy OCR để tự ghi đè bản đã sửa bảng mà chưa kiểm tra.
+
+## Bộ câu hỏi
+
+Giữ 20 câu hỏi và 30 đoạn bằng chứng đã có, kiểm tra lại với corpus toàn bộ. Bộ 20 câu chưa bao phủ mọi điều khoản mới; không được mô tả nó là đánh giá đầy đủ mọi nội dung của 51 trang. `questions.reference.json` là đầu vào câu hỏi để chỉnh sửa lâu dài; `questions.json` và `questions.md` là output.
+
+Không đưa câu hỏi/đáp án, `corrections/`, `extracted/` hoặc tài liệu hướng dẫn vào chỉ mục cùng corpus. Chỉ dùng `processed/corpus_pages.json`, sau đó gán gold chunks riêng theo từng cấu hình.

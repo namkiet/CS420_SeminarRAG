@@ -34,8 +34,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -63,8 +63,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -102,8 +102,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": "Không tách hoặc diễn giải lại quan hệ “hoặc/và” trong câu ngoại trừ."
   },
   {
@@ -131,8 +131,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -163,8 +163,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -190,8 +190,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -218,8 +218,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": "Không dùng ngưỡng của bài trích lược theo Thông tư 40/2026 ở ngoài corpus để thay đáp án của câu hỏi phiên bản này."
   },
   {
@@ -247,8 +247,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -275,8 +275,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": "Số liệu giả định và phép tính do nhóm tạo, không phải kết quả của sinh viên thật."
   },
   {
@@ -304,8 +304,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -332,8 +332,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -371,8 +371,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -420,8 +420,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": "Phép trừ do nhóm thực hiện từ bảng nguồn; không suy ra chênh lệch học phí cả năm."
   },
   {
@@ -449,8 +449,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -499,8 +499,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -548,8 +548,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -587,8 +587,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -615,8 +615,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -643,8 +643,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   },
   {
@@ -672,8 +672,8 @@
     "relevant_chunk_ids": [],
     "verified": true,
     "human_review_status": "pending",
-    "verification_method": "Trợ lý đọc ảnh PDF và đối chiếu đoạn trích; script kiểm tra quote có trong đúng trang bản sạch.",
-    "corpus_version": "multi_document_v2",
+    "verification_method": "Reference evidence previously checked against PDF images; literal match checked in full corpus. Independent team review pending.",
+    "corpus_version": "full_document_v3",
     "notes": ""
   }
 ]
