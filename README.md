@@ -3,7 +3,7 @@
 ## Team Members
 - **Trịnh Võ Nam Kiệt** — `24125013`
 - **Tuấn Lĩnh** — `241250XX`
-- **Trần Đăng Lê Huy** — `241250XX`
+- **Trần Đăng Lê Huy** — `24125057`
 
 ## Research Question & Objective
 > **Guiding Question:** *Does providing external documents eliminate hallucinations in language models?*
@@ -39,6 +39,7 @@ The goal of this seminar topic is to:
 See [`experiment/README.md`](experiment/README.md) for the prepared dataset.
 
 - [Corpus](experiment/data/processed/corpus_pages.json): text and metadata for all 51 pages of four source documents.
+- [Chunks](experiment/data/chunks/chunks_by_structure.json): 80 chunks, one article or top-level appendix section per chunk. Regenerate with `python experiment/scripts/chunk_by_structure.py`.
 - [Evaluation questions](experiment/data/questions.json): 20 questions with reference answers and 30 evidence spans; keep outside the retrieval index.
 - [Sources](experiment/data/sources.json): source links, document versions, scope, and checksums. Original PDFs are in `experiment/data/raw/`.
 - Data files are ready to load directly; no build script is required. OCR accuracy still needs independent review on 29 pages.
