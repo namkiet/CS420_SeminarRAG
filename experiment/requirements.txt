@@ -1,2 +1,0 @@
-# Needed only to rebuild dataset artifacts from the stored PDFs and Markdown.
-PyMuPDF

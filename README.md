@@ -36,20 +36,12 @@ The goal of this seminar topic is to:
 
 ## Experiment Data — G2 Tasks 1–2
 
-The dataset is in [`experiment/`](experiment/README.md).
+See [`experiment/README.md`](experiment/README.md) for the prepared dataset.
 
-- Four original PDFs and text for **all 51/51 pages**: training/graduation, conduct scores, tuition, and English requirements.
-- Page completeness and OCR accuracy are tracked separately: 22 pages have visual transcriptions/table reconstruction; 29 OCR pages still need independent review.
-- [Full corpus](experiment/data/processed/corpus_all.md), [source catalog](experiment/data/CORPUS_4_TAI_LIEU.md), and [page coverage report](experiment/data/coverage_report.json).
-- Twenty reference questions with 30 evidence spans remain available; this benchmark is not exhaustive coverage of all 51 pages.
-- Retrieval input: `experiment/data/processed/corpus_pages.json`. Keep reference answers and historical/OCR copies outside the index.
-
-Rebuild from the repository root:
-
-```powershell
-python -m pip install -r experiment/requirements.txt
-python experiment/scripts/build_multi_document_dataset.py
-```
+- [Corpus](experiment/data/processed/corpus_pages.json): text and metadata for all 51 pages of four source documents.
+- [Evaluation questions](experiment/data/questions.json): 20 questions with reference answers and 30 evidence spans; keep outside the retrieval index.
+- [Sources](experiment/data/sources.json): source links, document versions, scope, and checksums. Original PDFs are in `experiment/data/raw/`.
+- Data files are ready to load directly; no build script is required. OCR accuracy still needs independent review on 29 pages.
 
 ## References
 - **Lewis, P. et al. (2020).** *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* NeurIPS 2020. [Paper Link](https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html)
