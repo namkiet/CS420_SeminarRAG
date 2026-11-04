@@ -1,62 +1,74 @@
 # Dữ liệu thực nghiệm RAG
 
-Corpus gồm **4 tài liệu, tổng cộng 51 trang**, đã chia thành **80 chunks theo cấu trúc tài liệu**.
+Corpus gồm **4 tài liệu, 51 trang**, chia thành **162 chunks với trần 800 token** theo tokenizer `cl100k_base`. Trần tính cả ngữ cảnh và tiêu đề bảng được lặp lại trong trường `text`.
 
 ## Các file cần dùng
 
 | File | Công dụng |
 |---|---|
-| [chunks_by_structure.json](data/chunks/chunks_by_structure.json) | Chunks để tạo embedding và chỉ mục tìm kiếm. Đọc `chunks[*].text`, giữ metadata để trích dẫn. |
-| [corpus_pages.json](data/processed/corpus_pages.json) | Văn bản đầy đủ theo trang, dùng để kiểm tra và tạo lại chunks. |
+| [chunks_by_structure.json](data/chunks/chunks_by_structure.json) | Chunks để tạo embedding/index từ `chunks[*].text`; giữ metadata để trích dẫn. |
+| [corpus_pages.json](data/processed/corpus_pages.json) | Văn bản đầy đủ theo trang để kiểm tra và tạo lại chunks. |
 | [questions.json](data/questions.json) | 20 câu hỏi đánh giá, đáp án chuẩn và 30 đoạn bằng chứng. Không đưa vào chỉ mục tìm kiếm. |
 | [sources.json](data/sources.json) | Link nguồn, số quyết định, phạm vi áp dụng và SHA-256 của PDF. |
-| `data/raw/*.pdf` | 4 PDF gốc để đối chiếu văn bản, số liệu và bảng. |
-| [chunk_by_structure.py](scripts/chunk_by_structure.py) | Script tạo lại chunks, chỉ dùng thư viện chuẩn Python. |
+| `data/raw/*.pdf` | 4 PDF gốc để đối chiếu. |
+| [chunk_by_structure.py](scripts/chunk_by_structure.py) | Script chia theo cấu trúc rồi tách phần dài theo trần token. |
+| [requirements.txt](requirements.txt) | Phiên bản `tiktoken` dùng để tái tạo kết quả. |
 
-Đây là dữ liệu cho pipeline RAG: chia tài liệu → embedding → retrieval → sinh câu trả lời. Bộ câu hỏi hiện dùng để đánh giá, chưa phải bộ dữ liệu fine-tuning.
+Đây là dữ liệu cho pipeline RAG: chunking → embedding → retrieval → sinh câu trả lời. Bộ câu hỏi hiện dùng để đánh giá, chưa phải dữ liệu fine-tuning.
 
 ## Nguyên tắc chia
 
-Ví dụ: tài liệu có 3 chương, mỗi chương 4 mục, mỗi mục 5 gạch đầu dòng → **12 chunks**. Mỗi chunk giữ đủ 5 gạch đầu dòng của một mục; chương được lưu làm ngữ cảnh.
+1. Nhận diện **điều** trong quy chế/quyết định và **mục lớn** trong phụ lục. Corpus có 80 điều/mục cha.
+2. Nếu toàn bộ điều/mục cùng ngữ cảnh không vượt 800 token, giữ thành một chunk. Không ghép hai điều ngắn để đạt độ dài mục tiêu.
+3. Nếu vượt trần, ưu tiên giữ các khoản nguyên vẹn và gom những khoản liên tiếp cùng điều khi vừa giới hạn. Khoản riêng lẻ quá dài được tách tiếp theo đoạn, gạch đầu dòng, câu, rồi khoảng trắng; trường hợp chuỗi liền quá dài mới dùng ranh giới ký tự Unicode.
+4. Bảng trong phần vượt trần được chia theo nhóm hàng; không cắt ngang một hàng. Các nhóm sau lặp tiêu đề cột. Bảng học phí lặp đầy đủ chú giải C1–C7, đơn vị và thời gian đào tạo từ nguồn. Nếu một hàng cộng ngữ cảnh vượt trần, script báo lỗi thay vì âm thầm cắt hàng.
+5. Mỗi chunk có ngữ cảnh tên tài liệu, loại văn bản và điều/mục. Phần thân nguồn không tạo overlap; tiêu đề/ngữ cảnh có thể lặp lại. Không trộn tài liệu, điều/mục hoặc bản gốc và sửa đổi.
 
-Với các quy chế trong corpus, cấp tương ứng là **Điều**:
+`section_id` là ID của điều/mục cha; `chunk_id` là ID của mảnh sau khi chia. Ví dụ một điều dài có thể tạo `D01_regulation_article_3_01`, `D01_regulation_article_3_02`, cùng `section_id: D01_regulation_article_3`.
 
-- Mỗi điều là một chunk, chứa toàn bộ các khoản, điểm a/b/c, gạch đầu dòng và bảng bên trong. Không chia mỗi khoản thành một chunk.
-- Phụ lục điểm rèn luyện chia theo 6 mục lớn. Các mục con và bảng thuộc mục nào được giữ trong mục đó.
-- Phụ lục học phí chia thành 3 mục. Mục bảng học phí giữ nguyên chú giải C1–C7 và đủ 27 dòng, kể cả khi kéo dài từ trang PDF 2 đến 5.
-- Không cắt theo số trang hoặc giới hạn 400/800 token; không gom hai điều ngắn để đạt độ dài mục tiêu; không tạo overlap.
-- Chương là metadata và tiêu đề chương được giữ cùng điều đầu tiên của chương. Phần mở đầu của mỗi văn bản đi cùng điều/mục đầu tiên.
-- Quyết định ban hành, quy chế kèm theo, phụ lục và văn bản sửa đổi được phân biệt bằng `instrument`. D02 giữ riêng vai trò bản gốc và sửa đổi bằng `revision_role`.
+Tiêu đề chương được giữ cùng điều đầu tiên của chương và lưu trong metadata. Phần mở đầu văn bản được giữ trong điều đầu tiên trước khi chia tiếp. Script chấp nhận OCR `Điêu` như tiêu đề điều, giữ nguyên nội dung nguồn; chỉ coi “Chương” kèm số La Mã/chữ số là tiêu đề, tránh nhầm “chương trình…”. Ranh giới văn bản kèm trong 4 PDF được khai báo ở `instrument()`; cần kiểm tra lại nếu thay corpus.
 
-Script nhận diện cả chữ OCR `Điêu` như một tiêu đề điều, nhưng giữ nguyên văn bản nguồn. Ranh giới giữa các văn bản kèm trong 4 PDF được khai báo trong hàm `instrument()`; nếu thay bộ PDF, cần kiểm tra lại quy tắc này.
+## Kết quả cấu hình 800 token
 
-## Kết quả
+| Tài liệu | Trang | Điều/mục cha | Chunks |
+|---|---:|---:|---:|
+| D01 — Quy chế đào tạo | 21 | 30 | 58 |
+| D02 — Điểm rèn luyện và sửa đổi | 16 | 25 | 54 |
+| D03 — Học phí | 5 | 7 | 22 |
+| D04 — Ngoại ngữ | 9 | 18 | 28 |
+| **Tổng** | **51** | **80** | **162** |
 
-| Tài liệu | Trang | Chunks |
-|---|---:|---:|
-| D01 — Quy chế đào tạo | 21 | 30 |
-| D02 — Điểm rèn luyện, gồm sửa đổi | 16 | 25 |
-| D03 — Học phí | 5 | 7 |
-| D04 — Ngoại ngữ | 9 | 18 |
-| **Tổng** | **51** | **80** |
+Có 29 điều/mục phải tách thành nhiều chunks; 51 điều/mục còn lại giữ nguyên một chunk.
 
-Số chunks bao gồm các điều trong quyết định ban hành và các mục phụ lục. Có 30 chunks đi qua nhiều trang. Chunk dài nhất có 5.486 ký tự; đây là số ký tự, không phải số token.
+| Thống kê token trong `text` | Giá trị |
+|---|---:|
+| Trung bình | 441,3 |
+| Trung vị | 380,5 |
+| Ngắn nhất | 96 |
+| Dài nhất | 788 |
+| Từ 1–500 token | 95 chunks |
+| Từ 501–800 token | 67 chunks |
+| Trên 800 token | **0 chunks** |
 
-Đếm riêng trường `text` bằng tokenizer `cl100k_base`: trung bình khoảng **675 token/chunk**, trung vị **564**, ngắn nhất **27**, dài nhất **2.572**. Đây là thống kê tham khảo; script chia cấu trúc không phụ thuộc tokenizer. Cần đếm lại bằng tokenizer của mô hình embedding được chọn.
+Giới hạn 800 là trần, không phải độ dài bắt buộc. Phần ngữ cảnh lặp cũng được tính vào số token nên tổng token của các chunks lớn hơn corpus ban đầu.
 
-Script kiểm tra mọi ký tự nguồn đều được giữ đúng một lần trong `source_spans`, không lẫn tài liệu/văn bản/phiên bản, và có thể dựng lại văn bản từ các vị trí nguồn. Kiểm tra độc lập xác nhận ví dụ 3 × 4 mục tạo đúng 12 chunks, đủ 27 dòng bảng học phí và 30/30 đoạn bằng chứng nằm trọn trong chunk tương ứng. Đây chưa phải kết quả đo retrieval.
+Script kiểm tra tất cả ký tự nguồn của 51 trang được giữ đúng một lần trong phần thân, không lẫn văn bản/phiên bản. Kiểm tra độc lập xác nhận các dòng bảng không bị cắt, đủ 27 dòng học phí và 30/30 đoạn bằng chứng nằm nguyên trong chunk tương ứng. Đây là kiểm tra dữ liệu, chưa phải đánh giá retrieval.
 
 ## Chạy lại
 
-Từ thư mục gốc repo `CS420_SeminarRAG`, chạy:
+Từ thư mục gốc `CS420_SeminarRAG`, chạy PowerShell:
 
 ```powershell
-python experiment/scripts/chunk_by_structure.py
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r experiment/requirements.txt
+.\.venv\Scripts\python.exe experiment/scripts/chunk_by_structure.py --max-tokens 800
 ```
 
-Không cần cài thêm package. Script chỉ đọc `corpus_pages.json` và `sources.json`, không dùng câu hỏi/đáp án để quyết định ranh giới. Output ghi vào `experiment/data/chunks/chunks_by_structure.json`. Hai bộ chunks 400/800 token cũ đã được thay bằng file này.
+Hai lệnh đầu chỉ cần khi chuẩn bị môi trường. Nếu đã có `.venv` và `tiktoken`, chỉ chạy lệnh cuối. Lần đầu tokenizer có thể tải từ vựng công khai; không gửi corpus đi. Cache mặc định trong `experiment/tmp/`, đã được Git bỏ qua; có thể đổi bằng `TIKTOKEN_CACHE_DIR`.
 
-## Đọc chunks
+Script chỉ đọc corpus và nguồn, không dùng câu hỏi/đáp án để chọn ranh giới. Output vẫn là `data/chunks/chunks_by_structure.json`, thay thế bản 80 chunks trước đó, không tạo thêm các file dữ liệu trùng nhau.
+
+## Cấu trúc output
 
 ```python
 import json
@@ -69,14 +81,27 @@ chunks = payload["chunks"]
 texts = [chunk["text"] for chunk in chunks]
 ```
 
-Output có `config`, `statistics`, `chunks`. Mỗi chunk có `chunk_id`, `doc_id`, `instrument`, `revision_role`, `chapter`, `section`, `section_number`, `pdf_pages`, `text`, `char_count`, URL nguồn và trạng thái kiểm tra.
+Output có `config`, `statistics`, `chunks`. Mỗi chunk có:
 
-`source_spans` lưu `pdf_page`, `char_start`, `char_end`: vị trí ký tự trong `text` của trang nguồn, bắt đầu từ 0, kết thúc không bao gồm ký tự ở `char_end`. Văn bản giữ nguyên, chỉ thêm hai dấu xuống dòng khi nối trang; metadata không được tự chèn vào trường `text`.
+| Trường | Ý nghĩa |
+|---|---|
+| `doc_id`, `section_id`, `chunk_id` | Tài liệu, điều/mục cha và chunk duy nhất. |
+| `section`, `chapter`, `instrument`, `revision_role` | Tiêu đề và phạm vi văn bản/phiên bản. |
+| `chunk_index`, `chunks_in_section` | Thứ tự mảnh và tổng số mảnh trong điều/mục. |
+| `text` | Ngữ cảnh cộng văn bản nguồn, dùng để embedding. |
+| `word_count` | Số đơn vị cách nhau bởi khoảng trắng trong toàn bộ `text`; không phải phân đoạn từ tiếng Việt. |
+| `token_count` | Số token `cl100k_base` trong toàn bộ `text`, tối đa 800. |
+| `pdf_pages`, URL nguồn | Nguồn phần thân để trích dẫn. |
+| `source_spans` | Vị trí nguồn phần thân theo trang: `char_start` bắt đầu từ 0, `char_end` không bao gồm ký tự cuối. |
+| `body_char_start` | Phần thân nguồn là `text[body_char_start:]`; phần trước là ngữ cảnh thêm/lặp. |
+| `context_source_spans` | Vị trí nguồn của tiêu đề bảng/chú giải lặp. Tên tài liệu và tiêu đề điều được lấy từ metadata. |
+| `context_is_derived` | Ngữ cảnh có thêm nhãn biên tập, không coi toàn bộ ngữ cảnh là trích dẫn nguyên văn. |
+
+Phần thân giữ nguyên văn bản nguồn, chỉ nối các trang bằng hai dấu xuống dòng. Các ID đã thay đổi so với bản 80 chunks; cần tạo lại index khi dùng bản này.
 
 ## Việc tiếp theo
 
-- Chọn mô hình embedding và kiểm tra số token từng chunk bằng tokenizer của mô hình đó. Cách chia hiện tại không đặt trần token; cần kiểm tra giới hạn đầu vào trước khi index để tránh bị cắt mất nội dung.
-- Tạo embedding/index từ `chunks[*].text`; khi cần, bổ sung tên tài liệu, chương và điều từ metadata vào đầu vào embedding. Không index thêm bản theo trang hoặc bộ câu hỏi vào cùng chỉ mục.
-- Gán và kiểm tra `relevant_chunk_ids` trong bộ câu hỏi trước khi đo Recall@k; các trường này hiện vẫn rỗng. ID chunks đã thay đổi theo cách chia mới.
-- D02 phải đọc bản gốc cùng sửa đổi 2023; lưu ý phạm vi áp dụng, năm học và khóa tuyển của từng tài liệu.
-- Chất lượng văn bản: 22 trang có bản chép/khôi phục bảng từ ảnh; 29 trang OCR còn cần đối chiếu độc lập. Mọi trang vẫn có `human_review_status: pending`. Bao phủ 51 trang không có nghĩa OCR đã hoàn toàn chính xác.
+- Chọn mô hình embedding và kiểm tra lại đầu vào bằng tokenizer của chính mô hình. Trần 800 `cl100k_base` không đảm bảo vừa giới hạn của mọi mô hình. Nếu thêm nội dung vào `text`, cần đếm lại.
+- Gán và kiểm tra `relevant_chunk_ids` trước khi đo Recall@k; các trường này trong bộ câu hỏi vẫn rỗng. Không index câu hỏi/đáp án vào corpus.
+- D02 phải đọc bản gốc cùng sửa đổi 2023; lưu ý năm học, khóa tuyển và phạm vi áp dụng của từng tài liệu.
+- 22 trang có bản chép/khôi phục bảng từ ảnh; 29 trang OCR còn cần đối chiếu độc lập. Mọi trang vẫn có `human_review_status: pending`. Đủ 51 trang không có nghĩa OCR hoàn toàn chính xác.
