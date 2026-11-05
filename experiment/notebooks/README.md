@@ -33,7 +33,7 @@ Generator mặc định FP32 + SDPA. Khi kiểm tra trên môi trường Kaggle 
 
 Nhấn **Save Version → Save & Run All** để giữ output trên Kaggle. Embedding/chunk không được cắt ngầm theo tokenizer. Khi prompt hết ngân sách, notebook chỉ giữ các chunk nguyên vẹn theo thứ tự rank và ghi `omitted_context_ids`.
 
-Cell cuối tạo `s07_rag_results.zip` kèm link tải tất cả kết quả (không chứa model weights).
+Cell cuối tạo `s07_rag_results.zip` (không chứa model weights). Tải bằng sidebar Output → làm mới thư mục → More actions của file ZIP → Download.
 
 ## Cách đọc đánh giá
 

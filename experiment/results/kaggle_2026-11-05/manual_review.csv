@@ -1,0 +1,190 @@
+question_id,question,mode,answer,reference_answer,correctness_1_5,completeness_1_5,citation_support_1_5,reviewer,notes
+Q01,"Theo Quy chế 2026, học phần tiên quyết khác học phần học trước như thế nào?",baseline,"Theo Quy chế 2026 của trường Đại học Công nghệ TP.HCM (HCMC), học phần tiên quyết (hay học phần ưu tiên) được xác định dựa trên các tiêu chí sau:
+
+1. Học lực: Điểm trung bình môn học trong năm học gần nhất.
+
+2. Kết quả kỳ thi tuyển sinh: Điểm chuẩn hoặc điểm trúng tuyển.
+
+3. Thành tích học tập: Bảng xếp hạng học sinh giỏi, danh hiệu học sinh xuất sắc.
+
+4. Kỹ năng mềm: Khả năng giao tiếp, tư duy logic, khả năng làm việc nhóm...
+
+5. Các chứng chỉ chuyên môn: Giấy chứng nhận tốt nghiệp các khóa học liên quan.
+
+6. Phong cách ứng xử: Tính kỷ luật, trách nhiệm với công việc và người khác.
+
+7. Lời khuyên từ giáo viên, hướng dẫn viên hoặc ban giám hiệu.
+
+Đối tượng có thể được ưu tiên là những sinh viên đã đạt được kết quả tốt trong các kì thi tuyển sinh hoặc đã có thành tích đáng kể trong quá trình học tập tại trường.
+
+Tuy nhiên, để nắm chắc thông tin chính xác nhất về quy định cụ thể, bạn nên tham khảo trực tiếp thông tin từ cơ sở đào tạo hoặc liên hệ bộ phận tuyển sinh của trường.",Học phần tiên quyết phải được học và thi đạt trước khi đăng ký và theo học học phần A. Học phần học trước yêu cầu hoàn thành quá trình học tập trước khi đăng ký và theo học A; định nghĩa này không ghi điều kiện thi đạt như học phần tiên quyết.,,,,,
+Q01,"Theo Quy chế 2026, học phần tiên quyết khác học phần học trước như thế nào?",rag,"Theo Quy chế 2026, học phần tiên quyết (A) là học phần mà sinh viên phải học và thi đạt mới được đăng ký và theo học học phần A. Học phần học trước (B) là học phần mà sinh viên phải hoàn thành quá trình học tập trước khi đăng ký và theo học học phần A.",Học phần tiên quyết phải được học và thi đạt trước khi đăng ký và theo học học phần A. Học phần học trước yêu cầu hoàn thành quá trình học tập trước khi đăng ký và theo học A; định nghĩa này không ghi điều kiện thi đạt như học phần tiên quyết.,,,,,
+Q02,Một tín chỉ tương đương bao nhiêu giờ học tập và mỗi giờ được tính theo bao nhiêu phút?,baseline,"1 tín chỉ thường tương đương với 30 giờ học tập trong một năm tại các trường đại học hoặc cao đẳng ở Hoa Kỳ. Mỗi giờ học tập thường được tính là 45 phút. Tuy nhiên, quy định này có thể thay đổi tùy thuộc vào từng trường và chương trình học cụ thể.","Một tín chỉ tương đương từ 45 đến 50 giờ học tập, tính theo đơn vị 60 phút. Đây là tổng khối lượng học tập, gồm cả các hoạt động học và kiểm tra, đánh giá, không chỉ giờ lên lớp.",,,,,
+Q02,Một tín chỉ tương đương bao nhiêu giờ học tập và mỗi giờ được tính theo bao nhiêu phút?,rag,"Theo NGUỒN, một tín chỉ tương đương từ 45 đến 50 giờ học tập của người học được tính theo đơn vị 60 phút, bao gồm thời gian học trực tiếp, học trực tuyến, thực hành, thí nghiệm, thực tập, tự học có hướng dẫn, các hình thức học tập khác và kiểm tra, đánh giá.","Một tín chỉ tương đương từ 45 đến 50 giờ học tập, tính theo đơn vị 60 phút. Đây là tổng khối lượng học tập, gồm cả các hoạt động học và kiểm tra, đánh giá, không chỉ giờ lên lớp.",,,,,
+Q03,"Theo mức thông thường, sinh viên chính quy đại trà/tài năng phải đăng ký tối thiểu và tối đa bao nhiêu tín chỉ mỗi học kỳ chính; văn bản ghi ngoại trừ gì ở mức tối thiểu?",baseline,"Mức đăng ký tín chỉ cho sinh viên chính quy và tài năng trong một học kỳ chính tại nhiều trường đại học có thể thay đổi tùy theo từng trường. Tuy nhiên, theo thông lệ chung, các trường đại học thường khuyến nghị sinh viên đăng ký từ 12 đến 18 tín chỉ mỗi học kỳ.
+
+Đối với sinh viên tài năng hoặc có kỹ năng chuyên môn đặc biệt, số tín chỉ có thể tăng lên, nhưng vẫn cần đảm bảo rằng tổng số tín chỉ đăng ký phù hợp với chương trình học của họ và khả năng tiếp thu của mình.
+
+Ví dụ cụ thể về giới hạn này có thể khác nhau giữa các trường đại học, nên tốt nhất là liên hệ trực tiếp với cơ quan đào tạo hoặc trang web chính thức của trường để nhận thông tin chính xác nhất.","Mức thông thường là tối thiểu 12 và tối đa 25 tín chỉ. Sau mức tối thiểu, văn bản ghi: “Ngoại trừ học kỳ cuối khóa hoặc các trường hợp từ năm thứ năm và Trường không mở đủ học phần để đăng ký.” Điều kiện xin vượt tối đa được quy định riêng tại khoản 6(b).",,,,,
+Q03,"Theo mức thông thường, sinh viên chính quy đại trà/tài năng phải đăng ký tối thiểu và tối đa bao nhiêu tín chỉ mỗi học kỳ chính; văn bản ghi ngoại trừ gì ở mức tối thiểu?",rag,"[TINCHUC]
+
+Bản gốc: Sinh viên chính quy đại trà/tài năng phải đăng ký tối thiểu 08 tín chỉ và tối đa 20 tín chỉ mỗi học kỳ chính.
+
+Bản sửa đổi: Không có thông tin về mức tối đa đăng ký tín chỉ.
+
+[Ngay hoi]
+
+[Chunk ID: D01_regulation_article_7_02 - Điều 7. Tổ chức đăng ký học tập - a) Số tín chỉ tối thiểu được đăng ký trong một học kỳ chính như sau:]
+
+- Đối với hệ chính quy chương trình tiên tiến: Tối thiểu là 09 tín chỉ.
+- Đối với hệ chính quy chương trình chất lượng cao và tăng cường tiếng Anh: Tối thiểu là 08 tín chỉ.
+- Đối với hệ chính quy chương trình đại trà, cử nhân tài năng: Tối thiểu là 12 tín chỉ. Ngoại trừ học kỳ cuối khóa hoặc các trường hợp từ năm thứ năm và Trường không mở đủ học phần để đăng ký.
+
+[Tin hoc]
+
+[Chunk ID: D03_decision_article_1_02 - Định mức học phí 2026–2027, chính quy đại trà khóa 2022–2026 - Điều 1. Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ và mức thu của một tín chỉ học phí được quy định theo năm học, trong đó 15 tiết thực học được tính là một tín chỉ học phí.]
+
+- Đối với hệ chính quy chương trình tiên tiến, chất lượng cao, tăng cường tiếng Anh: tối đa là 20 tín chỉ","Mức thông thường là tối thiểu 12 và tối đa 25 tín chỉ. Sau mức tối thiểu, văn bản ghi: “Ngoại trừ học kỳ cuối khóa hoặc các trường hợp từ năm thứ năm và Trường không mở đủ học phần để đăng ký.” Điều kiện xin vượt tối đa được quy định riêng tại khoản 6(b).",,,,,
+Q04,"Theo điều khoản chuyển tiếp, có thể khẳng định mọi quy định mới đều áp dụng nguyên trạng cho sinh viên tuyển sinh năm 2024 không?",baseline,"Theo quy định hiện hành tại Học viện Multimedia và Công nghệ Thông tin (HCMUS), việc chuyển tiếp giữa các năm học không phải lúc nào cũng áp dụng nguyên trạng cho tất cả các quy định. Điều này phụ thuộc vào nhiều yếu tố như chương trình đào tạo cụ thể, yêu cầu của ngành học, và sự thay đổi trong môi trường học thuật.
+
+Tuy nhiên, một số trường hợp đặc biệt có thể áp dụng nguyên trạng, ví dụ như những quy định về thời gian học, điểm trung bình cần đạt để tiếp tục học, hoặc các điều kiện khác liên quan đến quá trình học tập.
+
+Để chắc chắn về quy định cụ thể, bạn nên tham khảo trực tiếp với cơ quan quản lý hoặc bộ phận hướng dẫn của Học viện Multimedia và Công nghệ Thông tin (HCMUS).","Không thể khẳng định như vậy. Điều 27 quy định áp dụng cho các khóa tuyển từ năm học 2026–2027; với khóa tuyển sinh năm 2025 trở về trước, Trường lựa chọn áp dụng quy định mới có lợi hơn cho người học, đồng thời bảo đảm điều kiện chất lượng và trách nhiệm giải trình. Khóa 2024 thuộc nhóm chuyển tiếp này.",,,,,
+Q04,"Theo điều khoản chuyển tiếp, có thể khẳng định mọi quy định mới đều áp dụng nguyên trạng cho sinh viên tuyển sinh năm 2024 không?",rag,"Không, theo điều khoản chuyển tiếp trong Quy chế đào tạo trình độ đại học năm 2026, quy định mới chỉ áp dụng cho các khóa tuyển sinh từ năm 2025 trở về trước. Không mặc định mọi quy định mới áp dụng nguyên trạng cho khóa cũ.","Không thể khẳng định như vậy. Điều 27 quy định áp dụng cho các khóa tuyển từ năm học 2026–2027; với khóa tuyển sinh năm 2025 trở về trước, Trường lựa chọn áp dụng quy định mới có lợi hơn cho người học, đồng thời bảo đảm điều kiện chất lượng và trách nhiệm giải trình. Khóa 2024 thuộc nhóm chuyển tiếp này.",,,,,
+Q05,"Theo Điều 19 Quy chế đào tạo 2026, chỉ tích lũy đủ tín chỉ đã đủ điều kiện xét tốt nghiệp chưa?",baseline,"Theo quy định của Quy chế đào tạo 2026 tại Điều 19, để có thể xem xét tốt nghiệp, học viên cần đạt đủ số tín chỉ yêu cầu. Tuy nhiên, nếu không đủ số tín chỉ mà vẫn muốn tốt nghiệp, họ sẽ phải hoàn thành lại các môn học thiếu tín chỉ hoặc tham gia các khóa học bổ sung phù hợp.","Chưa. Còn phải không đang bị đình chỉ học tập do kỷ luật tại thời điểm xét, đạt học lực từ trung bình trở lên, hoàn tất GDQP có chứng chỉ và GDTC, đạt chuẩn ngoại ngữ, chuẩn tin học của chương trình và thỏa các quy định của quy chế.",,,,,
+Q05,"Theo Điều 19 Quy chế đào tạo 2026, chỉ tích lũy đủ tín chỉ đã đủ điều kiện xét tốt nghiệp chưa?",rag,[TBC_ID],"Chưa. Còn phải không đang bị đình chỉ học tập do kỷ luật tại thời điểm xét, đạt học lực từ trung bình trở lên, hoàn tất GDQP có chứng chỉ và GDTC, đạt chuẩn ngoại ngữ, chuẩn tin học của chương trình và thỏa các quy định của quy chế.",,,,,
+Q06,"Theo bản quy chế điểm rèn luyện 2020 kèm sửa đổi 2023 trong D02, tổng các nội dung được 112 điểm thì ghi điểm rèn luyện bao nhiêu?",baseline,"Theo quy chế điểm rèn luyện 2020 kèm sửa đổi 2023 của trường ĐH Kinh tế TP.HCM (D02), tổng số điểm rèn luyện là 112 điểm.",Quy về 100 điểm vì tổng điểm nội dung đánh giá vượt 100.,,,,,
+Q06,"Theo bản quy chế điểm rèn luyện 2020 kèm sửa đổi 2023 trong D02, tổng các nội dung được 112 điểm thì ghi điểm rèn luyện bao nhiêu?",rag,"Theo bản quy chế điểm rèn luyện 2020 kèm sửa đổi 2023 trong D02, tổng các nội dung được 112 điểm thì điểm rèn luyện là 100 điểm.",Quy về 100 điểm vì tổng điểm nội dung đánh giá vượt 100.,,,,,
+Q07,"Theo D02 (quy chế 2020 kèm sửa đổi 2023), sinh viên được 68 điểm rèn luyện xếp loại gì?",baseline,"Theo quy định của Đạo luật Giáo dục và Đào tạo số 74/2019/QH14 ngày 25/11/2019, cụ thể:
+
+- Sinh viên đạt 68 điểm trở lên trong kỳ thi đánh giá năng lực rèn luyện sẽ được xếp loại là ""Khá"".
+
+Vì vậy, theo D02 (quy chế 2020 kèm sửa đổi 2023) của trường Đại học Công nghiệp TP.HCM, sinh viên được 68 điểm rèn luyện sẽ được xếp loại là ""Khá"".",Loại Khá theo ngưỡng từ 65 đến 79 điểm của Điều 7 trong bản PDF này.,,,,,
+Q07,"Theo D02 (quy chế 2020 kèm sửa đổi 2023), sinh viên được 68 điểm rèn luyện xếp loại gì?",rag,"Theo D02 (Quy chế 2020 kèm sửa đổi 2023), sinh viên được 68 điểm rèn luyện xếp loại Trung bình (50 điểm).
+
+Mã Chunk ID: chunk_id_1",Loại Khá theo ngưỡng từ 65 đến 79 điểm của Điều 7 trong bản PDF này.,,,,,
+Q08,"Theo sửa đổi 2739 năm 2023 trong D02, sinh viên nghỉ học tạm thời hoặc còn thời gian đào tạo nhưng không đăng ký học phần được đánh giá rèn luyện ra sao?",baseline,"Theo quy định của Bộ Giáo dục và Đào tạo (GD&TĐ) tại Thông tư số 27/2023/TT-BGDĐT, đối với sinh viên nghỉ học tạm thời hoặc còn thời gian đào tạo nhưng không đăng ký học phần, việc đánh giá rèn luyện sẽ dựa trên các tiêu chí sau:
+
+1. Kỹ năng thực hành: Sinh viên có thể hoàn thành các nhiệm vụ, bài tập hay hoạt động ngoại khóa liên quan đến chuyên ngành.
+
+2. Khả năng tự học: Việc tự nghiên cứu, tìm hiểu kiến thức bổ sung qua các kênh trực tuyến hoặc sách vở.
+
+3. Tác phong làm việc nhóm: Trình độ phối hợp, chia sẻ ý tưởng trong các nhóm làm việc.
+
+4. Kỹ năng mềm: Khả năng giao tiếp, lãnh đạo, quản lý thời gian.
+
+5. Thành tích học tập: Kết quả đạt được trong quá trình học tập hiện tại.
+
+6. Phản hồi từ giảng viên và đồng nghiệp.
+
+7. Các chứng chỉ, bằng cấp liên quan đến lĩnh vực đào tạo.
+
+8. Lãnh đạo công việc cá nhân.
+
+Tuy nhiên, cần lưu ý rằng đây là cơ sở để đánh giá tổng thể, nên kết quả cụ thể sẽ phụ thuộc vào từng trường hợp và tình hình cụ thể.","Được xếp loại Trung bình, 50 điểm trong học kỳ đó.",,,,,
+Q08,"Theo sửa đổi 2739 năm 2023 trong D02, sinh viên nghỉ học tạm thời hoặc còn thời gian đào tạo nhưng không đăng ký học phần được đánh giá rèn luyện ra sao?",rag,"Theo sửa đổi 2739 năm 2023 trong D02, sinh viên nghỉ học tạm thời hoặc còn thời gian đào tạo nhưng không đăng ký học phần được đánh giá rèn luyện như sau:
+
+- Kết quả rèn luyện trong học kỳ đó được xếp loại Trung bình (50 điểm).
+  
+- Thời gian nghỉ học tạm thời sẽ được tính vào thời gian học chính thức quy định tại khoản 6 Điều 3 của Quy chế này.","Được xếp loại Trung bình, 50 điểm trong học kỳ đó.",,,,,
+Q09,"Theo công thức sửa đổi năm 2023 của D02, ba học kỳ chính có đánh giá lần lượt là 70, 80 và 90 điểm thì điểm rèn luyện toàn khóa trước các khoản cộng đặc biệt là bao nhiêu?",baseline,"Theo công thức sửa đổi năm 2023 của Đạo luật 15/2022/QH15 về giáo dục và đào tạo, điểm rèn luyện toàn khóa (tên gọi khác là điểm rèn luyện) được tính dựa trên kết quả học tập trong cả ba học kỳ chính.
+
+- Học kỳ I: 70 điểm
+- Học kỳ II: 80 điểm
+- Học kỳ III: 90 điểm
+
+Điểm rèn luyện toàn khóa sẽ được cộng vào tổng số điểm trung bình để tính toán điểm trung bình học kỳ (điểm trung bình học kỳ 1, 2 hoặc 3).
+
+Vì vậy, điểm rèn luyện toàn khóa trước các khoản cộng đặc biệt sẽ là 70 điểm cho học kỳ I, 80 điểm cho học kỳ II và 90 điểm cho học kỳ III.","R = (70 + 80 + 90) / 3 = 80 điểm, lấy trung bình các học kỳ chính có đánh giá.",,,,,
+Q09,"Theo công thức sửa đổi năm 2023 của D02, ba học kỳ chính có đánh giá lần lượt là 70, 80 và 90 điểm thì điểm rèn luyện toàn khóa trước các khoản cộng đặc biệt là bao nhiêu?",rag,"Theo công thức sửa đổi năm 2023 của D02, điểm rèn luyện toàn khóa được tính dựa trên công thức: 
+R = (r_1 + ... + r_N) / N,
+với N là tổng số học kỳ chính có đánh giá kết quả rèn luyện.
+
+Trong trường hợp bạn đã cung cấp, ba học kỳ chính có điểm là 70, 80 và 90 điểm, chúng ta cần tính điểm rèn luyện toàn khóa R.
+
+Vậy:
+R = (70 + 80 + 90) / 3
+R = 240 / 3
+R = 80
+
+Do đó, điểm rèn luyện toàn khóa trước các khoản cộng đặc biệt là 80 điểm.","R = (70 + 80 + 90) / 3 = 80 điểm, lấy trung bình các học kỳ chính có đánh giá.",,,,,
+Q10,"Theo Điều 9 của bản D02, thời hạn tiếp nhận phản hồi và đề nghị điều chỉnh kết quả rèn luyện dự kiến là bao lâu kể từ công bố?",baseline,"Theo Điều 9 của bản D02, thời hạn tiếp nhận phản hồi và đề nghị điều chỉnh kết quả rèn luyện dự kiến là 30 ngày kể từ khi công bố kết quả rèn luyện.",Trong vòng 15 ngày kể từ thời điểm công bố kết quả dự kiến.,,,,,
+Q10,"Theo Điều 9 của bản D02, thời hạn tiếp nhận phản hồi và đề nghị điều chỉnh kết quả rèn luyện dự kiến là bao lâu kể từ công bố?",rag,"Theo Điều 9 của bản D02, thời hạn tiếp nhận phản hồi và đề nghị điều chỉnh kết quả rèn luyện dự kiến là 15 ngày kể từ thời điểm công bố.",Trong vòng 15 ngày kể từ thời điểm công bố kết quả dự kiến.,,,,,
+Q11,"Theo QĐ3317, học phí được thu theo học kỳ dựa trên gì và một tín chỉ học phí tương ứng bao nhiêu tiết thực học?",baseline,"Theo Quyết định 3317 của Bộ Giáo dục và Đào tạo, học phí được tính theo học kỳ dựa trên số tiết học trong mỗi học kỳ. Một tín chỉ học phí thường tương ứng với khoảng 20-40 tiết thực học, tùy thuộc vào chương trình và yêu cầu cụ thể của từng trường.",Căn cứ tổng số tiết thực học của các học phần đã đăng ký trong học kỳ và mức thu một tín chỉ học phí theo năm học; 15 tiết thực học bằng một tín chỉ học phí.,,,,,
+Q11,"Theo QĐ3317, học phí được thu theo học kỳ dựa trên gì và một tín chỉ học phí tương ứng bao nhiêu tiết thực học?",rag,"[TINH_TRACONG] Theo QĐ3317, học phí được thu theo học kỳ dựa trên tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ. Một tín chỉ học phí tương ứng với 15 tiết thực học.",Căn cứ tổng số tiết thực học của các học phần đã đăng ký trong học kỳ và mức thu một tín chỉ học phí theo năm học; 15 tiết thực học bằng một tín chỉ học phí.,,,,,
+Q12,"Trong bảng QĐ3317 năm học 2026–2027 cho khóa 2022–2026, đơn giá một tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo là bao nhiêu?",baseline,"Xin lỗi, tôi không có thông tin chi tiết về đơn giá học phí cụ thể cho khóa học này trong bảng QĐ3317 năm học 2026-2027. Để có thông tin chính xác nhất, bạn nên liên hệ trực tiếp với cơ sở đào tạo hoặc trung tâm giáo dục của mình để được hỗ trợ.",1.014.000 đồng cho một tín chỉ học phí khối giáo dục chuyên nghiệp; không phải đơn giá chung cho mọi học phần của ngành.,,,,,
+Q12,"Trong bảng QĐ3317 năm học 2026–2027 cho khóa 2022–2026, đơn giá một tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo là bao nhiêu?",rag,"Dựa trên bảng QĐ3317 năm học 2026–2027 cho khóa 2022–2026, đơn giá một tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo là 734.000 VND.",1.014.000 đồng cho một tín chỉ học phí khối giáo dục chuyên nghiệp; không phải đơn giá chung cho mọi học phần của ngành.,,,,,
+Q13,"Theo QĐ3317, đơn giá tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo cao hơn nhóm ngành Công nghệ thông tin bao nhiêu trong năm học 2026–2027?",baseline,"Tôi xin lỗi, nhưng tôi không có thông tin chính xác về việc so sánh giữa đơn giá tín chỉ học phí của ngành Trí tuệ nhân tạo và Công nghệ thông tin tại Trường Đại học Công nghệ TP.HCM (HCMUS) trong năm học 2026-2027. Thông tin chi tiết này thường được công bố trên trang web hoặc tài liệu chính thức của trường. Tôi khuyên bạn nên tham khảo trực tiếp từ cơ quan quản lý hoặc trung tâm tuyển sinh của HCMUS để nhận được thông tin chính xác nhất.",Trí tuệ nhân tạo: 1.014.000 đồng; nhóm ngành CNTT: 974.000 đồng. Chênh lệch 40.000 đồng cho một tín chỉ học phí của khối này.,,,,,
+Q13,"Theo QĐ3317, đơn giá tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo cao hơn nhóm ngành Công nghệ thông tin bao nhiêu trong năm học 2026–2027?",rag,"[TINHTUC]
+
+Theo QĐ3317, đơn giá tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo (C1 = 1.014.000 VND) cao hơn nhóm ngành Công nghệ thông tin (C1 = 974.000 VND) trong năm học 2026–2027.
+
+[chunk_id] C1 = 1.014.000 VND - 974.000 VND = 230.000 VND
+
+Trong năm học 2026–2027, đơn giá tín chỉ học phí ngành Trí tuệ nhân tạo cao hơn nhóm ngành Công nghệ thông tin 230.000 VND/tín chỉ.",Trí tuệ nhân tạo: 1.014.000 đồng; nhóm ngành CNTT: 974.000 đồng. Chênh lệch 40.000 đồng cho một tín chỉ học phí của khối này.,,,,,
+Q14,Có thể dùng bảng học phí QĐ3317 năm học 2026–2027 trong D03 để tính học phí cho sinh viên khóa 2020 không?,baseline,"Không đủ thông tin để trả lời chính xác. Để có kết quả chính xác nhất, bạn cần xem xét các điều kiện cụ thể như:
+
+- Bảng học phí được áp dụng từ ngày nào đến ngày nào?
+- Có thay đổi gì về học phí giữa năm học 2026-2027 và 2020 không?
+
+Nếu có thêm thông tin cụ thể, tôi sẽ giúp bạn tính toán chính xác hơn.","Không. Bảng này quy định cho hệ chính quy đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026; khóa 2020 ngoài phạm vi, cần văn bản áp dụng riêng.",,,,,
+Q14,Có thể dùng bảng học phí QĐ3317 năm học 2026–2027 trong D03 để tính học phí cho sinh viên khóa 2020 không?,rag,"Không, vì:
+
+1. Bảng học phí QĐ3317 năm học 2026–2027 được áp dụng cho khóa 2022 trở lên.
+2. Khóa 2020 nằm trong thời gian không áp dụng bảng này (khóa trước 2022).
+
+Do đó, không thể sử dụng bảng học phí QĐ3317 năm học 2026–2027 để tính học phí cho sinh viên khóa 2020.","Không. Bảng này quy định cho hệ chính quy đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026; khóa 2020 ngoài phạm vi, cần văn bản áp dụng riêng.",,,,,
+Q15,Sinh viên đại trà khóa 2024 đã nộp IELTS 4.5 hợp lệ do British Council hoặc IDP cấp có cơ sở được xét miễn học Anh văn không; nếu phải học thì đơn giá tín chỉ học phí Anh văn năm 2026–2027 là bao nhiêu?,baseline,"Tôi xin lỗi, nhưng tôi không có thông tin chính xác về chi tiết này. Tôi không thể cung cấp thông tin cụ thể về đơn giá học phí Anh văn mà không có thêm thông tin chi tiết về chương trình và thời gian học. Để nhận được thông tin chính xác nhất, bạn nên liên hệ trực tiếp với trường Đại học Quốc gia Hà Nội (Học viện Tài chính - Ngân hàng) để được tư vấn.","Có cơ sở được xét miễn: QĐ2464 công nhận IELTS 4.5 do British Council hoặc IDP Australia cấp trong danh sách chuẩn đầu ra đại trà, còn QĐ3317 nêu được xét miễn học Anh văn khi nộp chứng chỉ đạt chuẩn theo quy định. Nếu phải học, đơn giá một tín chỉ học phí Anh văn là 488.000 đồng. Việc xét cần đáp ứng thủ tục và hiệu lực chứng chỉ, không tự động chỉ từ điểm IELTS.",,,,,
+Q15,Sinh viên đại trà khóa 2024 đã nộp IELTS 4.5 hợp lệ do British Council hoặc IDP cấp có cơ sở được xét miễn học Anh văn không; nếu phải học thì đơn giá tín chỉ học phí Anh văn năm 2026–2027 là bao nhiêu?,rag,"[TINH KIẾM]
+
+Sinh viên đại trà khóa 2024 đã nộp IELTS 4.5 hợp lệ do British Council hoặc IDP cấp có cơ sở được xét miễn học Anh văn.
+
+Đơn giá tín chỉ học phí Anh văn năm 2026–2027 đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026 theo loại học phần được quy định tại phụ lục I đính kèm quyết định này là 488.000 đồng.","Có cơ sở được xét miễn: QĐ2464 công nhận IELTS 4.5 do British Council hoặc IDP Australia cấp trong danh sách chuẩn đầu ra đại trà, còn QĐ3317 nêu được xét miễn học Anh văn khi nộp chứng chỉ đạt chuẩn theo quy định. Nếu phải học, đơn giá một tín chỉ học phí Anh văn là 488.000 đồng. Việc xét cần đáp ứng thủ tục và hiệu lực chứng chỉ, không tự động chỉ từ điểm IELTS.",,,,,
+Q16,"Theo QĐ2464, mức IELTS tối thiểu trong danh sách chuẩn đầu ra khác nhau thế nào giữa đại trà khóa 2024 và cử nhân tài năng khóa 2024?",baseline,"Tôi xin lỗi, nhưng tôi không có thông tin chính xác về việc so sánh các yêu cầu IELTS giữa hai khóa học này. Thông tin cụ thể nhất cần được tìm kiếm trực tiếp trên trang web của trường hoặc liên hệ với bộ phận tư vấn tuyển sinh của họ để nhận được câu trả lời chính xác.","Đại trà khóa 2024: IELTS 4.5 (chuẩn bậc 3/6). Cử nhân tài năng khóa 2024 thuộc nhóm khóa 2023 trở về sau: IELTS 5.0 (chuẩn bậc 4/6). Chứng chỉ do British Council hoặc IDP Australia cấp và phải đáp ứng điều kiện hiệu lực, hồ sơ.",,,,,
+Q16,"Theo QĐ2464, mức IELTS tối thiểu trong danh sách chuẩn đầu ra khác nhau thế nào giữa đại trà khóa 2024 và cử nhân tài năng khóa 2024?",rag,"Theo QĐ2464, mức IELTS tối thiểu trong danh sách chuẩn đầu ra khác nhau giữa đại trà khóa 2024 và cử nhân tài năng khóa 2024 như sau:
+
+- Đại trà: Mức tối thiểu là 4.5
+- Cử nhân tài năng: Mức tối thiểu là 4.5
+
+Mặc dù cả hai đều yêu cầu đạt 4.5, nhưng điều quan trọng cần lưu ý là đây là mức tối thiểu mà các chứng chỉ IELTS được chấp nhận tương đương bậc 3/6 theo khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam.","Đại trà khóa 2024: IELTS 4.5 (chuẩn bậc 3/6). Cử nhân tài năng khóa 2024 thuộc nhóm khóa 2023 trở về sau: IELTS 5.0 (chuẩn bậc 4/6). Chứng chỉ do British Council hoặc IDP Australia cấp và phải đáp ứng điều kiện hiệu lực, hồ sơ.",,,,,
+Q17,"Theo QĐ2464, hoàn thành Anh văn 1–4 có đồng nghĩa tự động đạt chuẩn ngoại ngữ đầu ra đại trà không?",baseline,"Theo Quyết định số 2464/QĐ-TTg của Thủ tướng Chính phủ về việc ban hành Thông tư số 03/2021/TT-BGDĐT hướng dẫn thi tuyển sinh vào lớp 10 THPT và sau đó vào các trường đại học, cao đẳng, theo quy định này:
+
+- Học sinh hoàn thành chương trình Anh Văn từ cấp 1 đến cấp 4 (tương đương với các môn Tiếng Anh, Tiếng Trung, Tiếng Nhật) sẽ được đánh giá là đã đạt chuẩn ngoại ngữ đầu ra đại trà.
+
+Vậy, nếu bạn hoàn thành Anh Văn từ cấp 1 đến cấp 4, thì bạn sẽ được đánh giá là đã đạt chuẩn ngoại ngữ đầu ra đại trà. Tuy nhiên, điều quan trọng cần lưu ý là chỉ khi bạn hoàn thành toàn bộ chương trình Anh Văn từ cấp 1 đến cấp 4 mới được đánh giá như vậy.",Không. Hoàn thành Anh văn 1–4 là một cách đạt chuẩn trong quá trình học để xét học chuyên ngành. Chuẩn đầu ra đại trà được quy định riêng tại Điều 7; sinh viên phải nộp chứng chỉ/văn bằng theo khoản 2 hoặc 3 trước khi nộp hồ sơ xét tốt nghiệp.,,,,,
+Q17,"Theo QĐ2464, hoàn thành Anh văn 1–4 có đồng nghĩa tự động đạt chuẩn ngoại ngữ đầu ra đại trà không?",rag,"[TÀI LIỆU TRẢ LỜI]
+
+Theo QĐ2464, hoàn thành Anh văn 1–4 không đồng nghĩa tự động đạt chuẩn ngoại ngữ đầu ra đại trà. SV cần nộp chứng chỉ đạt chuẩn trình độ ngoại ngữ đầu ra theo khoản 2 hoặc 3 Điều này trước khi nộp hồ sơ xét tốt nghiệp trình độ đại học chương trình đại trà.",Không. Hoàn thành Anh văn 1–4 là một cách đạt chuẩn trong quá trình học để xét học chuyên ngành. Chuẩn đầu ra đại trà được quy định riêng tại Điều 7; sinh viên phải nộp chứng chỉ/văn bằng theo khoản 2 hoặc 3 trước khi nộp hồ sơ xét tốt nghiệp.,,,,,
+Q18,"Theo QĐ2464, hạn chậm nhất đạt chuẩn tiếng Anh trong quá trình học là khi nào và chưa đạt sẽ bị hạn chế gì?",baseline,"Theo Quyết định 2464/2019/QĐ-UBND của UBND TP.HCM về việc ban hành Kế hoạch triển khai thực hiện Đề án ""Tăng cường giáo dục ngoại ngữ cho học sinh tiểu học"", theo quy định:
+
+Hạn chót đạt chuẩn tiếng Anh trong quá trình học là sau 3 năm học (từ lớp 5 đến lớp 8).
+
+Nếu chưa đạt chuẩn vào thời điểm này, học sinh sẽ bị hạn chế quyền lợi như sau:
+- Không được tham gia các hoạt động ngoại khóa liên quan đến tiếng Anh.
+- Không được tham gia các chương trình đào tạo chuyên sâu về ngoại ngữ.
+
+Vì vậy, nếu bạn đang học tiếng Anh tại trường và muốn đảm bảo đạt chuẩn vào cuối cấp, hãy cố gắng hoàn thành mục tiêu học tập này một cách hiệu quả.",Chậm nhất cuối học kỳ thứ 6. Không đạt chuẩn theo khoản 2 và 3 Điều 6 thì không được tiếp tục đăng ký và học các học phần chuyên ngành.,,,,,
+Q18,"Theo QĐ2464, hạn chậm nhất đạt chuẩn tiếng Anh trong quá trình học là khi nào và chưa đạt sẽ bị hạn chế gì?",rag,"Theo QĐ2464, hạn chậm nhất đạt chuẩn tiếng Anh trong quá trình học là cuối học kỳ thứ 6. Nếu chưa đạt chuẩn, SV không được tiếp tục đăng ký và học các học phần chuyên ngành.",Chậm nhất cuối học kỳ thứ 6. Không đạt chuẩn theo khoản 2 và 3 Điều 6 thì không được tiếp tục đăng ký và học các học phần chuyên ngành.,,,,,
+Q19,"Theo QĐ2464, chứng chỉ ngoại ngữ không ghi thời hạn hiệu lực được tính hiệu lực thế nào khi xét chuẩn đầu ra?",baseline,"Theo Quyết định 2464/2019/QĐ-UBND của UBND TP.HCM về việc ban hành Kế hoạch triển khai thực hiện Nghị quyết số 35/NQ-CP ngày 28/7/2019 của Chính phủ về việc tăng cường quản lý chất lượng giáo dục và đào tạo tại các trường đại học, cao đẳng, trung cấp chuyên nghiệp trên địa bàn thành phố Hồ Chí Minh, thì:
+
+- Đối với sinh viên tốt nghiệp từ năm 2019 trở đi, nếu có chứng chỉ ngoại ngữ không ghi thời hạn hiệu lực, sẽ được tính hiệu lực theo quy định tại Điều 10 Thông tư 12/2019/TT-BGDĐT.
+
+- Thời hạn hiệu lực bắt đầu từ ngày nhận hồ sơ đăng ký xét tuyển đầu vào.
+
+- Trường hợp không đủ điều kiện xét tuyển do không đạt yêu cầu về chứng chỉ ngoại ngữ, thí sinh có thể tham gia kỳ thi bổ sung hoặc nộp đơn xin học bổng để tiếp tục học.
+
+Vì vậy, để biết chính xác thời hạn hiệu lực cụ thể, bạn nên liên hệ trực tiếp với cơ quan quản lý giáo dục hoặc trao đổi trực tiếp với trường đại học mà bạn đang xét tuyển.",Hiệu lực 2 năm tính từ ngày cấp (được tính ngay sau khi công bố kết quả thi chứng chỉ) đến ngày đăng ký xét đạt chuẩn ngoại ngữ đầu ra cho Trường.,,,,,
+Q19,"Theo QĐ2464, chứng chỉ ngoại ngữ không ghi thời hạn hiệu lực được tính hiệu lực thế nào khi xét chuẩn đầu ra?",rag,[chunk_id] Điều 11.1. Trường sẽ căn cứ vào hiệu lực của chứng chỉ ngoại ngữ mà được ghi trong hồ sơ của sinh viên để so sánh với thời điểm sinh viên nộp hồ sơ xét đạt chuẩn ngoại ngữ đầu ra cho Trường.,Hiệu lực 2 năm tính từ ngày cấp (được tính ngay sau khi công bố kết quả thi chứng chỉ) đến ngày đăng ký xét đạt chuẩn ngoại ngữ đầu ra cho Trường.,,,,,
+Q20,Hồ sơ xét chuẩn ngoại ngữ đầu ra theo Điều 12 QĐ2464 gồm gì?,baseline,"Theo Điều 12 Quyết định số 2464/QĐ-TTg ngày 07/12/2018 của Thủ tướng Chính phủ về chính sách hỗ trợ học tập ngoại ngữ cho người lao động, hồ sơ xét chuẩn ngoại ngữ đầu ra cần bao gồm:
+
+- Hồ sơ cá nhân của người lao động (nếu có)
+- Giấy chứng nhận đã hoàn thành chương trình đào tạo hoặc chứng chỉ tương đương
+- Bản sao công chứng hợp đồng lao động
+- Bằng cấp liên quan đến ngành nghề mà người lao động đang làm việc
+
+Ngoài ra, còn tùy thuộc vào từng trường hợp cụ thể và yêu cầu của cơ quan chức năng khác nhau.",Đơn đăng ký xét chuẩn đầu ra ngoại ngữ; bản photo công chứng chứng chỉ hoặc bản photo kèm bản chính đối chiếu; mang Căn cước công dân để đối chiếu.,,,,,
+Q20,Hồ sơ xét chuẩn ngoại ngữ đầu ra theo Điều 12 QĐ2464 gồm gì?,rag,"Hồ sơ xét chuẩn ngoại ngữ đầu ra theo Điều 12 QĐ2464 bao gồm:
+
+1. Đơn đăng ký xét đạt chuẩn đầu ra ngoại ngữ.
+2. Bản photo có công chứng các chứng chỉ (hoặc bản photo chứng chỉ kèm bản chính đối chiếu).
+3. Mang theo Căn cước công dân để đối chiếu.",Đơn đăng ký xét chuẩn đầu ra ngoại ngữ; bản photo công chứng chứng chỉ hoặc bản photo kèm bản chính đối chiếu; mang Căn cước công dân để đối chiếu.,,,,,

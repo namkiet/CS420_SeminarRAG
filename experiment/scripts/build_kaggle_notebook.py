@@ -305,14 +305,14 @@ md('''
 ''')
 code('''
     import shutil
-    from IPython.display import FileLink
     if RUN_GENERATION:
         print("Nguồn đã cung cấp cho câu hỏi demo (cần đối chiếu với kết luận của model):")
         display(pd.DataFrame(custom_answer["sources"]))
         if not custom_answer["citations"]["has_citation"]:
             print("Model chưa chèn citation trong đáp án; chưa được xem là trích dẫn đạt yêu cầu.")
     archive = shutil.make_archive("/kaggle/working/s07_rag_results", "zip", OUTPUT)
-    display(FileLink(archive))
+    print("Đã tạo:", archive)
+    print("Tải ZIP trong sidebar Output → s07_rag_results.zip → More actions → Download.")
 ''')
 
 notebook = {"nbformat": 4, "nbformat_minor": 5, "metadata": {

@@ -1,0 +1,572 @@
+[
+  {
+    "question_id": "Q01",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D01",
+          "pdf_page": 4,
+          "printed_page": 3,
+          "section": "Điều 3 khoản 3(c)",
+          "quote": "Học phần tiên quyết đối với học phần A là học phần mà sinh viên phải học và thi đạt mới được đăng ký và theo học học phần A.",
+          "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+          "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+          "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=4"
+        },
+        "chunk_ids": [
+          "D01_regulation_article_3_03"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D01",
+          "pdf_page": 4,
+          "printed_page": 3,
+          "section": "Điều 3 khoản 3(c)",
+          "quote": "Học phần học trước đối với học phần A là học phần mà sinh viên phải hoàn thành quá trình học tập trước khi đăng ký và theo học học phần A.",
+          "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+          "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+          "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=4"
+        },
+        "chunk_ids": [
+          "D01_regulation_article_3_03"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q02",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D01",
+          "pdf_page": 4,
+          "printed_page": 3,
+          "section": "Điều 3 khoản 3(d)",
+          "quote": "Một (01) tín chỉ tương đương từ 45 đến 50 giờ học tập của người học được tính theo đơn vị 60 phút, bao gồm thời gian học trực tiếp, học trực tuyến, thực hành, thí nghiệm, thực tập, tự học có hướng dẫn, các hình thức học tập khác và kiểm tra, đánh giá;",
+          "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+          "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+          "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=4"
+        },
+        "chunk_ids": [
+          "D01_regulation_article_3_04"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q03",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D01",
+          "pdf_page": 8,
+          "printed_page": 7,
+          "section": "Điều 7 khoản 6(a)",
+          "quote": "Đối với hệ chính quy chương trình đại trà, cử nhân tài năng: Tối thiểu là 12 tín chỉ. Ngoại trừ học kỳ cuối khóa hoặc các trường hợp từ năm thứ năm và Trường không mở đủ học phần để đăng ký.",
+          "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+          "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+          "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=8"
+        },
+        "chunk_ids": [
+          "D01_regulation_article_7_02"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D01",
+          "pdf_page": 8,
+          "printed_page": 7,
+          "section": "Điều 7 khoản 6(b)",
+          "quote": "Đối với hệ chính quy chương trình đại trà và cử nhân tài năng: tối đa là 25 tín chỉ.",
+          "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+          "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+          "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=8"
+        },
+        "chunk_ids": [
+          "D01_regulation_article_7_02"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q04",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D01",
+          "pdf_page": 21,
+          "printed_page": 20,
+          "section": "Điều 27 khoản 1–2",
+          "quote": "1. Quy định này áp dụng cho các khóa tuyển từ năm học 2026-2027.\n\n2. Đối với các khóa tuyển sinh từ năm 2025 trở về trước, Trường lựa chọn áp dụng quy định mới có lợi hơn cho người học trong hoạt động đào tạo và phải bảo đảm điều kiện chất lượng và trách nhiệm giải trình.",
+          "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+          "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+          "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=21"
+        },
+        "chunk_ids": [
+          "D01_regulation_article_27_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q05",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D01",
+          "pdf_page": 17,
+          "printed_page": 16,
+          "section": "Điều 19 khoản 1",
+          "quote": "Sinh viên được xét và công nhận tốt nghiệp khi có đủ các điều kiện sau:\n\na) Cho đến thời điểm xét tốt nghiệp không đang trong thời gian bị kỷ luật ở mức đình chỉ học tập;\n\nb) Tích lũy đủ số học phần và tổng số tín chỉ theo quy định của chương trình đào tạo và được xếp loại học lực từ trung bình trở lên;\n\nc) Đã hoàn tất đủ các học phần Giáo dục quốc phòng (có chứng chỉ GDQP- An ninh) và Giáo dục thể chất;\n\nd) Đạt chuẩn trình độ ngoại ngữ theo quy định của Trường;\n\ne) Đạt chuẩn trình độ tin học của chương trình đào tạo mà sinh viên theo học;\n\nf) Thỏa các quy định tại quy chế này.",
+          "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+          "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+          "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=17"
+        },
+        "chunk_ids": [
+          "D01_regulation_article_19_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q06",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D02",
+          "pdf_page": 3,
+          "printed_page": 2,
+          "section": "Điều 4 khoản 4",
+          "quote": "Trong trường hợp tổng điểm các nội dung đánh giá lớn hơn 100 điểm thì Điểm rèn luyện quy về điểm 100.",
+          "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+          "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=3"
+        },
+        "chunk_ids": [
+          "D02_regulation_article_4_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q07",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D02",
+          "pdf_page": 5,
+          "printed_page": 4,
+          "section": "Điều 7 khoản 2(c)",
+          "quote": "Từ 65 đến 79 điểm: loại Khá.",
+          "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+          "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=5"
+        },
+        "chunk_ids": [
+          "D02_regulation_article_7_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q08",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D02",
+          "pdf_page": 15,
+          "printed_page": 2,
+          "section": "QĐ2739 Điều 1 mục 3, sửa Điều 8 khoản 5",
+          "quote": "Sinh viên nghỉ học tạm thời hoặc sinh viên còn đang trong thời gian đào tạo nhưng không đăng ký học phần thì kết quả rèn luyện trong học kỳ đó được xếp loại Trung bình (50 điểm).",
+          "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+          "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=15"
+        },
+        "chunk_ids": [
+          "D02_amendment_2023_article_1_03"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q09",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D02",
+          "pdf_page": 15,
+          "printed_page": 2,
+          "section": "QĐ2739 Điều 1 mục 2, sửa Điều 6 khoản 3",
+          "quote": "Điểm rèn luyện toàn khóa học là trung bình cộng của điểm rèn luyện các học kỳ chính có đánh giá kết quả rèn luyện của khóa học và được tính theo công thức: R = (r_1 + ... + r_N) / N.",
+          "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+          "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=15"
+        },
+        "chunk_ids": [
+          "D02_amendment_2023_article_1_03"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q10",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D02",
+          "pdf_page": 6,
+          "printed_page": 5,
+          "section": "Điều 9 khoản 4",
+          "quote": "Phòng Công tác Sinh viên công bố kết quả rèn luyện dự kiến học kỳ đánh giá qua hộp thư điện tử của sinh viên và tiếp nhận phản hồi, cập nhật minh chứng, đề nghị điều chỉnh trong vòng 15 ngày kể từ thời điểm công bố, đồng thời gửi kết quả của sinh viên trước và sau điều chỉnh đến Hội đồng đánh giá kết quả rèn luyện cấp Khoa.",
+          "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+          "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=6"
+        },
+        "chunk_ids": [
+          "D02_regulation_article_9_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q11",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 1,
+          "printed_page": null,
+          "section": "Điều 1",
+          "quote": "Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ và mức thu của một tín chỉ học phí được quy định theo năm học, trong đó 15 tiết thực học được tính là một tín chỉ học phí.",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=1"
+        },
+        "chunk_ids": [
+          "D03_decision_article_1_02"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q12",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 2,
+          "printed_page": null,
+          "section": "Phụ lục I, chú giải cột C5",
+          "quote": "C5: đơn giá 01 tín chỉ học phí các học phần khối kiến thức giáo dục chuyên nghiệp gồm cơ sở ngành, chuyên ngành, tốt nghiệp...",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=2"
+        },
+        "chunk_ids": [
+          "D03_appendix_section_1_01"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 4,
+          "printed_page": 3,
+          "section": "Phụ lục I dòng 16",
+          "quote": "| 16 | 7480107 | Trí tuệ nhân tạo | không có | 488.000 | 488.000 | 734.000 | 1.014.000 | 40.500.000 | 162.000.000 |",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=4"
+        },
+        "chunk_ids": [
+          "D03_appendix_section_1_10"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q13",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 2,
+          "printed_page": null,
+          "section": "Phụ lục I, chú giải cột C5",
+          "quote": "C5: đơn giá 01 tín chỉ học phí các học phần khối kiến thức giáo dục chuyên nghiệp gồm cơ sở ngành, chuyên ngành, tốt nghiệp...",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=2"
+        },
+        "chunk_ids": [
+          "D03_appendix_section_1_01"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 4,
+          "printed_page": 3,
+          "section": "Phụ lục I dòng 16",
+          "quote": "| 16 | 7480107 | Trí tuệ nhân tạo | không có | 488.000 | 488.000 | 734.000 | 1.014.000 | 40.500.000 | 162.000.000 |",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=4"
+        },
+        "chunk_ids": [
+          "D03_appendix_section_1_10"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 4,
+          "printed_page": 3,
+          "section": "Phụ lục I dòng 17",
+          "quote": "| 17 | 7480201 | Nhóm ngành Công nghệ thông tin | 488.000 | 488.000 | 488.000 | 734.000 | 974.000 | 40.500.000 | 162.000.000 |",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=4"
+        },
+        "chunk_ids": [
+          "D03_appendix_section_1_10"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q14",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 1,
+          "printed_page": null,
+          "section": "Điều 2",
+          "quote": "Mức thu của một tín chỉ học phí trong năm học 2026-2027 đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026 theo loại học phần được quy định tại phụ lục I đính kèm quyết định này.",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=1"
+        },
+        "chunk_ids": [
+          "D03_decision_article_2_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q15",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 6,
+          "printed_page": 5,
+          "section": "Điều 7 khoản 2(a)",
+          "quote": "Chứng chỉ IELTS 4.5 do British Council hoặc IDP Australia cấp.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_7_01"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 5,
+          "printed_page": 4,
+          "section": "Phụ lục I mục 3",
+          "quote": "Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành.",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=5"
+        },
+        "chunk_ids": [
+          "D03_appendix_section_3_01"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D03",
+          "pdf_page": 5,
+          "printed_page": 4,
+          "section": "Phụ lục I mục 3",
+          "quote": "Đối với sinh viên trình độ đại học chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026, đơn giá 01 tín chỉ học phí các học phần Anh văn là 488.000 đồng.",
+          "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+          "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+          "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=5"
+        },
+        "chunk_ids": [
+          "D03_appendix_section_3_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q16",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 6,
+          "printed_page": 5,
+          "section": "Điều 7 khoản 2(a)",
+          "quote": "Chứng chỉ IELTS 4.5 do British Council hoặc IDP Australia cấp.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_7_01"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 6,
+          "printed_page": 5,
+          "section": "Điều 8 khoản 2",
+          "quote": "Sinh viên từ khóa tuyển 2023 trở về sau: Chuẩn ngoại ngữ đầu ra của sinh viên tốt nghiệp trình độ đại học hệ chính quy chương trình cử nhân tài năng là ngoại ngữ tiếng Anh và phải đạt tối thiểu bậc 4/6 theo khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_8_01"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 7,
+          "printed_page": 6,
+          "section": "Điều 8 khoản 3(a)",
+          "quote": "Chứng chỉ IELTS 5.0 do British Council hoặc IDP Australia cấp.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=7"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_8_02"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q17",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 5,
+          "printed_page": 4,
+          "section": "Điều 6 khoản 2",
+          "quote": "Để được xét đăng ký và học các học phần chuyên ngành, SV phải thỏa một trong ba điều kiện như sau:\n\na) SV hoàn tất bốn học phần Anh văn trong chương trình đào tạo gồm: Anh văn 1, Anh văn 2, Anh văn 3 và Anh văn 4.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=5"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_6_01"
+        ]
+      },
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 6,
+          "printed_page": 5,
+          "section": "Điều 7 khoản 4",
+          "quote": "SV phải nộp chứng chỉ đạt chuẩn trình độ ngoại ngữ đầu ra theo khoản 2 hoặc khoản 3 Điều này trước khi nộp hồ sơ xét tốt nghiệp trình độ đại học chương trình đại trà.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_7_02"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q18",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 5,
+          "printed_page": 4,
+          "section": "Điều 6 khoản 3–4",
+          "quote": "3. Chậm nhất là cuối học kỳ thứ 6, SV phải đạt chuẩn tiếng Anh trong quá trình học theo khoản 2 Điều này.\n\n4. Đối với SV không đạt chuẩn tiếng Anh theo quy định tại khoản 2 và khoản 3 Điều này, SV không được tiếp tục đăng ký và học các học phần chuyên ngành.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=5"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_6_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q19",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 8,
+          "printed_page": 7,
+          "section": "Điều 11 khoản 2",
+          "quote": "Đối với chứng chỉ không ghi hiệu lực thời gian: Hiệu lực của chứng chỉ ngoại ngữ là 02 (hai) năm tính từ ngày cấp (được tính ngay sau khi công bố kết quả thi chứng chỉ của sinh viên) đến ngày đăng ký xét đạt chuẩn ngoại ngữ đầu ra cho Trường.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=8"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_11_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  },
+  {
+    "question_id": "Q20",
+    "groups": [
+      {
+        "evidence": {
+          "doc_id": "D04",
+          "pdf_page": 8,
+          "printed_page": 7,
+          "section": "Điều 12",
+          "quote": "1. Đơn đăng ký xét đạt chuẩn đầu ra ngoại ngữ.\n\n2. Bản photo có công chứng các chứng chỉ (hoặc bản photo chứng chỉ kèm bản chính đối chiếu).\n\n3. Mang theo Căn cước công dân để đối chiếu.",
+          "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+          "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+          "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=8"
+        },
+        "chunk_ids": [
+          "D04_regulation_article_12_01"
+        ]
+      }
+    ],
+    "human_review_status": "pending"
+  }
+]
