@@ -44,6 +44,11 @@ See [`experiment/README.md`](experiment/README.md) for the prepared dataset.
 - [Sources](experiment/data/sources.json): source links, document versions, scope, and checksums. Original PDFs are in `experiment/data/raw/`.
 - Data files are ready to load directly; no build script is required. OCR accuracy still needs independent review on 29 pages.
 
+## Kaggle Embedding RAG
+
+- [Standalone Kaggle notebook](experiment/notebooks/S07_RAG_Embedding_Kaggle.ipynb): BGE-M3 dense embeddings → cosine top-k → Qwen2.5 answers with citations.
+- [Run instructions and evaluation](experiment/notebooks/README.md): 20-question retrieval evaluation at k=1/3/5, RAG vs. no-RAG generation, and manual review outputs.
+
 ## References
 - **Lewis, P. et al. (2020).** *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* NeurIPS 2020. [Paper Link](https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html)
 - **Schneider, J. (2024).** *Explainable Generative AI (GenXAI): a survey, conceptualization, and research agenda.* Artificial Intelligence Review 57, 289. [DOI](https://doi.org/10.1007/s10462-024-10916-x)

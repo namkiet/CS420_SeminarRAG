@@ -14,3 +14,8 @@ venv/
 # Temporary PDF renders and local working files
 tmp/
 *.tmp
+
+# RAG runtime outputs and model caches
+experiment/outputs/
+.ipynb_checkpoints/
+*.npy
