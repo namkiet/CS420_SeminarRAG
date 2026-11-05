@@ -46,7 +46,7 @@ See [`experiment/README.md`](experiment/README.md) for the prepared dataset.
 
 ## Kaggle Embedding RAG
 
-- [Standalone Kaggle notebook](experiment/notebooks/S07_RAG_Embedding_Kaggle.ipynb): BGE-M3 dense embeddings → cosine top-k → Qwen2.5 answers with citations.
+- [Kaggle notebook](experiment/notebooks/S07_RAG_Embedding_Kaggle.ipynb): BGE-M3 dense embeddings → cosine top-k → Qwen2.5 answers with citations. Attach [S07 HCMUS RAG Corpus](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus) in Add Input.
 - [Run instructions and evaluation](experiment/notebooks/README.md): 20-question retrieval evaluation at k=1/3/5, RAG vs. no-RAG generation, and manual review outputs.
 
 ## References

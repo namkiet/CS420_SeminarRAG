@@ -8,6 +8,28 @@ from pathlib import Path
 import numpy as np
 
 
+def load_dataset(data_root=None, input_root="/kaggle/input"):
+    if data_root is None:
+        candidates = sorted({p.parent.parent for p in Path(input_root).rglob("chunks_by_structure.json")
+                             if p.parent.name == "chunks" and (p.parent.parent / "questions.json").is_file()})
+        if len(candidates) != 1:
+            raise ValueError("Attach S07 HCMUS RAG Corpus in Add Input, or set DATA_ROOT explicitly; "
+                             f"found {len(candidates)} matching datasets")
+        data_root = candidates[0]
+    data_root = Path(data_root)
+    payloads = {}
+    paths = {"corpus": "chunks/chunks_by_structure.json", "questions": "questions.json", "sources": "sources.json"}
+    manifest_path = data_root / "SHA256SUMS.json"
+    checksums = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    for name, relative in paths.items():
+        raw = (data_root / relative).read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        if checksums and checksums.get(relative) != digest:
+            raise ValueError(f"Dataset checksum mismatch: {relative}")
+        payloads[name] = {"sha256": digest, "value": json.loads(raw)}
+    return data_root, payloads
+
+
 def save_json(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -123,3 +145,8 @@ def citation_audit(answer, hits):
     valid = {h["chunk_id"] for h in hits}
     return {"cited_ids": citations, "unknown_ids": sorted(set(citations) - valid),
             "has_citation": bool(citations)}
+
+
+def validate_answer_text(answer):
+    if not re.search(r"[^\W\d_]", answer, re.UNICODE):
+        raise ValueError("Generator returned no words; check numerical precision/model backend")

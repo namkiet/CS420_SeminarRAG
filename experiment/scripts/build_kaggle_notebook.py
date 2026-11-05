@@ -1,5 +1,4 @@
-"""Build a standalone notebook from the tested helper and pinned corpus files."""
-import hashlib
+"""Build a Kaggle notebook from the tested helper; data is a separate Kaggle Dataset."""
 import json
 from pathlib import Path
 import textwrap
@@ -23,7 +22,7 @@ md('''
     Không huấn luyện/fine-tune, không chia chunk lại. Chỉ index trường `text` của corpus.
 
     **Cách chạy:** Settings → Accelerator → GPU T4/P100; bật Internet; Run All.
-    Notebook tự chứa dữ liệu hiện tại và helper, không cần API key hay Add Input.
+    Add Input → Your Datasets → **S07 HCMUS RAG Corpus**; không cần API key.
     Mặc định chạy đủ 20 câu hỏi, so sánh cùng LLM có/không dùng RAG.
     Thay `CUSTOM_QUESTION` để hỏi câu khác. Output ở `/kaggle/working/s07_rag`.
 
@@ -48,7 +47,7 @@ code('''
     from IPython.display import display, Markdown
     from huggingface_hub import HfApi
     from sentence_transformers import SentenceTransformer
-    from transformers import AutoTokenizer, AutoModelForCausalLM
+    from transformers import AutoTokenizer, AutoModelForCausalLM, LogitsProcessor
 
     EMBEDDING_MODEL = "BAAI/bge-m3"
     GENERATOR_MODEL = "Qwen/Qwen2.5-1.5B-Instruct"
@@ -58,9 +57,11 @@ code('''
     GENERATION_TOP_K = 5
     MAX_INPUT_TOKENS = 8192
     MAX_NEW_TOKENS = 384
+    GENERATOR_DTYPE = torch.float32  # FP16 produced degenerate output on this Kaggle T4 runtime
     EVAL_LIMIT = None  # None = all 20; use 2 for a smoke run
     RUN_GENERATION = True
     CUSTOM_QUESTION = "Điều kiện đăng ký học phần tiên quyết là gì?"
+    DATA_ROOT = None  # auto-detect attached Kaggle dataset; or set a specific directory
     OUTPUT = Path("/kaggle/working/s07_rag")
     OUTPUT.mkdir(parents=True, exist_ok=True)
     SEED = 42
@@ -71,24 +72,21 @@ code('''
         print("CPU sẽ chậm. Nên bật GPU trước khi Run All.")
 ''')
 code((ROOT / "rag_embedding.py").read_text(encoding="utf-8"))
-payloads = {}
-for name, rel in [("corpus", "chunks/chunks_by_structure.json"),
-                  ("questions", "questions.json"), ("sources", "sources.json")]:
-    raw = (ROOT / "data" / rel).read_bytes()
-    payloads[name] = {"sha256": hashlib.sha256(raw).hexdigest(), "value": json.loads(raw)}
-code("# Snapshot from data commit 8bba55c1c62a286928955ecfcd63b549759285d1.\n"
-     "# Only corpus chunks enter the index; questions/answers are evaluation data.\n"
-     "DATA = json.loads(" + repr(json.dumps(payloads, ensure_ascii=False)) + ")\n"
-     'chunks = DATA["corpus"]["value"]["chunks"]\n'
-     'all_questions = DATA["questions"]["value"]\n'
-     'questions = all_questions if EVAL_LIMIT is None else all_questions[:EVAL_LIMIT]\n'
-     'sources = DATA["sources"]["value"]\n'
-     'validate_chunks(chunks)\n'
-     'if not questions: raise ValueError("No evaluation questions")\n'
-     'gold = align_evidence(questions, chunks)\n'
-     'save_json(OUTPUT / "gold_alignment.json", gold)\n'
-     'print({"chunks": len(chunks), "questions": len(questions), "evidence": sum(len(g["groups"]) for g in gold)})\n'
-     'display(pd.DataFrame(chunks)[["doc_id", "chunk_id", "section", "pdf_pages"]].head())')
+code('''
+    # Only corpus chunks enter the index; questions/answers are evaluation data.
+    DATA_ROOT, DATA = load_dataset(DATA_ROOT)
+    chunks = DATA["corpus"]["value"]["chunks"]
+    all_questions = DATA["questions"]["value"]
+    questions = all_questions if EVAL_LIMIT is None else all_questions[:EVAL_LIMIT]
+    sources = DATA["sources"]["value"]
+    validate_chunks(chunks)
+    if not questions: raise ValueError("No evaluation questions")
+    gold = align_evidence(questions, chunks)
+    save_json(OUTPUT / "gold_alignment.json", gold)
+    print("Dataset directory:", DATA_ROOT)
+    print({"chunks": len(chunks), "questions": len(questions), "evidence": sum(len(g["groups"]) for g in gold)})
+    display(pd.DataFrame(chunks)[["doc_id", "chunk_id", "section", "pdf_pages"]].head())
+''')
 md('''
     ## 2. Embedding và index
     Chuẩn hóa L2 để dot product = cosine. Không dùng ngưỡng cosine tùy ý làm xác suất đúng.
@@ -174,16 +172,26 @@ code('''
     generator_sha = None
     answer_rows = []
     if RUN_GENERATION:
+        if "llm" in globals():
+            del llm
+            gc.collect()
+            if torch.cuda.is_available(): torch.cuda.empty_cache()
         generator_sha = api.model_info(GENERATOR_MODEL, revision=GENERATOR_REVISION).sha
         tokenizer = AutoTokenizer.from_pretrained(GENERATOR_MODEL, revision=generator_sha)
         llm = AutoModelForCausalLM.from_pretrained(
             GENERATOR_MODEL, revision=generator_sha,
-            torch_dtype=torch.float16 if DEVICE.startswith("cuda") else torch.float32,
-            device_map=DEVICE, attn_implementation="eager")
+            torch_dtype=GENERATOR_DTYPE,
+            device_map=DEVICE, attn_implementation="sdpa")
         llm.eval()
         context_limit = getattr(llm.config, "max_position_embeddings", 32768)
         if MAX_INPUT_TOKENS + MAX_NEW_TOKENS > context_limit:
             raise ValueError("Prompt + output budget exceeds generator context")
+
+        class FiniteLogitsProcessor(LogitsProcessor):
+            def __call__(self, input_ids, scores):
+                if not torch.isfinite(scores).all():
+                    raise FloatingPointError("Non-finite generation logits; stop instead of saving invalid answers")
+                return scores
 
         def generate(messages):
             ids = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
@@ -194,9 +202,12 @@ code('''
             start = time.perf_counter()
             with torch.inference_mode():
                 outputs = llm.generate(**inputs, max_new_tokens=MAX_NEW_TOKENS, do_sample=False,
-                                       pad_token_id=tokenizer.eos_token_id, use_cache=True)
+                                       pad_token_id=tokenizer.eos_token_id, use_cache=True,
+                                       logits_processor=[FiniteLogitsProcessor()])
             new_ids = outputs[0, len(ids):]
-            return {"answer": tokenizer.decode(new_ids, skip_special_tokens=True).strip(),
+            answer = tokenizer.decode(new_ids, skip_special_tokens=True).strip()
+            validate_answer_text(answer)
+            return {"answer": answer,
                     "input_tokens": len(ids), "output_tokens": len(new_ids),
                     "reached_token_limit": len(new_ids) == MAX_NEW_TOKENS,
                     "seconds": time.perf_counter() - start}
@@ -261,9 +272,11 @@ code('''
             OUTPUT / "manual_review.csv", index=False)
     save_json(OUTPUT / "run_manifest.json", {
         "data_commit": "8bba55c1c62a286928955ecfcd63b549759285d1",
+        "dataset_directory": str(DATA_ROOT), "dataset_ref": "tunlnh/s07-hcmus-rag-corpus",
         "data_sha256": {k: v["sha256"] for k, v in DATA.items()},
         "embedding_model": EMBEDDING_MODEL, "embedding_revision": embedding_sha,
         "generator_model": GENERATOR_MODEL, "generator_revision": generator_sha,
+        "generator_dtype": str(GENERATOR_DTYPE), "generator_attention": "sdpa",
         "top_ks": TOP_KS, "generation_top_k": GENERATION_TOP_K, "seed": SEED,
         "max_input_tokens": MAX_INPUT_TOKENS, "max_new_tokens": MAX_NEW_TOKENS,
         "do_sample": False, "question_ids": [q["question_id"] for q in questions],
@@ -284,10 +297,22 @@ md('''
     - [Sentence Transformers](https://sbert.net/docs/package_reference/sentence_transformer/SentenceTransformer.html).
     - [Transformers generation](https://huggingface.co/docs/transformers/main_classes/text_generation).
 
-    Dữ liệu nhúng để notebook chạy độc lập, snapshot commit `8bba55c` của repo seminar.
-    Khi cập nhật corpus/questions, chạy `python experiment/scripts/build_kaggle_notebook.py`
-    để tạo lại notebook; không sửa riêng một bản dữ liệu nhúng. Manifest cache đảm bảo tạo lại vector khi thay corpus.
+    [Kaggle Dataset](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus), snapshot dữ liệu từ commit `8bba55c`.
+    Khi cập nhật corpus/questions, tạo version mới cho Dataset bằng ZIP từ
+    `python experiment/scripts/package_kaggle_dataset.py`. Gắn đúng version trong Input.
+    Manifest cache đảm bảo tạo lại vector khi thay corpus; SHA256SUMS kiểm tra dữ liệu tải lên.
     Nội dung nguồn và model được tải/chạy trong môi trường Kaggle; không gọi API trả phí.
+''')
+code('''
+    import shutil
+    from IPython.display import FileLink
+    if RUN_GENERATION:
+        print("Nguồn đã cung cấp cho câu hỏi demo (cần đối chiếu với kết luận của model):")
+        display(pd.DataFrame(custom_answer["sources"]))
+        if not custom_answer["citations"]["has_citation"]:
+            print("Model chưa chèn citation trong đáp án; chưa được xem là trích dẫn đạt yêu cầu.")
+    archive = shutil.make_archive("/kaggle/working/s07_rag_results", "zip", OUTPUT)
+    display(FileLink(archive))
 ''')
 
 notebook = {"nbformat": 4, "nbformat_minor": 5, "metadata": {

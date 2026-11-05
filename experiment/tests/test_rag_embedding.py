@@ -3,6 +3,7 @@ import copy
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 import numpy as np
@@ -10,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from rag_embedding import (align_evidence, citation_audit, corpus_fingerprint, fit_context,
-                           retrieval_metrics, search, unit_vectors, validate_chunks)
+                           load_dataset, retrieval_metrics, search, unit_vectors, validate_answer_text, validate_chunks)
 
 
 class RagTests(unittest.TestCase):
@@ -79,18 +80,38 @@ class RagTests(unittest.TestCase):
         result = citation_audit("Có [chunk1], nhưng [chunk2]", [{"chunk_id": "chunk1"}])
         self.assertEqual(result["unknown_ids"], ["chunk2"])
 
-    def test_notebook_python_cells_and_embedded_snapshot(self):
+    def test_degenerate_generation_is_not_accepted(self):
+        for answer in ["", "!" * 384, "12345"]:
+            with self.assertRaises(ValueError): validate_answer_text(answer)
+        validate_answer_text("Chưa đủ thông tin trong tài liệu.")
+
+    def test_notebook_python_cells_and_mounted_dataset_loader(self):
         nb = json.loads((ROOT / "notebooks/S07_RAG_Embedding_Kaggle.ipynb").read_text(encoding="utf-8"))
         for cell in nb["cells"]:
             if cell["cell_type"] == "code" and not cell["source"].startswith("%"):
                 ast.parse(cell["source"])
-        embedded = next(c["source"] for c in nb["cells"] if "DATA = json.loads(" in c["source"])
-        namespace = {"json": json, "validate_chunks": validate_chunks, "align_evidence": align_evidence,
-                     "EVAL_LIMIT": None, "save_json": lambda *a: None, "OUTPUT": ROOT,
+        loader = next(c["source"] for c in nb["cells"] if "DATA_ROOT, DATA = load_dataset(" in c["source"])
+        namespace = {"load_dataset": load_dataset, "validate_chunks": validate_chunks, "align_evidence": align_evidence,
+                     "DATA_ROOT": ROOT / "data", "EVAL_LIMIT": None, "save_json": lambda *a: None, "OUTPUT": ROOT,
                      "display": lambda *a: None, "pd": __import__("pandas")}
-        exec(compile(embedded, "embedded_data", "exec"), namespace)
+        exec(compile(loader, "mounted_dataset", "exec"), namespace)
         self.assertEqual(namespace["chunks"], self.chunks)
         self.assertEqual(namespace["questions"], self.questions)
+
+    def test_dataset_discovery_and_corruption(self):
+        root, data = load_dataset(input_root=ROOT / "data")
+        self.assertEqual(root, ROOT / "data")
+        self.assertEqual(len(data["corpus"]["value"]["chunks"]), 162)
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(ValueError, "found 0"):
+                load_dataset(input_root=directory)
+            base = Path(directory)
+            (base / "chunks").mkdir()
+            (base / "chunks/chunks_by_structure.json").write_text("{}")
+            (base / "questions.json").write_text("[]")
+            (base / "SHA256SUMS.json").write_text('{"chunks/chunks_by_structure.json": "wrong"}')
+            with self.assertRaisesRegex(ValueError, "checksum mismatch"):
+                load_dataset(base)
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ Corpus gồm **4 tài liệu, 51 trang**, chia thành **162 chunks với trần 
 
 ## Notebook RAG trên Kaggle
 
-Đã có [notebook chạy độc lập](notebooks/S07_RAG_Embedding_Kaggle.ipynb) dùng BGE-M3 embeddings, cosine retrieval và Qwen2.5 sinh câu trả lời kèm nguồn. Xem [hướng dẫn chạy và đọc kết quả](notebooks/README.md). Notebook có đánh giá retrieval k=1/3/5 và so sánh cùng LLM có/không RAG trên 20 câu hỏi; điểm chất lượng câu trả lời cần chấm thủ công.
+Đã có [notebook Kaggle](notebooks/S07_RAG_Embedding_Kaggle.ipynb) dùng BGE-M3 embeddings, cosine retrieval và Qwen2.5 sinh câu trả lời kèm nguồn. Gắn [Dataset S07 HCMUS RAG Corpus](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus) vào Input. Xem [hướng dẫn chạy và đọc kết quả](notebooks/README.md). Notebook có đánh giá retrieval k=1/3/5 và so sánh cùng LLM có/không RAG trên 20 câu hỏi; điểm chất lượng câu trả lời cần chấm thủ công.
 
 ## Nguyên tắc chia
 
