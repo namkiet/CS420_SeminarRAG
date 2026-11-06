@@ -1,0 +1,237 @@
+{
+  "date": "2026-11-07",
+  "basis": "Saved FP32+SDPA run, actual chunks/prompts/vectors and current validator code; no new model run",
+  "answers_sha256": "9663ac480e22c781c7972d04c178cab5a6ed312ca19cb36a88c40c25ebaa2c09",
+  "helper_sha256": "ccb9a7fc0a3372a520b60b4458620fd943de22d74c15f5d43e1f62ed45dcf148",
+  "embeddings_sha256": "43b4a956020ee8d374da6ce06ab17803c3186877710032995b9fa6b8c935d215",
+  "query_embeddings_sha256": "c0376053092c864db6280959bfa786971230035fc3b9a213bc2d4c543f7e8378",
+  "number_of_questions": 20,
+  "severe_error_ids": [
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q07",
+    "Q12",
+    "Q13",
+    "Q16",
+    "Q19"
+  ],
+  "severe_errors_with_all_reference_evidence_in_prompt": [
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q12",
+    "Q13",
+    "Q19"
+  ],
+  "input_tokens_min": 2436,
+  "input_tokens_max": 4702,
+  "configured_max_input_tokens": 8192,
+  "omitted_context_question_ids": [],
+  "output_limit_question_ids": [
+    "Q03"
+  ],
+  "embedding_max_actual_tokens": 530,
+  "embedding_max_model_tokens": 8192,
+  "retrieval_diagnosis": [
+    {
+      "question_id": "Q07",
+      "gold_ranks": [
+        [
+          {
+            "chunk_id": "D02_regulation_article_7_01",
+            "rank": 11
+          }
+        ]
+      ],
+      "top_5": [
+        {
+          "chunk_id": "D02_amendment_2023_article_1_03",
+          "cosine_score": 0.6565552353858948
+        },
+        {
+          "chunk_id": "D02_amendment_2023_article_1_04",
+          "cosine_score": 0.6433310508728027
+        },
+        {
+          "chunk_id": "D02_regulation_article_8_01",
+          "cosine_score": 0.6401071548461914
+        },
+        {
+          "chunk_id": "D02_regulation_article_4_01",
+          "cosine_score": 0.6358470320701599
+        },
+        {
+          "chunk_id": "D02_appendix_section_1_01",
+          "cosine_score": 0.6252816915512085
+        }
+      ]
+    },
+    {
+      "question_id": "Q15",
+      "gold_ranks": [
+        [
+          {
+            "chunk_id": "D04_regulation_article_7_01",
+            "rank": 10
+          }
+        ],
+        [
+          {
+            "chunk_id": "D03_appendix_section_3_01",
+            "rank": 1
+          }
+        ],
+        [
+          {
+            "chunk_id": "D03_appendix_section_3_01",
+            "rank": 1
+          }
+        ]
+      ],
+      "top_5": [
+        {
+          "chunk_id": "D03_appendix_section_3_01",
+          "cosine_score": 0.7821322679519653
+        },
+        {
+          "chunk_id": "D04_regulation_article_3_01",
+          "cosine_score": 0.6537200212478638
+        },
+        {
+          "chunk_id": "D03_decision_article_1_01",
+          "cosine_score": 0.6474804878234863
+        },
+        {
+          "chunk_id": "D04_regulation_article_2_04",
+          "cosine_score": 0.6473764181137085
+        },
+        {
+          "chunk_id": "D03_decision_article_2_01",
+          "cosine_score": 0.6433537006378174
+        }
+      ]
+    },
+    {
+      "question_id": "Q16",
+      "gold_ranks": [
+        [
+          {
+            "chunk_id": "D04_regulation_article_7_01",
+            "rank": 3
+          }
+        ],
+        [
+          {
+            "chunk_id": "D04_regulation_article_8_01",
+            "rank": 1
+          }
+        ],
+        [
+          {
+            "chunk_id": "D04_regulation_article_8_02",
+            "rank": 6
+          }
+        ]
+      ],
+      "top_5": [
+        {
+          "chunk_id": "D04_regulation_article_8_01",
+          "cosine_score": 0.6418853998184204
+        },
+        {
+          "chunk_id": "D04_decision_article_2_01",
+          "cosine_score": 0.6163344383239746
+        },
+        {
+          "chunk_id": "D04_regulation_article_7_01",
+          "cosine_score": 0.6017524003982544
+        },
+        {
+          "chunk_id": "D04_regulation_article_2_03",
+          "cosine_score": 0.5692723393440247
+        },
+        {
+          "chunk_id": "D04_regulation_article_4_01",
+          "cosine_score": 0.5663488507270813
+        }
+      ]
+    },
+    {
+      "question_id": "Q17",
+      "gold_ranks": [
+        [
+          {
+            "chunk_id": "D04_regulation_article_6_01",
+            "rank": 12
+          }
+        ],
+        [
+          {
+            "chunk_id": "D04_regulation_article_7_02",
+            "rank": 5
+          }
+        ]
+      ],
+      "top_5": [
+        {
+          "chunk_id": "D04_regulation_article_7_01",
+          "cosine_score": 0.6463884711265564
+        },
+        {
+          "chunk_id": "D04_regulation_article_2_04",
+          "cosine_score": 0.6331957578659058
+        },
+        {
+          "chunk_id": "D04_regulation_article_9_01",
+          "cosine_score": 0.6322542428970337
+        },
+        {
+          "chunk_id": "D04_regulation_article_2_01",
+          "cosine_score": 0.6282261610031128
+        },
+        {
+          "chunk_id": "D04_regulation_article_7_02",
+          "cosine_score": 0.6232362389564514
+        }
+      ]
+    }
+  ],
+  "validator_probes": [
+    {
+      "text": "[TBC_ID]",
+      "accepted_by_validate_answer_text": true,
+      "citation_audit": {
+        "cited_ids": [
+          "TBC_ID"
+        ],
+        "unknown_ids": [
+          "TBC_ID"
+        ],
+        "has_citation": true
+      }
+    },
+    {
+      "text": "[chunk_id]",
+      "accepted_by_validate_answer_text": true,
+      "citation_audit": {
+        "cited_ids": [
+          "chunk_id"
+        ],
+        "unknown_ids": [
+          "chunk_id"
+        ],
+        "has_citation": true
+      }
+    },
+    {
+      "text": "Mã Chunk ID: chunk_id_1",
+      "accepted_by_validate_answer_text": true,
+      "citation_audit": {
+        "cited_ids": [],
+        "unknown_ids": [],
+        "has_citation": false
+      }
+    }
+  ]
+}

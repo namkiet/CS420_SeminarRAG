@@ -2,6 +2,8 @@
 
 **Cập nhật đánh giá 07/11:** đã đọc 20 cặp đáp án, phân loại lỗi nội dung và kiểm tra context. Xem [đánh giá chi tiết](OUTPUT_REVIEW_2026-11-07.md). Nội dung RAG đúng chính 9/20 theo đánh giá sơ bộ, không phải độ chính xác 95%. Q12/Q13 thực tế đã có chú giải bảng trong context; audit bổ sung phân biệt điều này với metric phần thân bên dưới.
 
+Xem thêm [phân tích lỗi theo từng bước và thứ tự cải thiện](ERROR_ANALYSIS_AND_IMPROVEMENT_2026-11-07.md): 6/8 câu lỗi nặng đã đủ bằng chứng trong prompt; có thứ hạng các nguồn bị bỏ và kiểm tra giới hạn của validator hiện tại.
+
 Đã chạy trên Tesla T4: 162 chunks → 162 vector BGE-M3 (1024 chiều), 20 câu hỏi đánh giá và một câu demo. Cùng Qwen2.5-1.5B-Instruct sinh đủ **20 cặp đáp án không RAG/có RAG**, greedy, tối đa 384 output token. Generator dùng FP32 + SDPA; embedding dùng FP16 trên GPU. Dataset version 1 đọc từ `/kaggle/input/datasets/tunlnh/s07-hcmus-rag-corpus`.
 
 - [Dataset Kaggle](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus) — Private, 10 files, gồm JSON và 4 PDF gốc.
