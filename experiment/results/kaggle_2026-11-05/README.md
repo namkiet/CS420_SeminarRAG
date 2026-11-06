@@ -1,5 +1,7 @@
 # Kết quả chạy Kaggle — 05/11/2026
 
+**Cập nhật đánh giá 07/11:** đã đọc 20 cặp đáp án, phân loại lỗi nội dung và kiểm tra context. Xem [đánh giá chi tiết](OUTPUT_REVIEW_2026-11-07.md). Nội dung RAG đúng chính 9/20 theo đánh giá sơ bộ, không phải độ chính xác 95%. Q12/Q13 thực tế đã có chú giải bảng trong context; audit bổ sung phân biệt điều này với metric phần thân bên dưới.
+
 Đã chạy trên Tesla T4: 162 chunks → 162 vector BGE-M3 (1024 chiều), 20 câu hỏi đánh giá và một câu demo. Cùng Qwen2.5-1.5B-Instruct sinh đủ **20 cặp đáp án không RAG/có RAG**, greedy, tối đa 384 output token. Generator dùng FP32 + SDPA; embedding dùng FP16 trên GPU. Dataset version 1 đọc từ `/kaggle/input/datasets/tunlnh/s07-hcmus-rag-corpus`.
 
 - [Dataset Kaggle](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus) — Private, 10 files, gồm JSON và 4 PDF gốc.
@@ -23,7 +25,7 @@ Kiểm tra độc lập từ ZIP tải về đã tái tạo toàn bộ thứ h�
 | Câu | Quan sát có thể kiểm tra trong output | Ý nghĩa |
 |---|---|---|
 | Q07 | Hit@5 = 0, Evidence Recall@5 = 0 | Không truy hồi được bằng chứng tham chiếu trong top-5. |
-| Q12 | Hit@5 = 1 nhưng Evidence Recall@5 = 0,5 | Tìm được một phần nguồn chưa đủ để kết luận đầy đủ. |
+| Q12 | Hit@5 = 1 nhưng Evidence Recall@5 phần thân = 0,5 | Chú giải C5 đã có trong context lặp; generator đọc sai cột. Xem audit toàn context ngày 07/11. |
 | Q19 | Generator dẫn `[chunk_id]`, không phải ID từ context | Có context không đảm bảo model tuân thủ trích dẫn. |
 | Q03 | Đạt giới hạn 384 output token | Đáp án có thể chưa hoàn tất; trường `reached_token_limit` ghi nhận điều này. |
 
