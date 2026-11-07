@@ -16,6 +16,33 @@ Corpus gồm **4 tài liệu, 51 trang**, chia thành **162 chunks với trần 
 
 Đây là dữ liệu cho pipeline RAG: chunking → embedding → retrieval → sinh câu trả lời. Bộ câu hỏi hiện dùng để đánh giá, chưa phải dữ liệu fine-tuning.
 
+## G2 Task 3–4: TF-IDF trên máy
+
+Đã triển khai [TF-IDF retrieval](tfidf_retrieval.py) và chạy đủ 20 câu hỏi với k=1/3/5. Chỉ mục học từ 162 chunks, dùng unigram + bigram và cosine similarity; không cần GPU hoặc LLM. Cấu hình cố định trước khi chạy, không fit câu hỏi/đáp án vào chỉ mục.
+
+Từ thư mục gốc repo:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r experiment/requirements-tfidf.txt
+.\.venv\Scripts\python.exe experiment/tfidf_retrieval.py --ks 1 3 5
+```
+
+| k | Hit Rate@k | Chunk Recall@k | Evidence Recall@k | Đủ mọi bằng chứng@k |
+|---|---:|---:|---:|---:|
+| 1 | 75% | 63,33% | 70,83% | 65% |
+| 3 | 90% | 74,17% | 82,50% | 75% |
+| 5 | 90% | 75,83% | 82,50% | 75% |
+
+Xem [báo cáo TF-IDF và cách tính chỉ số](results/tfidf_800/README.md), [CSV tổng hợp](results/tfidf_800/retrieval_summary.csv), [CSV từng câu](results/tfidf_800/retrieval_per_question.csv) và [nhãn/ranking/cấu hình](results/tfidf_800/evaluation_details.json).
+
+Gold được ánh xạ từ 30 quote vào phần thân hoặc chú giải lặp có vị trí nguồn xác nhận; không tính tiêu đề biên tập. `relevant_chunk_ids` cho lần chạy được lưu trong kết quả chi tiết, không sửa file câu hỏi gốc. CSV có thêm `body_only_evidence_recall` để đối chiếu quy ước chỉ xét phần thân của notebook cũ. Nhãn tự động vẫn cần người trong nhóm review.
+
+Chỉ mục thực tế được tạo tại `experiment/outputs/tfidf/index.joblib`, đã được Git bỏ qua; chạy lệnh trên để tạo lại. Bốn file kết quả nhỏ được giữ trong `results/tfidf_800/`. Có thể tra cứu riêng bằng `--query "Học phần tiên quyết là gì?" --top-k 5`. Kiểm tra code bằng:
+
+```powershell
+.\.venv\Scripts\python.exe -B -m unittest discover -s experiment/tests -p test_tfidf_retrieval.py -v
+```
+
 ## Notebook RAG trên Kaggle
 
 Đã có [notebook Kaggle](notebooks/S07_RAG_Embedding_Kaggle.ipynb) dùng BGE-M3 embeddings, cosine retrieval và Qwen2.5 sinh câu trả lời kèm nguồn. Gắn [Dataset S07 HCMUS RAG Corpus](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus) vào Input. Xem [hướng dẫn chạy và đọc kết quả](notebooks/README.md). Notebook có đánh giá retrieval k=1/3/5 và so sánh cùng LLM có/không RAG trên 20 câu hỏi; điểm chất lượng câu trả lời cần chấm thủ công.
@@ -106,6 +133,6 @@ Phần thân giữ nguyên văn bản nguồn, chỉ nối các trang bằng hai
 ## Việc tiếp theo
 
 - Chọn mô hình embedding và kiểm tra lại đầu vào bằng tokenizer của chính mô hình. Trần 800 `cl100k_base` không đảm bảo vừa giới hạn của mọi mô hình. Nếu thêm nội dung vào `text`, cần đếm lại.
-- Gán và kiểm tra `relevant_chunk_ids` trước khi đo Recall@k; các trường này trong bộ câu hỏi vẫn rỗng. Không index câu hỏi/đáp án vào corpus.
+- TF-IDF đã có nhãn liên quan trong `results/tfidf_800/evaluation_details.json`; nhóm cần kiểm tra chéo trước khi chốt báo cáo. Trường `relevant_chunk_ids` trong file câu hỏi gốc vẫn rỗng để giữ nguyên đầu vào. Không index câu hỏi/đáp án vào corpus.
 - D02 phải đọc bản gốc cùng sửa đổi 2023; lưu ý năm học, khóa tuyển và phạm vi áp dụng của từng tài liệu.
 - 22 trang có bản chép/khôi phục bảng từ ảnh; 29 trang OCR còn cần đối chiếu độc lập. Mọi trang vẫn có `human_review_status: pending`. Đủ 51 trang không có nghĩa OCR hoàn toàn chính xác.

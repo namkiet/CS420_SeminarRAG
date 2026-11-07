@@ -43,6 +43,7 @@ See [`experiment/README.md`](experiment/README.md) for the prepared dataset.
 - [Evaluation questions](experiment/data/questions.json): 20 questions with reference answers and 30 evidence spans; keep outside the retrieval index.
 - [Sources](experiment/data/sources.json): source links, document versions, scope, and checksums. Original PDFs are in `experiment/data/raw/`.
 - Data files are ready to load directly; no build script is required. OCR accuracy still needs independent review on 29 pages.
+- **G2 Tasks 3–4 — TF-IDF:** [implementation](experiment/tfidf_retrieval.py) and [evaluation report](experiment/results/tfidf_800/README.md), evaluated at k=1/3/5 on all 20 questions. Hit Rate@5 is 90%; Evidence Recall@5 is 82.5% under the documented automatic gold alignment, pending independent review. Setup and commands are in `experiment/README.md`.
 
 ## Kaggle Embedding RAG
 

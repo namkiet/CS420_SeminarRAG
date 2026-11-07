@@ -1,0 +1,2 @@
+# CPU-only TF-IDF; no embedding model, GPU or LLM required.
+scikit-learn==1.7.2
