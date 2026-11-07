@@ -43,6 +43,30 @@ Chỉ mục thực tế được tạo tại `experiment/outputs/tfidf/index.job
 .\.venv\Scripts\python.exe -B -m unittest discover -s experiment/tests -p test_tfidf_retrieval.py -v
 ```
 
+## G2 Task 3–4: BM25-only trên máy
+
+Đã triển khai [BM25-only retrieval](bm25_retrieval.py) (Lucene/Robertson non-negative IDF, `k1=1.5`, `b=0.75`) trên đúng 162 chunks và cùng không gian từ vựng unigram + bigram `(1, 2)` như TF-IDF để đối chiếu thuần công thức trọng số tại k=1/3/5. Chỉ mục chỉ fit trên `chunks[*].text`, không cần GPU, LLM hay `scikit-learn`.
+
+Từ thư mục gốc repo (dùng `uv` với `.venv`):
+
+```powershell
+uv venv --allow-existing .venv
+uv pip install --python .venv -r experiment/requirements-bm25.txt
+uv run --python .venv python experiment/bm25_retrieval.py --ks 1 3 5
+```
+
+| k | Hit Rate@k | Chunk Recall@k | Evidence Recall@k | Đủ mọi bằng chứng@k |
+|---|---:|---:|---:|---:|
+| 1 | 85% | 70,00% | 80,00% | 75% |
+| 3 | 90% | 76,67% | 84,17% | 80% |
+| 5 | 90% | 78,33% | 84,17% | 80% |
+
+Xem [báo cáo BM25 và đối chiếu với TF-IDF](results/bm25_800/README.md), [CSV tổng hợp](results/bm25_800/retrieval_summary.csv), [CSV từng câu](results/bm25_800/retrieval_per_question.csv) và [nhãn/ranking/cấu hình](results/bm25_800/evaluation_details.json). Chỉ mục tạo tại `experiment/outputs/bm25/index.joblib` (Git bỏ qua). Tra cứu riêng bằng `--query "Học phần tiên quyết là gì?" --top-k 5`. Kiểm tra code bằng:
+
+```powershell
+uv run --python .venv python -B -m unittest discover -s experiment/tests -p test_bm25_retrieval.py -v
+```
+
 ## Notebook RAG trên Kaggle
 
 Đã có [notebook Kaggle](notebooks/S07_RAG_Embedding_Kaggle.ipynb) dùng BGE-M3 embeddings, cosine retrieval và Qwen2.5 sinh câu trả lời kèm nguồn. Gắn [Dataset S07 HCMUS RAG Corpus](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus) vào Input. Xem [hướng dẫn chạy và đọc kết quả](notebooks/README.md). Notebook có đánh giá retrieval k=1/3/5 và so sánh cùng LLM có/không RAG trên 20 câu hỏi; điểm chất lượng câu trả lời cần chấm thủ công.

@@ -1,0 +1,4 @@
+# CPU-only BM25; no embedding model, GPU, LLM or scikit-learn required.
+numpy==2.4.6
+scipy==1.17.1
+joblib==1.6.0

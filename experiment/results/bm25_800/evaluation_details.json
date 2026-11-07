@@ -1,0 +1,2168 @@
+{
+  "manifest": {
+    "method": "bm25_lucene",
+    "params": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "lowercase": true,
+      "strip_accents": null,
+      "token_pattern": "(?u)\\b\\w+\\b",
+      "stop_words": null,
+      "k1": 1.5,
+      "b": 0.75,
+      "idf_formula": "ln(1 + (N - df + 0.5) / (df + 0.5))",
+      "doc_len_unit": "ngram_tokens_in_range"
+    },
+    "fit_input": "chunks[*].text only",
+    "chunks": 162,
+    "questions": 20,
+    "ks": [
+      1,
+      3,
+      5
+    ],
+    "evidence_groups": 30,
+    "chunk_config": {
+      "strategy": "structure_then_bounded_clauses_and_table_rows",
+      "version": "structure_bounded_v2",
+      "unit": "article_in_regulations; top_level_section_in_appendices",
+      "max_tokens": 800,
+      "tokenizer": "cl100k_base",
+      "tiktoken_version": "0.14.0",
+      "limit_includes_context": true,
+      "overlap": 0,
+      "table_policy": "whole_rows_with_repeated_headers_and_tuition_legend",
+      "prose_policy": "clauses_then_paragraphs_bullets_sentences_words",
+      "front_matter": "attached_to_first_section_of_each_instrument",
+      "corpus_sha256": "386fe6617f559ae9380cb28f302a4f32efe72927ff0bcb3318c846a42c2ade9a",
+      "sources_sha256": "a9629304f87e1b157f5f036cb72f423843cc0441ce31aff111dc5a7800211790"
+    },
+    "matrix_shape": [
+      162,
+      9817
+    ],
+    "matrix_nonzero": 37865,
+    "avgdl": 382.51851851851853,
+    "ubiquitous_terms_over_half_docs": 41,
+    "source_hashes": {
+      "chunks": "c6650ef101275582e947e2f0829f6fe1155c43f329a99135a6ded01758af6aa4",
+      "questions": "7fc7e9fd28ab39a37147ba4fb3e6744ae2258054db0ee1f00a681e63c41034b2",
+      "pages": "386fe6617f559ae9380cb28f302a4f32efe72927ff0bcb3318c846a42c2ade9a"
+    },
+    "versions": {
+      "python": "3.11.9",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "joblib": "1.6.0"
+    },
+    "gold_policy": "body_or_verified_source_context; editorial_only_excluded",
+    "tie_policy": "stable corpus order",
+    "zero_score_policy": "excluded",
+    "independent_human_review": "pending"
+  },
+  "questions": [
+    {
+      "question_id": "Q01",
+      "question": "Theo Quy chế 2026, học phần tiên quyết khác học phần học trước như thế nào?",
+      "relevant_chunk_ids": [
+        "D01_regulation_article_3_03"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D01",
+            "pdf_page": 4,
+            "printed_page": 3,
+            "section": "Điều 3 khoản 3(c)",
+            "quote": "Học phần tiên quyết đối với học phần A là học phần mà sinh viên phải học và thi đạt mới được đăng ký và theo học học phần A.",
+            "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+            "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+            "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=4"
+          },
+          "body_chunk_ids": [
+            "D01_regulation_article_3_03"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D01_regulation_article_3_03"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D01",
+            "pdf_page": 4,
+            "printed_page": 3,
+            "section": "Điều 3 khoản 3(c)",
+            "quote": "Học phần học trước đối với học phần A là học phần mà sinh viên phải hoàn thành quá trình học tập trước khi đăng ký và theo học học phần A.",
+            "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+            "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+            "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=4"
+          },
+          "body_chunk_ids": [
+            "D01_regulation_article_3_03"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D01_regulation_article_3_03"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1,
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D01_regulation_article_3_03",
+          "score": 40.66761022056125,
+          "doc_id": "D01",
+          "section": "Điều 3. Chương trình đào tạo và thời gian đào tạo (thời gian học tập)",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "- Học phần bắt buộc là học phần chứa đựng những nội dung kiến thức chính yếu của mỗi chương trình đào tạo và bắt buộc sinh viên phải tích lũy.\n- Học phần tự chọn là học phần chứa đựng những nội dung kiến thức cần thiết, "
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D04_regulation_article_2_04",
+          "score": 23.789661603830233,
+          "doc_id": "D04",
+          "section": "Điều 2. Quy định về tổ chức học ngoại ngữ đối với chương trình đại trà và chương trình cử nhân tài năng",
+          "pdf_pages": [
+            3
+          ],
+          "body_preview": "\n4. Kiểm tra và xếp lớp Anh văn đầu khóa học\n\na) Đầu khóa học, SV chưa có chứng chỉ để xét miễn học Anh văn theo Điều 7 quy định này phải tham gia đợt kiểm tra tiếng Anh đầu khóa do Trường tổ chức.\n\nb) Căn cứ kết quả kiể"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D01_regulation_article_4_01",
+          "score": 16.481377630128755,
+          "doc_id": "D01",
+          "section": "Điều 4. Tổ chức đào tạo theo tín chỉ",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "### Điều 4. Tổ chức đào tạo theo tín chỉ\n\n1. Trường tổ chức đào tạo trình độ đại học theo tín chỉ đối với các hình thức đào tạo. Đào tạo theo tín chỉ được thực hiện như sau:\n\na) Là cách thức tổ chức đào tạo theo từng lớp"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D01_regulation_article_7_01",
+          "score": 14.930489245691913,
+          "doc_id": "D01",
+          "section": "Điều 7. Tổ chức đăng ký học tập",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "body_preview": "### Điều 7. Tổ chức đăng ký học tập\n\n1. Trước khi bắt đầu mỗi học kỳ, Trường hướng dẫn sinh viên đăng ký học tập (sau đây gọi là đăng ký học phần) trên các hệ thống đăng ký học phần.\n\n2. Sinh viên phải theo dõi thông báo"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D01_regulation_article_15_01",
+          "score": 14.70889976944041,
+          "doc_id": "D01",
+          "section": "Điều 15. Học lại và học cải thiện điểm",
+          "pdf_pages": [
+            13,
+            14
+          ],
+          "body_preview": "Điều 15. Học lại và học cải thiện điểm\n1. Học lại\na) Sinh viên có điểm học phần không đạt phải đăng ký học lại, điểm lần học cuối là\nđiểm chính thức của học phần\nb) Đối với các học phần bắt buộc có điểm học phần dưới năm"
+        }
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "question": "Một tín chỉ tương đương bao nhiêu giờ học tập và mỗi giờ được tính theo bao nhiêu phút?",
+      "relevant_chunk_ids": [
+        "D01_regulation_article_3_04"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D01",
+            "pdf_page": 4,
+            "printed_page": 3,
+            "section": "Điều 3 khoản 3(d)",
+            "quote": "Một (01) tín chỉ tương đương từ 45 đến 50 giờ học tập của người học được tính theo đơn vị 60 phút, bao gồm thời gian học trực tiếp, học trực tuyến, thực hành, thí nghiệm, thực tập, tự học có hướng dẫn, các hình thức học tập khác và kiểm tra, đánh giá;",
+            "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+            "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+            "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=4"
+          },
+          "body_chunk_ids": [
+            "D01_regulation_article_3_04"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D01_regulation_article_3_04"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D01_regulation_article_3_04",
+          "score": 43.0751333326006,
+          "doc_id": "D01",
+          "section": "Điều 3. Chương trình đào tạo và thời gian đào tạo (thời gian học tập)",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "  - Học phần tự chọn định hướng: là học phần mà sinh viên phải chọn trong các học phần định hướng cho một ngành, chuyên ngành cụ thể.\n\nd) Tín chỉ là đơn vị dùng để lượng hóa khối lượng học tập của người học, trong đó:\n\n-"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D03_decision_article_1_02",
+          "score": 23.541522675472066,
+          "doc_id": "D03",
+          "section": "Điều 1. Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ và mức thu của một tín chỉ học phí được quy định theo năm học, trong đó 15 tiết thực học được tính là một tín chỉ học phí.",
+          "pdf_pages": [
+            1
+          ],
+          "body_preview": "Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D01_regulation_article_7_01",
+          "score": 22.183317979084507,
+          "doc_id": "D01",
+          "section": "Điều 7. Tổ chức đăng ký học tập",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "body_preview": "### Điều 7. Tổ chức đăng ký học tập\n\n1. Trước khi bắt đầu mỗi học kỳ, Trường hướng dẫn sinh viên đăng ký học tập (sau đây gọi là đăng ký học phần) trên các hệ thống đăng ký học phần.\n\n2. Sinh viên phải theo dõi thông báo"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D01_regulation_article_13_02",
+          "score": 20.34876990983474,
+          "doc_id": "D01",
+          "section": "Điều 13. Đánh giá khóa luận tốt nghiệp, thực tập tốt nghiệp, dự án tốt nghiệp,",
+          "pdf_pages": [
+            12,
+            13
+          ],
+          "body_preview": "3. Điểm đánh giá khóa luận tốt nghiệp, thực tập tốt nghiệp, dự án tốt nghiệp, đồ án\ntốt nghiệp được tính theo thang điểm 10 và được làm tròn đến một chữ số thập phân, là\nđiểm trung bình cộng không tính hệ số của tất cả t"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D01_regulation_article_4_01",
+          "score": 19.963921523146965,
+          "doc_id": "D01",
+          "section": "Điều 4. Tổ chức đào tạo theo tín chỉ",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "### Điều 4. Tổ chức đào tạo theo tín chỉ\n\n1. Trường tổ chức đào tạo trình độ đại học theo tín chỉ đối với các hình thức đào tạo. Đào tạo theo tín chỉ được thực hiện như sau:\n\na) Là cách thức tổ chức đào tạo theo từng lớp"
+        }
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "question": "Theo mức thông thường, sinh viên chính quy đại trà/tài năng phải đăng ký tối thiểu và tối đa bao nhiêu tín chỉ mỗi học kỳ chính; văn bản ghi ngoại trừ gì ở mức tối thiểu?",
+      "relevant_chunk_ids": [
+        "D01_regulation_article_7_02"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D01",
+            "pdf_page": 8,
+            "printed_page": 7,
+            "section": "Điều 7 khoản 6(a)",
+            "quote": "Đối với hệ chính quy chương trình đại trà, cử nhân tài năng: Tối thiểu là 12 tín chỉ. Ngoại trừ học kỳ cuối khóa hoặc các trường hợp từ năm thứ năm và Trường không mở đủ học phần để đăng ký.",
+            "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+            "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+            "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=8"
+          },
+          "body_chunk_ids": [
+            "D01_regulation_article_7_02"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D01_regulation_article_7_02"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D01",
+            "pdf_page": 8,
+            "printed_page": 7,
+            "section": "Điều 7 khoản 6(b)",
+            "quote": "Đối với hệ chính quy chương trình đại trà và cử nhân tài năng: tối đa là 25 tín chỉ.",
+            "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+            "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+            "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=8"
+          },
+          "body_chunk_ids": [
+            "D01_regulation_article_7_02"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D01_regulation_article_7_02"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1,
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D01_regulation_article_7_02",
+          "score": 90.58210451049608,
+          "doc_id": "D01",
+          "section": "Điều 7. Tổ chức đăng ký học tập",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "6. Số tín chỉ tối thiểu, tối đa được đăng ký trong học kỳ\n\na) Số tín chỉ tối thiểu được đăng ký trong một học kỳ chính như sau:\n\n- Đối với hệ chính quy chương trình tiên tiến: Tối thiểu là 09 tín chỉ.\n- Đối với hệ chính "
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D04_regulation_article_7_01",
+          "score": 46.67578747016734,
+          "doc_id": "D04",
+          "section": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "body_preview": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình\nđại trà\n1. Chuẩn ngoại ngữ đầu ra của sinh viên tốt nghiệp trình độ đại học hệ chính quy chương trình đại trà là ngoại ngữ tiếng Anh và phải đạt t"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D01_regulation_article_6_01",
+          "score": 45.7490204959138,
+          "doc_id": "D01",
+          "section": "Điều 6. Kế hoạch giảng dạy và học tập",
+          "pdf_pages": [
+            7
+          ],
+          "body_preview": "### Chương II. KẾ HOẠCH VÀ TỔ CHỨC ĐÀO TẠO\n\n### Điều 6. Kế hoạch giảng dạy và học tập\n\n1. Một năm học có 02 hoặc 03 học kỳ chính với tổng số tuần tối thiểu học trên lớp là 30 tuần học tập trên lớp, giảng dạy và hoạt động"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D04_regulation_article_8_02",
+          "score": 42.19774790257749,
+          "doc_id": "D04",
+          "section": "Điều 8. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "body_preview": "3. Đối với chuẩn trình độ ngoại ngữ đầu ra băng tiếng Anh, các chứng chỉ ngoại\nngữ tiếng Anh được Trường ĐH KHTN công nhận tương đương bậc 4/6 nếu trên chứng\nchỉ của sinh viên có điểm ở mức tối thiều như sau:\n\n6\na) Chứng"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D01_regulation_article_7_01",
+          "score": 42.16393760300469,
+          "doc_id": "D01",
+          "section": "Điều 7. Tổ chức đăng ký học tập",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "body_preview": "### Điều 7. Tổ chức đăng ký học tập\n\n1. Trước khi bắt đầu mỗi học kỳ, Trường hướng dẫn sinh viên đăng ký học tập (sau đây gọi là đăng ký học phần) trên các hệ thống đăng ký học phần.\n\n2. Sinh viên phải theo dõi thông báo"
+        }
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "question": "Theo điều khoản chuyển tiếp, có thể khẳng định mọi quy định mới đều áp dụng nguyên trạng cho sinh viên tuyển sinh năm 2024 không?",
+      "relevant_chunk_ids": [
+        "D01_regulation_article_27_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D01",
+            "pdf_page": 21,
+            "printed_page": 20,
+            "section": "Điều 27 khoản 1–2",
+            "quote": "1. Quy định này áp dụng cho các khóa tuyển từ năm học 2026-2027.\n\n2. Đối với các khóa tuyển sinh từ năm 2025 trở về trước, Trường lựa chọn áp dụng quy định mới có lợi hơn cho người học trong hoạt động đào tạo và phải bảo đảm điều kiện chất lượng và trách nhiệm giải trình.",
+            "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+            "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+            "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=21"
+          },
+          "body_chunk_ids": [
+            "D01_regulation_article_27_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D01_regulation_article_27_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D01_regulation_article_27_01",
+          "score": 68.68592485736818,
+          "doc_id": "D01",
+          "section": "Điều 27. Điều khoản chuyển tiếp",
+          "pdf_pages": [
+            21
+          ],
+          "body_preview": "### Điều 27. Điều khoản chuyển tiếp\n\n1. Quy định này áp dụng cho các khóa tuyển từ năm học 2026-2027.\n\n2. Đối với các khóa tuyển sinh từ năm 2025 trở về trước, Trường lựa chọn áp dụng quy định mới có lợi hơn cho người họ"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D01_regulation_article_21_02",
+          "score": 28.500935182153963,
+          "doc_id": "D01",
+          "section": "Điều 21. Chuyển ngành, chuyền chương trình, chuyển trường, chuyên hình thức",
+          "pdf_pages": [
+            19,
+            20
+          ],
+          "body_preview": "2. Sinh viên được xem xét chuyên cơ sở đào tạo khi có đủ các điều kiện sau đây:\na) Sinh viên đã đạt trình độ năm thứ nhất và không là sinh viên năm cuối khóa, không\nthuộc diện bị xem xét buộc thôi học và còn đủ thời gian"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D04_decision_article_2_01",
+          "score": 27.19291064950053,
+          "doc_id": "D04",
+          "section": "Điều 2. Quyết định này áp dụng cho sinh viên chương trình đại trà và cử nhân tài năng từ khóa tuyển năm 2022 trở về sau.",
+          "pdf_pages": [
+            1
+          ],
+          "body_preview": "Điều 2. Quyết định này áp dụng cho sinh viên chương trình đại trà và cử nhân tài năng từ khóa tuyển năm 2022 trở về sau.\n"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D04_regulation_article_14_01",
+          "score": 25.096618540454514,
+          "doc_id": "D04",
+          "section": "Điều 14. Điều khoản thi hành",
+          "pdf_pages": [
+            9
+          ],
+          "body_preview": "Điều 14. Điều khoản thi hành\nTrong quá trình thực hiện, Hiệu trưởng sẽ xem xét và quyết định sửa đồi, bồsung\ncác quy định nếu có văn bản quy định mới từ Đại học Quốc gia Thành phố Hồ Chí\nMinh hoặc Bộ Giáo dục và Đào tao "
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D01_regulation_article_5_01",
+          "score": 24.57214746839904,
+          "doc_id": "D01",
+          "section": "Điều 5. Hình thức và phương thức tổ chức đào tạo",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "body_preview": "### Điều 5. Hình thức và phương thức tổ chức đào tạo\n\n1. Hình thức đào tạo chính quy được quy định như sau:\n\na) Hoạt động giảng dạy có sự hiện diện đồng thời, tương tác trực tiếp giữa giảng viên và sinh viên, được tổ chứ"
+        }
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "question": "Theo Điều 19 Quy chế đào tạo 2026, chỉ tích lũy đủ tín chỉ đã đủ điều kiện xét tốt nghiệp chưa?",
+      "relevant_chunk_ids": [
+        "D01_regulation_article_19_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D01",
+            "pdf_page": 17,
+            "printed_page": 16,
+            "section": "Điều 19 khoản 1",
+            "quote": "Sinh viên được xét và công nhận tốt nghiệp khi có đủ các điều kiện sau:\n\na) Cho đến thời điểm xét tốt nghiệp không đang trong thời gian bị kỷ luật ở mức đình chỉ học tập;\n\nb) Tích lũy đủ số học phần và tổng số tín chỉ theo quy định của chương trình đào tạo và được xếp loại học lực từ trung bình trở lên;\n\nc) Đã hoàn tất đủ các học phần Giáo dục quốc phòng (có chứng chỉ GDQP- An ninh) và Giáo dục thể chất;\n\nd) Đạt chuẩn trình độ ngoại ngữ theo quy định của Trường;\n\ne) Đạt chuẩn trình độ tin học của chương trình đào tạo mà sinh viên theo học;\n\nf) Thỏa các quy định tại quy chế này.",
+            "source_url": "https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/",
+            "source_pdf_url": "https://drive.google.com/file/d/1F8OeurGoDyZCeMTql3enqYUpH72Z6Mpn/view?usp=drivesdk",
+            "local_pdf": "data/raw/D01_quy_che_dao_tao_2026.pdf#page=17"
+          },
+          "body_chunk_ids": [
+            "D01_regulation_article_19_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D01_regulation_article_19_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D01_regulation_article_19_01",
+          "score": 58.045091440565905,
+          "doc_id": "D01",
+          "section": "Điều 19. Công nhận tốt nghiệp và cấp bằng tốt nghiệp",
+          "pdf_pages": [
+            17
+          ],
+          "body_preview": "Điều 19. Công nhận tốt nghiệp và cấp bằng tốt nghiệp\n1. Sinh viên được xét và công nhận tốt nghiệp khi có đủ các điều kiện sau:\n\na) Cho đến thời điểm xét tốt nghiệp không đang trong thời gian bị kỷ luật ở mức đình chỉ họ"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D01_regulation_article_19_02",
+          "score": 57.374133522799966,
+          "doc_id": "D01",
+          "section": "Điều 19. Công nhận tốt nghiệp và cấp bằng tốt nghiệp",
+          "pdf_pages": [
+            17
+          ],
+          "body_preview": "4. Sinh viên không tốt nghiệp:\na) Được cấp bảng điểm các học phần đã tích lũy trong chương trình đào tạo;\nb) Được xác nhận đã tham gia học tập các học phần trong chương trình đào tạo của Trường.\n5. Quy trình, thủ tục xét"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D01_regulation_article_19_03",
+          "score": 38.74935272232342,
+          "doc_id": "D01",
+          "section": "Điều 19. Công nhận tốt nghiệp và cấp bằng tốt nghiệp",
+          "pdf_pages": [
+            18
+          ],
+          "body_preview": "17\nb) Sinh viên được phép xin hủy điểm đối với các học phần tự chọn nếu không ảnh hưởng đến điều kiện được công nhận tốt nghiệp. Sinh viên nộp đơn xin hủy điểm tại thời điểm nộp hồ sơ đề nghị xét tốt nghiệp.\nc) Hiệu trưở"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D01_regulation_article_12_02",
+          "score": 36.913027467294185,
+          "doc_id": "D01",
+          "section": "Điều 12. Tổ chức xét cho sinh viên làm khóa luận tốt nghiệp, thực tập tốt nghiệp, dự án tốt nghiệp, đồ án tốt nghiệp",
+          "pdf_pages": [
+            11,
+            12
+          ],
+          "body_preview": "1. Xét làm khóa luận tốt nghiệp, thực tập tốt nghiệp, dự án tốt nghiệp, đồ án tốt nghiệp\n\nVào đầu học kỳ cuối khóa học, căn cứ vào nguyện vọng và kết quả học tập của sinh viên, trưởng khoa phụ trách đào tạo tổ chức xét v"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D01_regulation_article_21_02",
+          "score": 33.42234103195611,
+          "doc_id": "D01",
+          "section": "Điều 21. Chuyển ngành, chuyền chương trình, chuyển trường, chuyên hình thức",
+          "pdf_pages": [
+            19,
+            20
+          ],
+          "body_preview": "2. Sinh viên được xem xét chuyên cơ sở đào tạo khi có đủ các điều kiện sau đây:\na) Sinh viên đã đạt trình độ năm thứ nhất và không là sinh viên năm cuối khóa, không\nthuộc diện bị xem xét buộc thôi học và còn đủ thời gian"
+        }
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "question": "Theo bản quy chế điểm rèn luyện 2020 kèm sửa đổi 2023 trong D02, tổng các nội dung được 112 điểm thì ghi điểm rèn luyện bao nhiêu?",
+      "relevant_chunk_ids": [
+        "D02_regulation_article_4_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D02",
+            "pdf_page": 3,
+            "printed_page": 2,
+            "section": "Điều 4 khoản 4",
+            "quote": "Trong trường hợp tổng điểm các nội dung đánh giá lớn hơn 100 điểm thì Điểm rèn luyện quy về điểm 100.",
+            "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+            "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=3"
+          },
+          "body_chunk_ids": [
+            "D02_regulation_article_4_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D02_regulation_article_4_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D02_regulation_article_4_01",
+          "score": 58.10808313492635,
+          "doc_id": "D02",
+          "section": "Điều 4.",
+          "pdf_pages": [
+            3
+          ],
+          "body_preview": "Điều 4.\nNội dung đánh giá, thang điểm và đợt đánh giá\n1. Kết quả rèn luyện của mỗi sinh viên được đánh giá định lượng về ý thức, thái độ, hành động thông qua Điểm rèn luyện.\n2. Nội dung đánh giá và mức Điểm rèn luyện tươ"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D02_amendment_2023_article_1_03",
+          "score": 49.4382077085887,
+          "doc_id": "D02",
+          "section": "Điều 1. Sửa đồi, bồsung một số điều của Quy chế đánh giá kết quả rèn luyện sinh",
+          "pdf_pages": [
+            15,
+            16
+          ],
+          "body_preview": "“3. Điểm rèn luyện toàn khóa học là trung bình cộng của điểm rèn luyện các học kỳ chính có đánh giá kết quả rèn luyện của khóa học và được tính theo công thức: R = (r_1 + ... + r_N) / N.\n\nTrong đó:\n\n- R là điểm rèn luyện"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D02_regulation_article_6_01",
+          "score": 41.80980784685207,
+          "doc_id": "D02",
+          "section": "Điều 6.",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "Điều 6.\nThời gian và cách tính kết quả\n1. Việc đánh giá kết quả rèn luyện của sinh viên được tiền hành định ky theo học kỳ\nchính thức, năm học và toàn khóa học.\n2. Điểm rèn luyện của năm học là trung bình cộng của diém r"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D02_appendix_section_5_01",
+          "score": 40.623342925929364,
+          "doc_id": "D02",
+          "section": "5. Các nội dung khuyến khích cộng thêm (cộng tối đa 30 điểm)",
+          "pdf_pages": [
+            12
+          ],
+          "body_preview": "### 5. Các nội dung khuyến khích cộng thêm (cộng tối đa 30 điểm)\n\nTiêu chí 11: Thành tích xuất sắc trong các kỳ thi, cuộc thi, học tập và rèn luyện.\n\nMục 5.1: Có thành tích đặc biệt trong học tập, rèn luyện và nhận được "
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D02_appendix_section_5_09",
+          "score": 39.13529121539046,
+          "doc_id": "D02",
+          "section": "5. Các nội dung khuyến khích cộng thêm (cộng tối đa 30 điểm)",
+          "pdf_pages": [
+            13
+          ],
+          "body_preview": "| Mục | Nội dung | Mức điểm |\n|---|---|---|\n| 5.8 | Mồ côi cả cha lẫn mẹ | +20 điểm/học kỳ |\n| 5.9 | Sinh viên khuyết tật, khó khăn trong đi lại và sinh hoạt | +10 điểm/học kỳ |\n| 5.10 | Hộ nghèo, Hộ cận nghèo được hưởng"
+        }
+      ]
+    },
+    {
+      "question_id": "Q07",
+      "question": "Theo D02 (quy chế 2020 kèm sửa đổi 2023), sinh viên được 68 điểm rèn luyện xếp loại gì?",
+      "relevant_chunk_ids": [
+        "D02_regulation_article_7_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D02",
+            "pdf_page": 5,
+            "printed_page": 4,
+            "section": "Điều 7 khoản 2(c)",
+            "quote": "Từ 65 đến 79 điểm: loại Khá.",
+            "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+            "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=5"
+          },
+          "body_chunk_ids": [
+            "D02_regulation_article_7_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D02_regulation_article_7_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 7,
+      "evidence_first_ranks": [
+        7
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D02_amendment_2023_article_1_03",
+          "score": 32.8152426178053,
+          "doc_id": "D02",
+          "section": "Điều 1. Sửa đồi, bồsung một số điều của Quy chế đánh giá kết quả rèn luyện sinh",
+          "pdf_pages": [
+            15,
+            16
+          ],
+          "body_preview": "“3. Điểm rèn luyện toàn khóa học là trung bình cộng của điểm rèn luyện các học kỳ chính có đánh giá kết quả rèn luyện của khóa học và được tính theo công thức: R = (r_1 + ... + r_N) / N.\n\nTrong đó:\n\n- R là điểm rèn luyện"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D02_regulation_article_6_01",
+          "score": 29.98155098538901,
+          "doc_id": "D02",
+          "section": "Điều 6.",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "Điều 6.\nThời gian và cách tính kết quả\n1. Việc đánh giá kết quả rèn luyện của sinh viên được tiền hành định ky theo học kỳ\nchính thức, năm học và toàn khóa học.\n2. Điểm rèn luyện của năm học là trung bình cộng của diém r"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D02_regulation_article_11_01",
+          "score": 29.156869536569342,
+          "doc_id": "D02",
+          "section": "Điều 11. Sử dụng kết quả",
+          "pdf_pages": [
+            7
+          ],
+          "body_preview": "Điều 11. Sử dụng kết quả\n1. Kết quả đánh giá rèn luyện từng học kỳ, năm học của sinh viên được lưu trong hồ sơ quản lý sinh viên của Trường, được sử dụng trong công tác đảm bảo chất lượng, kiểm định chất lượng giáo dục; "
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D02_amendment_2023_article_1_02",
+          "score": 26.72399911955505,
+          "doc_id": "D02",
+          "section": "Điều 1. Sửa đồi, bồsung một số điều của Quy chế đánh giá kết quả rèn luyện sinh",
+          "pdf_pages": [
+            14,
+            15
+          ],
+          "body_preview": "Căn cứ Quyết định số1208/QD-KHTN ngày 04/9/2020 của Liệu trưởng Trường\nDai học Khoa học tự nhiên ban hành Quy chế đánh giá kết quả rèn luyện người học;\nTheo đề nghị của 1Tưởng phòng Công tác Sinh viên.\nQUYẾT ĐỊNH:\nĐiều 1"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D02_regulation_article_4_01",
+          "score": 25.603059920554283,
+          "doc_id": "D02",
+          "section": "Điều 4.",
+          "pdf_pages": [
+            3
+          ],
+          "body_preview": "Điều 4.\nNội dung đánh giá, thang điểm và đợt đánh giá\n1. Kết quả rèn luyện của mỗi sinh viên được đánh giá định lượng về ý thức, thái độ, hành động thông qua Điểm rèn luyện.\n2. Nội dung đánh giá và mức Điểm rèn luyện tươ"
+        }
+      ]
+    },
+    {
+      "question_id": "Q08",
+      "question": "Theo sửa đổi 2739 năm 2023 trong D02, sinh viên nghỉ học tạm thời hoặc còn thời gian đào tạo nhưng không đăng ký học phần được đánh giá rèn luyện ra sao?",
+      "relevant_chunk_ids": [
+        "D02_amendment_2023_article_1_03"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D02",
+            "pdf_page": 15,
+            "printed_page": 2,
+            "section": "QĐ2739 Điều 1 mục 3, sửa Điều 8 khoản 5",
+            "quote": "Sinh viên nghỉ học tạm thời hoặc sinh viên còn đang trong thời gian đào tạo nhưng không đăng ký học phần thì kết quả rèn luyện trong học kỳ đó được xếp loại Trung bình (50 điểm).",
+            "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+            "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=15"
+          },
+          "body_chunk_ids": [
+            "D02_amendment_2023_article_1_03"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D02_amendment_2023_article_1_03"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D02_amendment_2023_article_1_03",
+          "score": 74.61033724700319,
+          "doc_id": "D02",
+          "section": "Điều 1. Sửa đồi, bồsung một số điều của Quy chế đánh giá kết quả rèn luyện sinh",
+          "pdf_pages": [
+            15,
+            16
+          ],
+          "body_preview": "“3. Điểm rèn luyện toàn khóa học là trung bình cộng của điểm rèn luyện các học kỳ chính có đánh giá kết quả rèn luyện của khóa học và được tính theo công thức: R = (r_1 + ... + r_N) / N.\n\nTrong đó:\n\n- R là điểm rèn luyện"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D02_regulation_article_8_01",
+          "score": 59.97259253394502,
+          "doc_id": "D02",
+          "section": "Điều 8.",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "Điều 8.\nPhân loại sinh viên dé đánh giá\n1. Trong thời gian sinh viên bị kỷ luật mức khiển trách, kết quả rèn luyện không được vượt quá loại Khá.\n2. Trong thời gian sinh viên bị kỷ luật mức cảnh cáo, kết quả rèn luyện khô"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D01_regulation_article_20_01",
+          "score": 51.01729025336944,
+          "doc_id": "D01",
+          "section": "Điều 20. Nghỉ học tạm thời, thôi học",
+          "pdf_pages": [
+            18
+          ],
+          "body_preview": "Chương IV\nCÁC QUY ĐỊNH VE QUÁ TRÌNH HỌC TAP, XỬLÝ VI PHAM CUA SINH VIÊN\nĐiều 20. Nghỉ học tạm thời, thôi học\n1. Sinh viên được xem xét nghỉ học tạm thời và bảo lưu kết quả đã học trong các\ntrường hợp sau và không tính và"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D01_regulation_article_20_02",
+          "score": 43.68756908184277,
+          "doc_id": "D01",
+          "section": "Điều 20. Nghỉ học tạm thời, thôi học",
+          "pdf_pages": [
+            18,
+            19
+          ],
+          "body_preview": "4. Trường quy định cụthé về điều kiện, thầm quyền, trình tự xét nghỉ học tạm thời,\nlý do cá nhân khác dé xét nghỉ học tạm thời và bảo lưu kết quả, tiếp nhận trở lại học và cho\nthôi học; việc bảo lưu và công nhận kết quả "
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D01_regulation_article_3_03",
+          "score": 38.098516262644864,
+          "doc_id": "D01",
+          "section": "Điều 3. Chương trình đào tạo và thời gian đào tạo (thời gian học tập)",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "- Học phần bắt buộc là học phần chứa đựng những nội dung kiến thức chính yếu của mỗi chương trình đào tạo và bắt buộc sinh viên phải tích lũy.\n- Học phần tự chọn là học phần chứa đựng những nội dung kiến thức cần thiết, "
+        }
+      ]
+    },
+    {
+      "question_id": "Q09",
+      "question": "Theo công thức sửa đổi năm 2023 của D02, ba học kỳ chính có đánh giá lần lượt là 70, 80 và 90 điểm thì điểm rèn luyện toàn khóa trước các khoản cộng đặc biệt là bao nhiêu?",
+      "relevant_chunk_ids": [
+        "D02_amendment_2023_article_1_03"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D02",
+            "pdf_page": 15,
+            "printed_page": 2,
+            "section": "QĐ2739 Điều 1 mục 2, sửa Điều 6 khoản 3",
+            "quote": "Điểm rèn luyện toàn khóa học là trung bình cộng của điểm rèn luyện các học kỳ chính có đánh giá kết quả rèn luyện của khóa học và được tính theo công thức: R = (r_1 + ... + r_N) / N.",
+            "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+            "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=15"
+          },
+          "body_chunk_ids": [
+            "D02_amendment_2023_article_1_03"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D02_amendment_2023_article_1_03"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D02_amendment_2023_article_1_03",
+          "score": 91.69240267850758,
+          "doc_id": "D02",
+          "section": "Điều 1. Sửa đồi, bồsung một số điều của Quy chế đánh giá kết quả rèn luyện sinh",
+          "pdf_pages": [
+            15,
+            16
+          ],
+          "body_preview": "“3. Điểm rèn luyện toàn khóa học là trung bình cộng của điểm rèn luyện các học kỳ chính có đánh giá kết quả rèn luyện của khóa học và được tính theo công thức: R = (r_1 + ... + r_N) / N.\n\nTrong đó:\n\n- R là điểm rèn luyện"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D02_regulation_article_6_01",
+          "score": 60.15541497599526,
+          "doc_id": "D02",
+          "section": "Điều 6.",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "Điều 6.\nThời gian và cách tính kết quả\n1. Việc đánh giá kết quả rèn luyện của sinh viên được tiền hành định ky theo học kỳ\nchính thức, năm học và toàn khóa học.\n2. Điểm rèn luyện của năm học là trung bình cộng của diém r"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D02_amendment_2023_article_1_02",
+          "score": 50.55557647810821,
+          "doc_id": "D02",
+          "section": "Điều 1. Sửa đồi, bồsung một số điều của Quy chế đánh giá kết quả rèn luyện sinh",
+          "pdf_pages": [
+            14,
+            15
+          ],
+          "body_preview": "Căn cứ Quyết định số1208/QD-KHTN ngày 04/9/2020 của Liệu trưởng Trường\nDai học Khoa học tự nhiên ban hành Quy chế đánh giá kết quả rèn luyện người học;\nTheo đề nghị của 1Tưởng phòng Công tác Sinh viên.\nQUYẾT ĐỊNH:\nĐiều 1"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D02_regulation_article_4_01",
+          "score": 46.628771190989376,
+          "doc_id": "D02",
+          "section": "Điều 4.",
+          "pdf_pages": [
+            3
+          ],
+          "body_preview": "Điều 4.\nNội dung đánh giá, thang điểm và đợt đánh giá\n1. Kết quả rèn luyện của mỗi sinh viên được đánh giá định lượng về ý thức, thái độ, hành động thông qua Điểm rèn luyện.\n2. Nội dung đánh giá và mức Điểm rèn luyện tươ"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D02_appendix_section_5_04",
+          "score": 40.69947911506235,
+          "doc_id": "D02",
+          "section": "5. Các nội dung khuyến khích cộng thêm (cộng tối đa 30 điểm)",
+          "pdf_pages": [
+            12
+          ],
+          "body_preview": "| Mục | Nội dung | Mức điểm |\n|---|---|---|\n| 5.2 | Giải Vô địch, Giải Đặc biệt và Giải Nhất | +5 điểm/lần |\n| 5.2 | Giải Nhì, Ba, Khuyến khích và các Giải phụ (nếu có) | +3 điểm/lần |\n| 5.3 | Là thành viên đội tuyển tha"
+        }
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "question": "Theo Điều 9 của bản D02, thời hạn tiếp nhận phản hồi và đề nghị điều chỉnh kết quả rèn luyện dự kiến là bao lâu kể từ công bố?",
+      "relevant_chunk_ids": [
+        "D02_regulation_article_9_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D02",
+            "pdf_page": 6,
+            "printed_page": 5,
+            "section": "Điều 9 khoản 4",
+            "quote": "Phòng Công tác Sinh viên công bố kết quả rèn luyện dự kiến học kỳ đánh giá qua hộp thư điện tử của sinh viên và tiếp nhận phản hồi, cập nhật minh chứng, đề nghị điều chỉnh trong vòng 15 ngày kể từ thời điểm công bố, đồng thời gửi kết quả của sinh viên trước và sau điều chỉnh đến Hội đồng đánh giá kết quả rèn luyện cấp Khoa.",
+            "source_url": "https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2024/03/QD-1028-QC-DRL-2020_20231.pdf",
+            "local_pdf": "data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf#page=6"
+          },
+          "body_chunk_ids": [
+            "D02_regulation_article_9_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D02_regulation_article_9_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D02_regulation_article_9_01",
+          "score": 99.71934529512157,
+          "doc_id": "D02",
+          "section": "Điều 9.",
+          "pdf_pages": [
+            6
+          ],
+          "body_preview": "Chương IV\nTO CHỨC ĐÁNH GIÁ VÀ SỬDỤNG KET QUA DANII GIÁ\nĐiều 9.\nQuy trình đánh giá kết quả rèn luyện\n1. Vào đầu mỗi năm học, Phòng Công tác Sinh viên xây dựng kế hoạch và phổ biến công tác đánh giá kết quả rèn luyện của s"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D02_regulation_article_12_01",
+          "score": 45.324358041596454,
+          "doc_id": "D02",
+          "section": "Điều 12. Quyền khiếu nại",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "body_preview": "Điều 12. Quyền khiếu nại\nSinh viên có quyền khiếu nại về việc đánh giá kết quả rèn luyện. Việc khiếu nại được thực hiện theo quy định của pháp luật về khiếu nại và quy trình khiếu nại được ban hành của Trường.\n6\n\nTrường "
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D02_regulation_article_10_01",
+          "score": 43.28449620234612,
+          "doc_id": "D02",
+          "section": "Điều 10. Hội đồng đánh giá kết qua rèn luyện",
+          "pdf_pages": [
+            6,
+            7
+          ],
+          "body_preview": "Điều 10. Hội đồng đánh giá kết qua rèn luyện\n1. Thành phần Hội dong cấp Trường:\na) Chủ tịch Hội dong: Hiệu trưởng hoặc Phó Hidu trưởng được Hi¢u trưởng uỷquyền.\nb) Thường trực Hội dong: Trưởng phòng Công tác Sinh viên.\nc"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D02_amendment_2023_article_1_02",
+          "score": 28.185220295900663,
+          "doc_id": "D02",
+          "section": "Điều 1. Sửa đồi, bồsung một số điều của Quy chế đánh giá kết quả rèn luyện sinh",
+          "pdf_pages": [
+            14,
+            15
+          ],
+          "body_preview": "Căn cứ Quyết định số1208/QD-KHTN ngày 04/9/2020 của Liệu trưởng Trường\nDai học Khoa học tự nhiên ban hành Quy chế đánh giá kết quả rèn luyện người học;\nTheo đề nghị của 1Tưởng phòng Công tác Sinh viên.\nQUYẾT ĐỊNH:\nĐiều 1"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D01_regulation_article_19_03",
+          "score": 28.038213752254418,
+          "doc_id": "D01",
+          "section": "Điều 19. Công nhận tốt nghiệp và cấp bằng tốt nghiệp",
+          "pdf_pages": [
+            18
+          ],
+          "body_preview": "17\nb) Sinh viên được phép xin hủy điểm đối với các học phần tự chọn nếu không ảnh hưởng đến điều kiện được công nhận tốt nghiệp. Sinh viên nộp đơn xin hủy điểm tại thời điểm nộp hồ sơ đề nghị xét tốt nghiệp.\nc) Hiệu trưở"
+        }
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "question": "Theo QĐ3317, học phí được thu theo học kỳ dựa trên gì và một tín chỉ học phí tương ứng bao nhiêu tiết thực học?",
+      "relevant_chunk_ids": [
+        "D03_decision_article_1_02"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 1,
+            "printed_page": null,
+            "section": "Điều 1",
+            "quote": "Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ và mức thu của một tín chỉ học phí được quy định theo năm học, trong đó 15 tiết thực học được tính là một tín chỉ học phí.",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=1"
+          },
+          "body_chunk_ids": [
+            "D03_decision_article_1_02"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D03_decision_article_1_02"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D03_decision_article_1_02",
+          "score": 90.46880469861937,
+          "doc_id": "D03",
+          "section": "Điều 1. Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ và mức thu của một tín chỉ học phí được quy định theo năm học, trong đó 15 tiết thực học được tính là một tín chỉ học phí.",
+          "pdf_pages": [
+            1
+          ],
+          "body_preview": "Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D03_decision_article_1_01",
+          "score": 60.86413678653529,
+          "doc_id": "D03",
+          "section": "Điều 1. Học phí đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà (kể cả sinh viên cử nhân tài năng) được thu theo học kỳ căn cứ vào tổng số tiết thực học của các học phần mà sinh viên đăng ký học trong học kỳ và mức thu của một tín chỉ học phí được quy định theo năm học, trong đó 15 tiết thực học được tính là một tín chỉ học phí.",
+          "pdf_pages": [
+            1
+          ],
+          "body_preview": "DAI HỌC QUỐC GIA TP.HCM\nCỘNG HOÀ XÃ HỘI CHỦNGHĨA VIỆT NAM\nTRƯỜNG ĐẠI HỌC KHOA HỌC TỰNHIÊN\nĐộc lập - Tự do - Hạnh phúc\nSố: 3317/QĐ-KHTN\nThành phố Hồ Chí Minh, ngày 14 tháng 10 năm 2026\nQUYET ĐỊNH\nVề việc Ban hành định mức"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D03_decision_article_2_01",
+          "score": 49.5328012521662,
+          "doc_id": "D03",
+          "section": "Điều 2. Trong năm học 2026-2027, mức thu của một tín chỉ học phí (còn gọi là đơn giá tín chỉ học phí) được xác định căn cứ vào mức học phí theo ngành, nhóm ngành, loại học phần và tổng số tín chỉ học phí toàn khóa học theo quy định hiện hành. Mức thu của một tín chỉ học phí trong năm học 2026-2027 đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026 theo loại học phần được quy định tại phụ lục I đính kèm quyết định này.",
+          "pdf_pages": [
+            1
+          ],
+          "body_preview": "Điều 2. Trong năm học 2026-2027, mức thu của một tín chỉ học phí (còn gọi là đơn giá tín chỉ học phí) được xác định căn cứ vào mức học phí theo ngành, nhóm ngành, loại học phần và tổng số tín chỉ học phí toàn khóa học th"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D01_regulation_article_16_01",
+          "score": 30.73345276839857,
+          "doc_id": "D01",
+          "section": "Điều 16. Đánh giá kết quả học tập theo học kỳ, năm học, khóa học",
+          "pdf_pages": [
+            14
+          ],
+          "body_preview": "Điều 16. Đánh giá kết quả học tập theo học kỳ, năm học, khóa học\n1. Kết quả học tập của sinh viên được đánh giá sau từng học kỳ, sau từng năm học,\nhoặc khóa học dựa trên kết quả các học phần thuộc chương trình đào tạo th"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D03_appendix_section_2_01",
+          "score": 28.919445051975746,
+          "doc_id": "D03",
+          "section": "2. Nguyên tắc xác định đơn giá: Các loại đơn giá theo năm học được xác định sao cho tổng học phí các khối kiến thức trong chương trình đào tạo không cao hơn định mức tổng học phí CTĐT (4 năm) tính tại năm học tương ứng.",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "2. Nguyên tắc xác định đơn giá: Các loại đơn giá theo năm học được xác định sao cho tổng học phí các khối kiến thức trong chương trình đào tạo không cao hơn định mức tổng học phí CTĐT (4 năm) tính tại năm học tương ứng.\n"
+        }
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "question": "Trong bảng QĐ3317 năm học 2026–2027 cho khóa 2022–2026, đơn giá một tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo là bao nhiêu?",
+      "relevant_chunk_ids": [
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_02",
+        "D03_appendix_section_1_04",
+        "D03_appendix_section_1_05",
+        "D03_appendix_section_1_06",
+        "D03_appendix_section_1_07",
+        "D03_appendix_section_1_08",
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_11",
+        "D03_appendix_section_1_12",
+        "D03_appendix_section_1_13",
+        "D03_appendix_section_1_15"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 2,
+            "printed_page": null,
+            "section": "Phụ lục I, chú giải cột C5",
+            "quote": "C5: đơn giá 01 tín chỉ học phí các học phần khối kiến thức giáo dục chuyên nghiệp gồm cơ sở ngành, chuyên ngành, tốt nghiệp...",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=2"
+          },
+          "body_chunk_ids": [
+            "D03_appendix_section_1_01"
+          ],
+          "source_context_chunk_ids": [
+            "D03_appendix_section_1_02",
+            "D03_appendix_section_1_04",
+            "D03_appendix_section_1_05",
+            "D03_appendix_section_1_06",
+            "D03_appendix_section_1_07",
+            "D03_appendix_section_1_08",
+            "D03_appendix_section_1_10",
+            "D03_appendix_section_1_11",
+            "D03_appendix_section_1_12",
+            "D03_appendix_section_1_13",
+            "D03_appendix_section_1_15"
+          ],
+          "chunk_ids": [
+            "D03_appendix_section_1_01",
+            "D03_appendix_section_1_02",
+            "D03_appendix_section_1_04",
+            "D03_appendix_section_1_05",
+            "D03_appendix_section_1_06",
+            "D03_appendix_section_1_07",
+            "D03_appendix_section_1_08",
+            "D03_appendix_section_1_10",
+            "D03_appendix_section_1_11",
+            "D03_appendix_section_1_12",
+            "D03_appendix_section_1_13",
+            "D03_appendix_section_1_15"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 4,
+            "printed_page": 3,
+            "section": "Phụ lục I dòng 16",
+            "quote": "| 16 | 7480107 | Trí tuệ nhân tạo | không có | 488.000 | 488.000 | 734.000 | 1.014.000 | 40.500.000 | 162.000.000 |",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=4"
+          },
+          "body_chunk_ids": [
+            "D03_appendix_section_1_10"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D03_appendix_section_1_10"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1,
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D03_appendix_section_1_10",
+          "score": 86.22983296827232,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "| STT | Mã ngành | Ngành | C1 | C2 | C3 | C4 | C5 | C6 | C7 |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n| 16 | 7480107 | Trí tuệ nhân tạo | không có | 488.000 | 488.000 | 734.000 | 1.014.000 | 40.500.000 | 162.000"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D03_appendix_section_1_01",
+          "score": 76.44027260664969,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            2
+          ],
+          "body_preview": "### Chú giải cột cho tất cả bảng ở trang PDF 2–5\n\n- C1: đơn giá 01 tín chỉ học phí Tin học cơ sở (hoặc tương đương tin học cơ sở).\n- C2: đơn giá 01 tín chỉ học phí Lý luận chính trị, KT-XH-PL.\n- C3: đơn giá 01 tín chỉ họ"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D03_appendix_section_1_08",
+          "score": 73.86503491835623,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            3
+          ],
+          "body_preview": "| 15 | 7460201 | Thống kê | 488.000 | 488.000 | 488.000 | 734.000 | 1.015.000 | 40.500.000 | 162.000.000 |\n"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D03_appendix_section_1_13",
+          "score": 73.78142820309057,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "| 25 | 74401a1 | Công nghệ bán dẫn | 488.000 | 488.000 | 488.000 | 734.000 | 919.000 | 38.600.000 | 154.400.000 |\n"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D03_appendix_section_1_15",
+          "score": 72.42964154391184,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "| STT | Mã ngành | Ngành | C1 | C2 | C3 | C4 | C5 | C6 | C7 |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n| 26 | 75202a1 | Thiết kế vi mạch | 488.000 | 488.000 | 488.000 | 734.000 | 981.000 | 40.500.000 | 162.000.00"
+        }
+      ]
+    },
+    {
+      "question_id": "Q13",
+      "question": "Theo QĐ3317, đơn giá tín chỉ học phí khối giáo dục chuyên nghiệp ngành Trí tuệ nhân tạo cao hơn nhóm ngành Công nghệ thông tin bao nhiêu trong năm học 2026–2027?",
+      "relevant_chunk_ids": [
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_02",
+        "D03_appendix_section_1_04",
+        "D03_appendix_section_1_05",
+        "D03_appendix_section_1_06",
+        "D03_appendix_section_1_07",
+        "D03_appendix_section_1_08",
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_11",
+        "D03_appendix_section_1_12",
+        "D03_appendix_section_1_13",
+        "D03_appendix_section_1_15"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 2,
+            "printed_page": null,
+            "section": "Phụ lục I, chú giải cột C5",
+            "quote": "C5: đơn giá 01 tín chỉ học phí các học phần khối kiến thức giáo dục chuyên nghiệp gồm cơ sở ngành, chuyên ngành, tốt nghiệp...",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=2"
+          },
+          "body_chunk_ids": [
+            "D03_appendix_section_1_01"
+          ],
+          "source_context_chunk_ids": [
+            "D03_appendix_section_1_02",
+            "D03_appendix_section_1_04",
+            "D03_appendix_section_1_05",
+            "D03_appendix_section_1_06",
+            "D03_appendix_section_1_07",
+            "D03_appendix_section_1_08",
+            "D03_appendix_section_1_10",
+            "D03_appendix_section_1_11",
+            "D03_appendix_section_1_12",
+            "D03_appendix_section_1_13",
+            "D03_appendix_section_1_15"
+          ],
+          "chunk_ids": [
+            "D03_appendix_section_1_01",
+            "D03_appendix_section_1_02",
+            "D03_appendix_section_1_04",
+            "D03_appendix_section_1_05",
+            "D03_appendix_section_1_06",
+            "D03_appendix_section_1_07",
+            "D03_appendix_section_1_08",
+            "D03_appendix_section_1_10",
+            "D03_appendix_section_1_11",
+            "D03_appendix_section_1_12",
+            "D03_appendix_section_1_13",
+            "D03_appendix_section_1_15"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 4,
+            "printed_page": 3,
+            "section": "Phụ lục I dòng 16",
+            "quote": "| 16 | 7480107 | Trí tuệ nhân tạo | không có | 488.000 | 488.000 | 734.000 | 1.014.000 | 40.500.000 | 162.000.000 |",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=4"
+          },
+          "body_chunk_ids": [
+            "D03_appendix_section_1_10"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D03_appendix_section_1_10"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 4,
+            "printed_page": 3,
+            "section": "Phụ lục I dòng 17",
+            "quote": "| 17 | 7480201 | Nhóm ngành Công nghệ thông tin | 488.000 | 488.000 | 488.000 | 734.000 | 974.000 | 40.500.000 | 162.000.000 |",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=4"
+          },
+          "body_chunk_ids": [
+            "D03_appendix_section_1_10"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D03_appendix_section_1_10"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1,
+        1,
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D03_appendix_section_1_10",
+          "score": 102.76559530985158,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "| STT | Mã ngành | Ngành | C1 | C2 | C3 | C4 | C5 | C6 | C7 |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n| 16 | 7480107 | Trí tuệ nhân tạo | không có | 488.000 | 488.000 | 734.000 | 1.014.000 | 40.500.000 | 162.000"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D03_appendix_section_1_13",
+          "score": 75.84096268400137,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "| 25 | 74401a1 | Công nghệ bán dẫn | 488.000 | 488.000 | 488.000 | 734.000 | 919.000 | 38.600.000 | 154.400.000 |\n"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D03_appendix_section_1_15",
+          "score": 74.40330740207631,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "| STT | Mã ngành | Ngành | C1 | C2 | C3 | C4 | C5 | C6 | C7 |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n| 26 | 75202a1 | Thiết kế vi mạch | 488.000 | 488.000 | 488.000 | 734.000 | 981.000 | 40.500.000 | 162.000.00"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D03_appendix_section_1_11",
+          "score": 74.35414113371729,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "| 19 | 7510406 | Công nghệ Kỹ thuật Môi trường | 488.000 | 488.000 | 488.000 | 734.000 | 782.000 | 32.600.000 | 130.400.000 |\n| 20 | 7520207 | Kỹ thuật điện tử - viễn thông | 488.000 | 488.000 | 488.000 | 734.000 | 1.048"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D03_appendix_section_1_02",
+          "score": 74.14336974502392,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            2
+          ],
+          "body_preview": "| STT | Mã ngành | Ngành | C1 | C2 | C3 | C4 | C5 | C6 | C7 |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n| 1 | 7420101 | Sinh học | 488.000 | 488.000 | 488.000 | 734.000 | 900.000 | 38.600.000 | 154.400.000 |\n| 2 |"
+        }
+      ]
+    },
+    {
+      "question_id": "Q14",
+      "question": "Có thể dùng bảng học phí QĐ3317 năm học 2026–2027 trong D03 để tính học phí cho sinh viên khóa 2020 không?",
+      "relevant_chunk_ids": [
+        "D03_decision_article_2_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 1,
+            "printed_page": null,
+            "section": "Điều 2",
+            "quote": "Mức thu của một tín chỉ học phí trong năm học 2026-2027 đối với sinh viên trình độ đại học hệ chính quy chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026 theo loại học phần được quy định tại phụ lục I đính kèm quyết định này.",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=1"
+          },
+          "body_chunk_ids": [
+            "D03_decision_article_2_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D03_decision_article_2_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 13,
+      "evidence_first_ranks": [
+        13
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D03_appendix_section_1_01",
+          "score": 41.1581577263826,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            2
+          ],
+          "body_preview": "### Chú giải cột cho tất cả bảng ở trang PDF 2–5\n\n- C1: đơn giá 01 tín chỉ học phí Tin học cơ sở (hoặc tương đương tin học cơ sở).\n- C2: đơn giá 01 tín chỉ học phí Lý luận chính trị, KT-XH-PL.\n- C3: đơn giá 01 tín chỉ họ"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D03_appendix_section_1_08",
+          "score": 39.72420638297577,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            3
+          ],
+          "body_preview": "| 15 | 7460201 | Thống kê | 488.000 | 488.000 | 488.000 | 734.000 | 1.015.000 | 40.500.000 | 162.000.000 |\n"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D03_appendix_section_1_13",
+          "score": 39.681449313492145,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            4
+          ],
+          "body_preview": "| 25 | 74401a1 | Công nghệ bán dẫn | 488.000 | 488.000 | 488.000 | 734.000 | 919.000 | 38.600.000 | 154.400.000 |\n"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D03_appendix_section_1_02",
+          "score": 39.124960181535236,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            2
+          ],
+          "body_preview": "| STT | Mã ngành | Ngành | C1 | C2 | C3 | C4 | C5 | C6 | C7 |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n| 1 | 7420101 | Sinh học | 488.000 | 488.000 | 488.000 | 734.000 | 900.000 | 38.600.000 | 154.400.000 |\n| 2 |"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D03_appendix_section_1_15",
+          "score": 38.76960492515624,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "| STT | Mã ngành | Ngành | C1 | C2 | C3 | C4 | C5 | C6 | C7 |\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n| 26 | 75202a1 | Thiết kế vi mạch | 488.000 | 488.000 | 488.000 | 734.000 | 981.000 | 40.500.000 | 162.000.00"
+        }
+      ]
+    },
+    {
+      "question_id": "Q15",
+      "question": "Sinh viên đại trà khóa 2024 đã nộp IELTS 4.5 hợp lệ do British Council hoặc IDP cấp có cơ sở được xét miễn học Anh văn không; nếu phải học thì đơn giá tín chỉ học phí Anh văn năm 2026–2027 là bao nhiêu?",
+      "relevant_chunk_ids": [
+        "D04_regulation_article_7_01",
+        "D03_appendix_section_3_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 6,
+            "printed_page": 5,
+            "section": "Điều 7 khoản 2(a)",
+            "quote": "Chứng chỉ IELTS 4.5 do British Council hoặc IDP Australia cấp.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_7_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_7_01"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 5,
+            "printed_page": 4,
+            "section": "Phụ lục I mục 3",
+            "quote": "Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành.",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=5"
+          },
+          "body_chunk_ids": [
+            "D03_appendix_section_3_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D03_appendix_section_3_01"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D03",
+            "pdf_page": 5,
+            "printed_page": 4,
+            "section": "Phụ lục I mục 3",
+            "quote": "Đối với sinh viên trình độ đại học chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026, đơn giá 01 tín chỉ học phí các học phần Anh văn là 488.000 đồng.",
+            "source_url": "https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/",
+            "source_pdf_url": "https://drive.google.com/file/d/1G4lC45rem_Sxd3FXL22IvUBb5fX34Cbr/view?usp=drivesdk",
+            "local_pdf": "data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf#page=5"
+          },
+          "body_chunk_ids": [
+            "D03_appendix_section_3_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D03_appendix_section_3_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        3,
+        1,
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D03_appendix_section_3_01",
+          "score": 94.07363379056804,
+          "doc_id": "D03",
+          "section": "3. Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành. Đối với sinh viên trình độ đại học chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026, đơn giá 01 tín chỉ học phí các học phần Anh văn là 488.000 đồng.",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "3. Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành. Đối với sinh viên trình độ đại học chương tr"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D04_regulation_article_2_04",
+          "score": 78.56614123946477,
+          "doc_id": "D04",
+          "section": "Điều 2. Quy định về tổ chức học ngoại ngữ đối với chương trình đại trà và chương trình cử nhân tài năng",
+          "pdf_pages": [
+            3
+          ],
+          "body_preview": "\n4. Kiểm tra và xếp lớp Anh văn đầu khóa học\n\na) Đầu khóa học, SV chưa có chứng chỉ để xét miễn học Anh văn theo Điều 7 quy định này phải tham gia đợt kiểm tra tiếng Anh đầu khóa do Trường tổ chức.\n\nb) Căn cứ kết quả kiể"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D04_regulation_article_7_01",
+          "score": 61.63410448981548,
+          "doc_id": "D04",
+          "section": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "body_preview": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình\nđại trà\n1. Chuẩn ngoại ngữ đầu ra của sinh viên tốt nghiệp trình độ đại học hệ chính quy chương trình đại trà là ngoại ngữ tiếng Anh và phải đạt t"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D04_regulation_article_3_01",
+          "score": 59.862986821609596,
+          "doc_id": "D04",
+          "section": "Điều 3. Quy định miễn học các học phần Anh văn",
+          "pdf_pages": [
+            3,
+            4
+          ],
+          "body_preview": "### Điều 3. Quy định miễn học các học phần Anh văn\n\n1. SV được miễn học 04 học phần Anh văn nếu SV đã nộp chứng chỉ theo quy định tại Điều 7 quy định này hoặc SV đạt từ 5,0 (năm) điểm trở lên trong kỳ thi đánh giá trình "
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D03_appendix_section_1_01",
+          "score": 56.41685371114701,
+          "doc_id": "D03",
+          "section": "Mục 1. Đơn giá tín chỉ học phí và bảng học phí",
+          "pdf_pages": [
+            2
+          ],
+          "body_preview": "### Chú giải cột cho tất cả bảng ở trang PDF 2–5\n\n- C1: đơn giá 01 tín chỉ học phí Tin học cơ sở (hoặc tương đương tin học cơ sở).\n- C2: đơn giá 01 tín chỉ học phí Lý luận chính trị, KT-XH-PL.\n- C3: đơn giá 01 tín chỉ họ"
+        }
+      ]
+    },
+    {
+      "question_id": "Q16",
+      "question": "Theo QĐ2464, mức IELTS tối thiểu trong danh sách chuẩn đầu ra khác nhau thế nào giữa đại trà khóa 2024 và cử nhân tài năng khóa 2024?",
+      "relevant_chunk_ids": [
+        "D04_regulation_article_7_01",
+        "D04_regulation_article_8_01",
+        "D04_regulation_article_8_02"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 6,
+            "printed_page": 5,
+            "section": "Điều 7 khoản 2(a)",
+            "quote": "Chứng chỉ IELTS 4.5 do British Council hoặc IDP Australia cấp.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_7_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_7_01"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 6,
+            "printed_page": 5,
+            "section": "Điều 8 khoản 2",
+            "quote": "Sinh viên từ khóa tuyển 2023 trở về sau: Chuẩn ngoại ngữ đầu ra của sinh viên tốt nghiệp trình độ đại học hệ chính quy chương trình cử nhân tài năng là ngoại ngữ tiếng Anh và phải đạt tối thiểu bậc 4/6 theo khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_8_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_8_01"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 7,
+            "printed_page": 6,
+            "section": "Điều 8 khoản 3(a)",
+            "quote": "Chứng chỉ IELTS 5.0 do British Council hoặc IDP Australia cấp.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=7"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_8_02"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_8_02"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        7,
+        1,
+        13
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D04_regulation_article_8_01",
+          "score": 41.61812517548186,
+          "doc_id": "D04",
+          "section": "Điều 8. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            6
+          ],
+          "body_preview": "Điều 8. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình\ncử nhân tài năng\n1. Sinh viên từ khóa tuyển 2022 trở về trước: Chuẩn ngoại ngữ đầu ra áp dụng tại Điều 7 quy định này.\n2. Sinh viên từ khóa tuyển "
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D04_decision_article_2_01",
+          "score": 38.08243778039278,
+          "doc_id": "D04",
+          "section": "Điều 2. Quyết định này áp dụng cho sinh viên chương trình đại trà và cử nhân tài năng từ khóa tuyển năm 2022 trở về sau.",
+          "pdf_pages": [
+            1
+          ],
+          "body_preview": "Điều 2. Quyết định này áp dụng cho sinh viên chương trình đại trà và cử nhân tài năng từ khóa tuyển năm 2022 trở về sau.\n"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D03_appendix_section_3_01",
+          "score": 37.699581872274806,
+          "doc_id": "D03",
+          "section": "3. Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành. Đối với sinh viên trình độ đại học chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026, đơn giá 01 tín chỉ học phí các học phần Anh văn là 488.000 đồng.",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "3. Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành. Đối với sinh viên trình độ đại học chương tr"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D01_regulation_article_7_02",
+          "score": 35.02879679107226,
+          "doc_id": "D01",
+          "section": "Điều 7. Tổ chức đăng ký học tập",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "6. Số tín chỉ tối thiểu, tối đa được đăng ký trong học kỳ\n\na) Số tín chỉ tối thiểu được đăng ký trong một học kỳ chính như sau:\n\n- Đối với hệ chính quy chương trình tiên tiến: Tối thiểu là 09 tín chỉ.\n- Đối với hệ chính "
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D04_regulation_article_10_01",
+          "score": 33.907533754359655,
+          "doc_id": "D04",
+          "section": "Điều 10. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "body_preview": "Điều 10. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học\nvà đạt chuẩn đầu ra đối với chương trình cir nhân tài năng.\n1. Trường hợp sinh viên nộp chứng chỉ ngoại ngữ bậc 3/6 được quy định tai Điều\n7 quy đ"
+        }
+      ]
+    },
+    {
+      "question_id": "Q17",
+      "question": "Theo QĐ2464, hoàn thành Anh văn 1–4 có đồng nghĩa tự động đạt chuẩn ngoại ngữ đầu ra đại trà không?",
+      "relevant_chunk_ids": [
+        "D04_regulation_article_6_01",
+        "D04_regulation_article_7_02"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 5,
+            "printed_page": 4,
+            "section": "Điều 6 khoản 2",
+            "quote": "Để được xét đăng ký và học các học phần chuyên ngành, SV phải thỏa một trong ba điều kiện như sau:\n\na) SV hoàn tất bốn học phần Anh văn trong chương trình đào tạo gồm: Anh văn 1, Anh văn 2, Anh văn 3 và Anh văn 4.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=5"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_6_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_6_01"
+          ]
+        },
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 6,
+            "printed_page": 5,
+            "section": "Điều 7 khoản 4",
+            "quote": "SV phải nộp chứng chỉ đạt chuẩn trình độ ngoại ngữ đầu ra theo khoản 2 hoặc khoản 3 Điều này trước khi nộp hồ sơ xét tốt nghiệp trình độ đại học chương trình đại trà.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=6"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_7_02"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_7_02"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 3,
+      "evidence_first_ranks": [
+        10,
+        3
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D04_regulation_article_9_01",
+          "score": 51.160761051065826,
+          "doc_id": "D04",
+          "section": "Điều 9. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học, đạt",
+          "pdf_pages": [
+            7
+          ],
+          "body_preview": "Điều 9. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học, đạt\nchuẩn đầu ra ngoại ngữ đối với chương trình đại trà\nSV chương trình đại trà nộp chứng chỉ xét đạt chuẩn ngoại ngữ trong quá trình\nhọc hoặc đạt"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D04_regulation_article_12_01",
+          "score": 46.31737654858773,
+          "doc_id": "D04",
+          "section": "Điều 12. Hồ sơ xét đạt chuẩn ngoại ngữ đầu ra",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "Điều 12. Hồ sơ xét đạt chuẩn ngoại ngữ đầu ra\nHồ sơ xét đạt chuẩn ngoại ngữ đầu ra gồm:\n1. Đơn đăng ký xét đạt chuẩn đầu ra ngoại ngữ.\n\n2. Bản photo có công chứng các chứng chỉ (hoặc bản photo chứng chỉ kèm bản chính đối"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D04_regulation_article_7_02",
+          "score": 43.01290390668838,
+          "doc_id": "D04",
+          "section": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            6
+          ],
+          "body_preview": "3. Văn bằng tốt nghiệp đại học về ngôn ngữ tiếng Anh: Theo quyết định số 170/QĐ-ĐHQG ngày 27 tháng 02 năm 2018 của Giám đốc ĐHQG-HCM về việc ban hành Quy chế chuẩn trình độ ngoại ngữ tại ĐHQG-HCM.\n4. SV phải nộp chứng ch"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D03_appendix_section_3_01",
+          "score": 40.97538444933056,
+          "doc_id": "D03",
+          "section": "3. Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành. Đối với sinh viên trình độ đại học chương trình đại trà khóa tuyển 2022, 2023, 2024, 2025 và 2026, đơn giá 01 tín chỉ học phí các học phần Anh văn là 488.000 đồng.",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "3. Các học phần Anh văn là học phần điều kiện và thuộc khối kiến thức bổ trợ, sinh viên được xét miễn học nếu nộp chứng chỉ ngoại ngữ đạt chuẩn đầu ra theo quy định hiện hành. Đối với sinh viên trình độ đại học chương tr"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D04_regulation_article_11_01",
+          "score": 40.28382927003683,
+          "doc_id": "D04",
+          "section": "Điều 11. Hiệu lực của chứng chỉ ngoại ngữ",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "Điều 11. Hiệu lực của chứng chỉ ngoại ngữ\n1. Đối với chứng chỉ có ghi hiệu lực thời gian: Trường sẽ căn cứ vào hiệu lực này so với thời điểm sinh viên nộp hồ sơ xét đạt chuẩn ngoại ngữ đầu ra cho Trường.\np)\n2. Đối với ch"
+        }
+      ]
+    },
+    {
+      "question_id": "Q18",
+      "question": "Theo QĐ2464, hạn chậm nhất đạt chuẩn tiếng Anh trong quá trình học là khi nào và chưa đạt sẽ bị hạn chế gì?",
+      "relevant_chunk_ids": [
+        "D04_regulation_article_6_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 5,
+            "printed_page": 4,
+            "section": "Điều 6 khoản 3–4",
+            "quote": "3. Chậm nhất là cuối học kỳ thứ 6, SV phải đạt chuẩn tiếng Anh trong quá trình học theo khoản 2 Điều này.\n\n4. Đối với SV không đạt chuẩn tiếng Anh theo quy định tại khoản 2 và khoản 3 Điều này, SV không được tiếp tục đăng ký và học các học phần chuyên ngành.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=5"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_6_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_6_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D04_regulation_article_6_01",
+          "score": 67.82911911978228,
+          "doc_id": "D04",
+          "section": "Điều 6. Chuẩn tiếng Anh trong quá trình học đối với chương trình đại trà và",
+          "pdf_pages": [
+            5
+          ],
+          "body_preview": "Điều 6. Chuẩn tiếng Anh trong quá trình học đối với chương trình đại trà và\nchương trình cử nhân tài năng\n1. Chuẩn tiếng Anh trong quá trình học là yêu cầu tối thiểu về kiến thức, kĩ năng tiếng Anh mà sinh viên cần đạt đ"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D04_regulation_article_9_01",
+          "score": 32.926584715388245,
+          "doc_id": "D04",
+          "section": "Điều 9. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học, đạt",
+          "pdf_pages": [
+            7
+          ],
+          "body_preview": "Điều 9. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học, đạt\nchuẩn đầu ra ngoại ngữ đối với chương trình đại trà\nSV chương trình đại trà nộp chứng chỉ xét đạt chuẩn ngoại ngữ trong quá trình\nhọc hoặc đạt"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D04_regulation_article_2_01",
+          "score": 31.336725842885617,
+          "doc_id": "D04",
+          "section": "Điều 2. Quy định về tổ chức học ngoại ngữ đối với chương trình đại trà và chương trình cử nhân tài năng",
+          "pdf_pages": [
+            2
+          ],
+          "body_preview": "### Điều 2. Quy định về tổ chức học ngoại ngữ đối với chương trình đại trà và chương trình cử nhân tài năng\n\n1. Đối với SV chưa có chứng chỉ đạt chuẩn ngoại ngữ được quy định tại Điều 7 quy định này phải đăng ký học bốn "
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D04_regulation_article_7_02",
+          "score": 29.01428672774525,
+          "doc_id": "D04",
+          "section": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            6
+          ],
+          "body_preview": "3. Văn bằng tốt nghiệp đại học về ngôn ngữ tiếng Anh: Theo quyết định số 170/QĐ-ĐHQG ngày 27 tháng 02 năm 2018 của Giám đốc ĐHQG-HCM về việc ban hành Quy chế chuẩn trình độ ngoại ngữ tại ĐHQG-HCM.\n4. SV phải nộp chứng ch"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D04_regulation_article_10_01",
+          "score": 28.684890031837295,
+          "doc_id": "D04",
+          "section": "Điều 10. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "body_preview": "Điều 10. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học\nvà đạt chuẩn đầu ra đối với chương trình cir nhân tài năng.\n1. Trường hợp sinh viên nộp chứng chỉ ngoại ngữ bậc 3/6 được quy định tai Điều\n7 quy đ"
+        }
+      ]
+    },
+    {
+      "question_id": "Q19",
+      "question": "Theo QĐ2464, chứng chỉ ngoại ngữ không ghi thời hạn hiệu lực được tính hiệu lực thế nào khi xét chuẩn đầu ra?",
+      "relevant_chunk_ids": [
+        "D04_regulation_article_11_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 8,
+            "printed_page": 7,
+            "section": "Điều 11 khoản 2",
+            "quote": "Đối với chứng chỉ không ghi hiệu lực thời gian: Hiệu lực của chứng chỉ ngoại ngữ là 02 (hai) năm tính từ ngày cấp (được tính ngay sau khi công bố kết quả thi chứng chỉ của sinh viên) đến ngày đăng ký xét đạt chuẩn ngoại ngữ đầu ra cho Trường.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=8"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_11_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_11_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D04_regulation_article_11_01",
+          "score": 83.68388965014745,
+          "doc_id": "D04",
+          "section": "Điều 11. Hiệu lực của chứng chỉ ngoại ngữ",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "Điều 11. Hiệu lực của chứng chỉ ngoại ngữ\n1. Đối với chứng chỉ có ghi hiệu lực thời gian: Trường sẽ căn cứ vào hiệu lực này so với thời điểm sinh viên nộp hồ sơ xét đạt chuẩn ngoại ngữ đầu ra cho Trường.\np)\n2. Đối với ch"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D01_regulation_article_18_03",
+          "score": 48.006090046314554,
+          "doc_id": "D01",
+          "section": "Điều 18. Chứng chỉ giáo dục đại học, công nhận kết quả học tập và chuyên đồi",
+          "pdf_pages": [
+            16,
+            17
+          ],
+          "body_preview": "4. Sinh viên được Trường xem xét công nhận để chuyển đổi tínchicủacáchọcphần ~~\ntrên cơ sở kết quả học tập theo phương thức tổ chức đào tạo từ xa hoặc các kỹ năng, kiến\nthức và kinh nghiệm mà sinh viên đã tích lũy được t"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D04_regulation_article_10_01",
+          "score": 44.59818300436477,
+          "doc_id": "D04",
+          "section": "Điều 10. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học",
+          "pdf_pages": [
+            7,
+            8
+          ],
+          "body_preview": "Điều 10. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học\nvà đạt chuẩn đầu ra đối với chương trình cir nhân tài năng.\n1. Trường hợp sinh viên nộp chứng chỉ ngoại ngữ bậc 3/6 được quy định tai Điều\n7 quy đ"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D04_regulation_article_12_01",
+          "score": 39.857443590376135,
+          "doc_id": "D04",
+          "section": "Điều 12. Hồ sơ xét đạt chuẩn ngoại ngữ đầu ra",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "Điều 12. Hồ sơ xét đạt chuẩn ngoại ngữ đầu ra\nHồ sơ xét đạt chuẩn ngoại ngữ đầu ra gồm:\n1. Đơn đăng ký xét đạt chuẩn đầu ra ngoại ngữ.\n\n2. Bản photo có công chứng các chứng chỉ (hoặc bản photo chứng chỉ kèm bản chính đối"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D04_regulation_article_7_01",
+          "score": 38.805055278120726,
+          "doc_id": "D04",
+          "section": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            5,
+            6
+          ],
+          "body_preview": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình\nđại trà\n1. Chuẩn ngoại ngữ đầu ra của sinh viên tốt nghiệp trình độ đại học hệ chính quy chương trình đại trà là ngoại ngữ tiếng Anh và phải đạt t"
+        }
+      ]
+    },
+    {
+      "question_id": "Q20",
+      "question": "Hồ sơ xét chuẩn ngoại ngữ đầu ra theo Điều 12 QĐ2464 gồm gì?",
+      "relevant_chunk_ids": [
+        "D04_regulation_article_12_01"
+      ],
+      "evidence_groups": [
+        {
+          "evidence": {
+            "doc_id": "D04",
+            "pdf_page": 8,
+            "printed_page": 7,
+            "section": "Điều 12",
+            "quote": "1. Đơn đăng ký xét đạt chuẩn đầu ra ngoại ngữ.\n\n2. Bản photo có công chứng các chứng chỉ (hoặc bản photo chứng chỉ kèm bản chính đối chiếu).\n\n3. Mang theo Căn cước công dân để đối chiếu.",
+            "source_url": "https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/",
+            "source_pdf_url": "https://hcmus.edu.vn/wp-content/uploads/2026/08/QD-2464_QD-chuan-NN-2026_DT_TN-1.pdf",
+            "local_pdf": "data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf#page=8"
+          },
+          "body_chunk_ids": [
+            "D04_regulation_article_12_01"
+          ],
+          "source_context_chunk_ids": [],
+          "chunk_ids": [
+            "D04_regulation_article_12_01"
+          ]
+        }
+      ],
+      "human_review_status": "pending",
+      "first_relevant_rank": 1,
+      "evidence_first_ranks": [
+        1
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "chunk_id": "D04_regulation_article_12_01",
+          "score": 68.44795401767553,
+          "doc_id": "D04",
+          "section": "Điều 12. Hồ sơ xét đạt chuẩn ngoại ngữ đầu ra",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "Điều 12. Hồ sơ xét đạt chuẩn ngoại ngữ đầu ra\nHồ sơ xét đạt chuẩn ngoại ngữ đầu ra gồm:\n1. Đơn đăng ký xét đạt chuẩn đầu ra ngoại ngữ.\n\n2. Bản photo có công chứng các chứng chỉ (hoặc bản photo chứng chỉ kèm bản chính đối"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D04_regulation_article_7_02",
+          "score": 48.876537992203644,
+          "doc_id": "D04",
+          "section": "Điều 7. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            6
+          ],
+          "body_preview": "3. Văn bằng tốt nghiệp đại học về ngôn ngữ tiếng Anh: Theo quyết định số 170/QĐ-ĐHQG ngày 27 tháng 02 năm 2018 của Giám đốc ĐHQG-HCM về việc ban hành Quy chế chuẩn trình độ ngoại ngữ tại ĐHQG-HCM.\n4. SV phải nộp chứng ch"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D04_regulation_article_11_01",
+          "score": 43.40001661048122,
+          "doc_id": "D04",
+          "section": "Điều 11. Hiệu lực của chứng chỉ ngoại ngữ",
+          "pdf_pages": [
+            8
+          ],
+          "body_preview": "Điều 11. Hiệu lực của chứng chỉ ngoại ngữ\n1. Đối với chứng chỉ có ghi hiệu lực thời gian: Trường sẽ căn cứ vào hiệu lực này so với thời điểm sinh viên nộp hồ sơ xét đạt chuẩn ngoại ngữ đầu ra cho Trường.\np)\n2. Đối với ch"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D04_regulation_article_9_01",
+          "score": 42.8336796786956,
+          "doc_id": "D04",
+          "section": "Điều 9. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học, đạt",
+          "pdf_pages": [
+            7
+          ],
+          "body_preview": "Điều 9. Thời gian và thủ tục xét đạt chuẩn ngoại ngữ trong quá trình học, đạt\nchuẩn đầu ra ngoại ngữ đối với chương trình đại trà\nSV chương trình đại trà nộp chứng chỉ xét đạt chuẩn ngoại ngữ trong quá trình\nhọc hoặc đạt"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "D04_regulation_article_8_01",
+          "score": 31.883207593410326,
+          "doc_id": "D04",
+          "section": "Điều 8. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình",
+          "pdf_pages": [
+            6
+          ],
+          "body_preview": "Điều 8. Chuẩn ngoại ngữ đầu ra trình độ đại học hệ chính quy chương trình\ncử nhân tài năng\n1. Sinh viên từ khóa tuyển 2022 trở về trước: Chuẩn ngoại ngữ đầu ra áp dụng tại Điều 7 quy định này.\n2. Sinh viên từ khóa tuyển "
+        }
+      ]
+    }
+  ]
+}

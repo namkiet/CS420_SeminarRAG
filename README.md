@@ -44,6 +44,7 @@ See [`experiment/README.md`](experiment/README.md) for the prepared dataset.
 - [Sources](experiment/data/sources.json): source links, document versions, scope, and checksums. Original PDFs are in `experiment/data/raw/`.
 - Data files are ready to load directly; no build script is required. OCR accuracy still needs independent review on 29 pages.
 - **G2 Tasks 3–4 — TF-IDF:** [implementation](experiment/tfidf_retrieval.py) and [evaluation report](experiment/results/tfidf_800/README.md), evaluated at k=1/3/5 on all 20 questions. Hit Rate@5 is 90%; Evidence Recall@5 is 82.5% under the documented automatic gold alignment, pending independent review. Setup and commands are in `experiment/README.md`.
+- **G2 Tasks 3–4 — BM25-only:** [implementation](experiment/bm25_retrieval.py) and [evaluation report](experiment/results/bm25_800/README.md), evaluated at k=1/3/5 on the same 162 chunks and `(1, 2)` vocabulary (`k1=1.5`, `b=0.75`). Hit Rate@1 is 85%, Hit Rate@5 is 90%, and Evidence Recall@5 is 84.17% (All Evidence@5: 80%) under the same automatic gold alignment, pending independent review. Setup and `uv` commands are in `experiment/README.md`.
 
 ## Kaggle Embedding RAG
 
