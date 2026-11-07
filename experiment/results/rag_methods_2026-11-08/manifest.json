@@ -1,0 +1,69 @@
+{
+  "chunk_count": 162,
+  "question_ids": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q09",
+    "Q10",
+    "Q11",
+    "Q12",
+    "Q13",
+    "Q14",
+    "Q15",
+    "Q16",
+    "Q17",
+    "Q18",
+    "Q19",
+    "Q20"
+  ],
+  "evidence_count": 30,
+  "retrieval_ks": [
+    1,
+    3,
+    5
+  ],
+  "generation_top_k": 5,
+  "data_sha256": {
+    "corpus": "c6650ef101275582e947e2f0829f6fe1155c43f329a99135a6ded01758af6aa4",
+    "questions": "7fc7e9fd28ab39a37147ba4fb3e6744ae2258054db0ee1f00a681e63c41034b2",
+    "sources": "a9629304f87e1b157f5f036cb72f423843cc0441ce31aff111dc5a7800211790"
+  },
+  "pages_sha256": "386fe6617f559ae9380cb28f302a4f32efe72927ff0bcb3318c846a42c2ade9a",
+  "gold": "source body + provenance-checked repeated context",
+  "human_review_status": "pending",
+  "embedder": "BAAI/bge-m3",
+  "embedder_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "dense_cache": false,
+  "generator": "Qwen/Qwen2.5-1.5B-Instruct",
+  "generator_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "generator_dtype": "float32",
+  "attention": "sdpa",
+  "max_input_tokens": 8192,
+  "max_output_tokens": 384,
+  "do_sample": false,
+  "seed": 42,
+  "packages": {
+    "numpy": "2.1.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.6.0",
+    "torch": "2.11.0+cu130",
+    "sentence-transformers": "5.1.2",
+    "transformers": "4.57.1",
+    "accelerate": "1.11.0"
+  },
+  "code_sha256": {
+    "benchmark_rag.py": "52d55ef4e128af1831d98a72310e3757785708518246b6b9eac80ecffb4ab8d7",
+    "rag_embedding.py": "ccb9a7fc0a3372a520b60b4458620fd943de22d74c15f5d43e1f62ed45dcf148",
+    "tfidf_retrieval.py": "7c71f7fe1dbc37896c58fcabbc6dc94abf74b3fa5ae6563adb19db628394b1f0",
+    "bm25_retrieval.py": "7110b46ca6320df9bc0f7c834c677dc4df8691d165eee8f7fb3e54bdad4413fb"
+  },
+  "gpu": "Tesla T4",
+  "completed_answers": 60
+}

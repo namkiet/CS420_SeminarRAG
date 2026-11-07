@@ -69,6 +69,8 @@ uv run --python .venv python -B -m unittest discover -s experiment/tests -p test
 
 ## Notebook RAG trên Kaggle
 
+Đã chạy benchmark chung TF-IDF, BM25 và BGE-M3 với cùng Qwen trên 20 câu. Có 60 đáp án, chỉ số retrieval và nhận xét từng phương pháp. [Kết quả benchmark 08/11](results/rag_methods_2026-11-08/README.md)
+
 Đã có [notebook Kaggle](notebooks/S07_RAG_Embedding_Kaggle.ipynb) dùng BGE-M3 embeddings, cosine retrieval và Qwen2.5 sinh câu trả lời kèm nguồn. Gắn [Dataset S07 HCMUS RAG Corpus](https://www.kaggle.com/datasets/tunlnh/s07-hcmus-rag-corpus) vào Input. Xem [hướng dẫn chạy và đọc kết quả](notebooks/README.md). Notebook có đánh giá retrieval k=1/3/5 và so sánh cùng LLM có/không RAG trên 20 câu hỏi; điểm chất lượng câu trả lời cần chấm thủ công.
 
 ## Nguyên tắc chia

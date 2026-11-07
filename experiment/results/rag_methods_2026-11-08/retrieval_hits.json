@@ -1,0 +1,2926 @@
+{
+  "Q01": {
+    "tfidf": [
+      {
+        "chunk_id": "D01_regulation_article_3_03",
+        "rank": 1,
+        "score": 0.22687277065336134,
+        "doc_id": "D01",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_04",
+        "rank": 2,
+        "score": 0.13023492595672564,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_4_01",
+        "rank": 3,
+        "score": 0.09678240240624324,
+        "doc_id": "D01",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_01",
+        "rank": 4,
+        "score": 0.0853438010416513,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D01_decision_article_2_01",
+        "rank": 5,
+        "score": 0.07627218616921481,
+        "doc_id": "D01",
+        "pdf_pages": [
+          1
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D01_regulation_article_3_03",
+        "rank": 1,
+        "score": 40.66761022056125,
+        "doc_id": "D01",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_04",
+        "rank": 2,
+        "score": 23.789661603830233,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_4_01",
+        "rank": 3,
+        "score": 16.481377630128755,
+        "doc_id": "D01",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_01",
+        "rank": 4,
+        "score": 14.930489245691913,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_15_01",
+        "rank": 5,
+        "score": 14.70889976944041,
+        "doc_id": "D01",
+        "pdf_pages": [
+          13,
+          14
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D01_regulation_article_3_03",
+        "rank": 1,
+        "score": 0.6271165013313293,
+        "doc_id": "D01",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_27_01",
+        "rank": 2,
+        "score": 0.5813252925872803,
+        "doc_id": "D01",
+        "pdf_pages": [
+          21
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_3_02",
+        "rank": 3,
+        "score": 0.5703604221343994,
+        "doc_id": "D01",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_6_02",
+        "rank": 4,
+        "score": 0.5642706155776978,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_18_02",
+        "rank": 5,
+        "score": 0.5539612770080566,
+        "doc_id": "D01",
+        "pdf_pages": [
+          16
+        ]
+      }
+    ]
+  },
+  "Q02": {
+    "tfidf": [
+      {
+        "chunk_id": "D01_regulation_article_3_04",
+        "rank": 1,
+        "score": 0.17922748589837204,
+        "doc_id": "D01",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_02",
+        "rank": 2,
+        "score": 0.12415375508962914,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_01",
+        "rank": 3,
+        "score": 0.09172232507148961,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_2_01",
+        "rank": 4,
+        "score": 0.09038182952603133,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_4_01",
+        "rank": 5,
+        "score": 0.08823297506715924,
+        "doc_id": "D01",
+        "pdf_pages": [
+          5
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D01_regulation_article_3_04",
+        "rank": 1,
+        "score": 43.0751333326006,
+        "doc_id": "D01",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_02",
+        "rank": 2,
+        "score": 23.541522675472066,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_01",
+        "rank": 3,
+        "score": 22.183317979084507,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_13_02",
+        "rank": 4,
+        "score": 20.34876990983474,
+        "doc_id": "D01",
+        "pdf_pages": [
+          12,
+          13
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_4_01",
+        "rank": 5,
+        "score": 19.963921523146965,
+        "doc_id": "D01",
+        "pdf_pages": [
+          5
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D01_regulation_article_3_04",
+        "rank": 1,
+        "score": 0.7134113907814026,
+        "doc_id": "D01",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_4_01",
+        "rank": 2,
+        "score": 0.6305925846099854,
+        "doc_id": "D01",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_08",
+        "rank": 3,
+        "score": 0.6210425496101379,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_16_05",
+        "rank": 4,
+        "score": 0.6210252046585083,
+        "doc_id": "D01",
+        "pdf_pages": [
+          15
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_04",
+        "rank": 5,
+        "score": 0.6199488639831543,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ]
+  },
+  "Q03": {
+    "tfidf": [
+      {
+        "chunk_id": "D01_regulation_article_7_02",
+        "rank": 1,
+        "score": 0.26686982464401976,
+        "doc_id": "D01",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_01",
+        "rank": 2,
+        "score": 0.14335724304906738,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_02",
+        "rank": 3,
+        "score": 0.13719917642017904,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_6_01",
+        "rank": 4,
+        "score": 0.1282046007291658,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_8_02",
+        "rank": 5,
+        "score": 0.1262235893039437,
+        "doc_id": "D01",
+        "pdf_pages": [
+          9
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D01_regulation_article_7_02",
+        "rank": 1,
+        "score": 90.58210451049608,
+        "doc_id": "D01",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_01",
+        "rank": 2,
+        "score": 46.67578747016734,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_6_01",
+        "rank": 3,
+        "score": 45.7490204959138,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_02",
+        "rank": 4,
+        "score": 42.19774790257749,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_01",
+        "rank": 5,
+        "score": 42.16393760300469,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D01_regulation_article_7_02",
+        "rank": 1,
+        "score": 0.787276566028595,
+        "doc_id": "D01",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_02",
+        "rank": 2,
+        "score": 0.7264394760131836,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_01",
+        "rank": 3,
+        "score": 0.7098544836044312,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_3_01",
+        "rank": 4,
+        "score": 0.6709609031677246,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_01",
+        "rank": 5,
+        "score": 0.6449498534202576,
+        "doc_id": "D04",
+        "pdf_pages": [
+          2
+        ]
+      }
+    ]
+  },
+  "Q04": {
+    "tfidf": [
+      {
+        "chunk_id": "D01_regulation_article_27_01",
+        "rank": 1,
+        "score": 0.31148321113579,
+        "doc_id": "D01",
+        "pdf_pages": [
+          21
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_2_01",
+        "rank": 2,
+        "score": 0.13384831172580441,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_14_01",
+        "rank": 3,
+        "score": 0.1329067990033817,
+        "doc_id": "D04",
+        "pdf_pages": [
+          9
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_21_02",
+        "rank": 4,
+        "score": 0.09923694723092977,
+        "doc_id": "D01",
+        "pdf_pages": [
+          19,
+          20
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_21_01",
+        "rank": 5,
+        "score": 0.090345909758302,
+        "doc_id": "D01",
+        "pdf_pages": [
+          19
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D01_regulation_article_27_01",
+        "rank": 1,
+        "score": 68.68592485736818,
+        "doc_id": "D01",
+        "pdf_pages": [
+          21
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_21_02",
+        "rank": 2,
+        "score": 28.500935182153963,
+        "doc_id": "D01",
+        "pdf_pages": [
+          19,
+          20
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_2_01",
+        "rank": 3,
+        "score": 27.19291064950053,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_14_01",
+        "rank": 4,
+        "score": 25.096618540454514,
+        "doc_id": "D04",
+        "pdf_pages": [
+          9
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_5_01",
+        "rank": 5,
+        "score": 24.57214746839904,
+        "doc_id": "D01",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D01_regulation_article_27_01",
+        "rank": 1,
+        "score": 0.6325852274894714,
+        "doc_id": "D01",
+        "pdf_pages": [
+          21
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_21_01",
+        "rank": 2,
+        "score": 0.5893997550010681,
+        "doc_id": "D01",
+        "pdf_pages": [
+          19
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_21_02",
+        "rank": 3,
+        "score": 0.5630348920822144,
+        "doc_id": "D01",
+        "pdf_pages": [
+          19,
+          20
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_18_03",
+        "rank": 4,
+        "score": 0.5327720642089844,
+        "doc_id": "D01",
+        "pdf_pages": [
+          16,
+          17
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_18_02",
+        "rank": 5,
+        "score": 0.5189385414123535,
+        "doc_id": "D01",
+        "pdf_pages": [
+          16
+        ]
+      }
+    ]
+  },
+  "Q05": {
+    "tfidf": [
+      {
+        "chunk_id": "D01_regulation_article_19_02",
+        "rank": 1,
+        "score": 0.28103092436091387,
+        "doc_id": "D01",
+        "pdf_pages": [
+          17
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_19_01",
+        "rank": 2,
+        "score": 0.23766803643599416,
+        "doc_id": "D01",
+        "pdf_pages": [
+          17
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_19_03",
+        "rank": 3,
+        "score": 0.15048449264690766,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_12_02",
+        "rank": 4,
+        "score": 0.14423238717538855,
+        "doc_id": "D01",
+        "pdf_pages": [
+          11,
+          12
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_21_02",
+        "rank": 5,
+        "score": 0.12346516278214535,
+        "doc_id": "D01",
+        "pdf_pages": [
+          19,
+          20
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D01_regulation_article_19_01",
+        "rank": 1,
+        "score": 58.045091440565905,
+        "doc_id": "D01",
+        "pdf_pages": [
+          17
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_19_02",
+        "rank": 2,
+        "score": 57.374133522799966,
+        "doc_id": "D01",
+        "pdf_pages": [
+          17
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_19_03",
+        "rank": 3,
+        "score": 38.74935272232342,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_12_02",
+        "rank": 4,
+        "score": 36.913027467294185,
+        "doc_id": "D01",
+        "pdf_pages": [
+          11,
+          12
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_21_02",
+        "rank": 5,
+        "score": 33.42234103195611,
+        "doc_id": "D01",
+        "pdf_pages": [
+          19,
+          20
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D01_regulation_article_19_01",
+        "rank": 1,
+        "score": 0.686147928237915,
+        "doc_id": "D01",
+        "pdf_pages": [
+          17
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_18_02",
+        "rank": 2,
+        "score": 0.6478099822998047,
+        "doc_id": "D01",
+        "pdf_pages": [
+          16
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_23_01",
+        "rank": 3,
+        "score": 0.644280195236206,
+        "doc_id": "D01",
+        "pdf_pages": [
+          20
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_18_01",
+        "rank": 4,
+        "score": 0.6308777332305908,
+        "doc_id": "D01",
+        "pdf_pages": [
+          16
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_19_02",
+        "rank": 5,
+        "score": 0.6298694014549255,
+        "doc_id": "D01",
+        "pdf_pages": [
+          17
+        ]
+      }
+    ]
+  },
+  "Q06": {
+    "tfidf": [
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 1,
+        "score": 0.22941176540908495,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_5_08",
+        "rank": 2,
+        "score": 0.21305786383383027,
+        "doc_id": "D02",
+        "pdf_pages": [
+          13
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_6_01",
+        "rank": 3,
+        "score": 0.20030271312470133,
+        "doc_id": "D02",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 4,
+        "score": 0.1876119971485428,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_4_02",
+        "rank": 5,
+        "score": 0.18464756312325317,
+        "doc_id": "D02",
+        "pdf_pages": [
+          11
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 1,
+        "score": 58.10808313492635,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 2,
+        "score": 49.4382077085887,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_6_01",
+        "rank": 3,
+        "score": 41.80980784685207,
+        "doc_id": "D02",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_5_01",
+        "rank": 4,
+        "score": 40.623342925929364,
+        "doc_id": "D02",
+        "pdf_pages": [
+          12
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_5_09",
+        "rank": 5,
+        "score": 39.13529121539046,
+        "doc_id": "D02",
+        "pdf_pages": [
+          13
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 0.6994168758392334,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_04",
+        "rank": 2,
+        "score": 0.6897923946380615,
+        "doc_id": "D02",
+        "pdf_pages": [
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 3,
+        "score": 0.6755319833755493,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_2_01",
+        "rank": 4,
+        "score": 0.6621330976486206,
+        "doc_id": "D02",
+        "pdf_pages": [
+          10
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_5_01",
+        "rank": 5,
+        "score": 0.642830491065979,
+        "doc_id": "D02",
+        "pdf_pages": [
+          12
+        ]
+      }
+    ]
+  },
+  "Q07": {
+    "tfidf": [
+      {
+        "chunk_id": "D02_regulation_article_6_01",
+        "rank": 1,
+        "score": 0.2405218240567465,
+        "doc_id": "D02",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 2,
+        "score": 0.21246848989496323,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_12_01",
+        "rank": 3,
+        "score": 0.17240141652680535,
+        "doc_id": "D02",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_11_01",
+        "rank": 4,
+        "score": 0.16938940743238617,
+        "doc_id": "D02",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_02",
+        "rank": 5,
+        "score": 0.1680339522086891,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14,
+          15
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 32.8152426178053,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_6_01",
+        "rank": 2,
+        "score": 29.98155098538901,
+        "doc_id": "D02",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_11_01",
+        "rank": 3,
+        "score": 29.156869536569342,
+        "doc_id": "D02",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_02",
+        "rank": 4,
+        "score": 26.72399911955505,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14,
+          15
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 5,
+        "score": 25.603059920554283,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 0.6565552353858948,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_04",
+        "rank": 2,
+        "score": 0.6433310508728027,
+        "doc_id": "D02",
+        "pdf_pages": [
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_8_01",
+        "rank": 3,
+        "score": 0.6401071548461914,
+        "doc_id": "D02",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 4,
+        "score": 0.6358470320701599,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_1_01",
+        "rank": 5,
+        "score": 0.6252816915512085,
+        "doc_id": "D02",
+        "pdf_pages": [
+          9
+        ]
+      }
+    ]
+  },
+  "Q08": {
+    "tfidf": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 0.2313802611684945,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_20_02",
+        "rank": 2,
+        "score": 0.21304054799183683,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18,
+          19
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_8_01",
+        "rank": 3,
+        "score": 0.1880147043746431,
+        "doc_id": "D02",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_20_01",
+        "rank": 4,
+        "score": 0.16070251168276414,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_01",
+        "rank": 5,
+        "score": 0.11199862443902006,
+        "doc_id": "D01",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 74.61033724700319,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_8_01",
+        "rank": 2,
+        "score": 59.97259253394502,
+        "doc_id": "D02",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_20_01",
+        "rank": 3,
+        "score": 51.01729025336944,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_20_02",
+        "rank": 4,
+        "score": 43.68756908184277,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18,
+          19
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_3_03",
+        "rank": 5,
+        "score": 38.098516262644864,
+        "doc_id": "D01",
+        "pdf_pages": [
+          4
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D02_regulation_article_8_01",
+        "rank": 1,
+        "score": 0.6688570976257324,
+        "doc_id": "D02",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 2,
+        "score": 0.6550328135490417,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_02",
+        "rank": 3,
+        "score": 0.6535454392433167,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14,
+          15
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_20_01",
+        "rank": 4,
+        "score": 0.6436692476272583,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_01",
+        "rank": 5,
+        "score": 0.6432662010192871,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14
+        ]
+      }
+    ]
+  },
+  "Q09": {
+    "tfidf": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 0.33418155561474067,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_6_01",
+        "rank": 2,
+        "score": 0.2637135593915319,
+        "doc_id": "D02",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_5_08",
+        "rank": 3,
+        "score": 0.18073010267530695,
+        "doc_id": "D02",
+        "pdf_pages": [
+          13
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_02",
+        "rank": 4,
+        "score": 0.17183961421263194,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14,
+          15
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 5,
+        "score": 0.16128267467844176,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 91.69240267850758,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_6_01",
+        "rank": 2,
+        "score": 60.15541497599526,
+        "doc_id": "D02",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_02",
+        "rank": 3,
+        "score": 50.55557647810821,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14,
+          15
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 4,
+        "score": 46.628771190989376,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_5_04",
+        "rank": 5,
+        "score": 40.69947911506235,
+        "doc_id": "D02",
+        "pdf_pages": [
+          12
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D02_amendment_2023_article_1_03",
+        "rank": 1,
+        "score": 0.6717648506164551,
+        "doc_id": "D02",
+        "pdf_pages": [
+          15,
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_1_04",
+        "rank": 2,
+        "score": 0.6285074949264526,
+        "doc_id": "D02",
+        "pdf_pages": [
+          9
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_04",
+        "rank": 3,
+        "score": 0.6243282556533813,
+        "doc_id": "D02",
+        "pdf_pages": [
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_4_01",
+        "rank": 4,
+        "score": 0.6195507049560547,
+        "doc_id": "D02",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D02_appendix_section_5_09",
+        "rank": 5,
+        "score": 0.6081422567367554,
+        "doc_id": "D02",
+        "pdf_pages": [
+          13
+        ]
+      }
+    ]
+  },
+  "Q10": {
+    "tfidf": [
+      {
+        "chunk_id": "D02_regulation_article_9_01",
+        "rank": 1,
+        "score": 0.32762110003266004,
+        "doc_id": "D02",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_12_01",
+        "rank": 2,
+        "score": 0.1437638265212276,
+        "doc_id": "D02",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_2_01",
+        "rank": 3,
+        "score": 0.12033273634638131,
+        "doc_id": "D02",
+        "pdf_pages": [
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_10_01",
+        "rank": 4,
+        "score": 0.11989984949483913,
+        "doc_id": "D02",
+        "pdf_pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "chunk_id": "D02_decision_article_2_01",
+        "rank": 5,
+        "score": 0.09057270035830486,
+        "doc_id": "D02",
+        "pdf_pages": [
+          1
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D02_regulation_article_9_01",
+        "rank": 1,
+        "score": 99.71934529512157,
+        "doc_id": "D02",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_12_01",
+        "rank": 2,
+        "score": 45.324358041596454,
+        "doc_id": "D02",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_10_01",
+        "rank": 3,
+        "score": 43.28449620234612,
+        "doc_id": "D02",
+        "pdf_pages": [
+          6,
+          7
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_02",
+        "rank": 4,
+        "score": 28.185220295900663,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14,
+          15
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_19_03",
+        "rank": 5,
+        "score": 28.038213752254418,
+        "doc_id": "D01",
+        "pdf_pages": [
+          18
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D02_amendment_2023_article_2_01",
+        "rank": 1,
+        "score": 0.6425670385360718,
+        "doc_id": "D02",
+        "pdf_pages": [
+          16
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_9_01",
+        "rank": 2,
+        "score": 0.636695921421051,
+        "doc_id": "D02",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D02_regulation_article_13_01",
+        "rank": 3,
+        "score": 0.6318185925483704,
+        "doc_id": "D02",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D02_decision_article_2_01",
+        "rank": 4,
+        "score": 0.6248860359191895,
+        "doc_id": "D02",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D02_amendment_2023_article_1_02",
+        "rank": 5,
+        "score": 0.6179486513137817,
+        "doc_id": "D02",
+        "pdf_pages": [
+          14,
+          15
+        ]
+      }
+    ]
+  },
+  "Q11": {
+    "tfidf": [
+      {
+        "chunk_id": "D03_decision_article_1_02",
+        "rank": 1,
+        "score": 0.45145338490425946,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_01",
+        "rank": 2,
+        "score": 0.23967525628825254,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_2_01",
+        "rank": 3,
+        "score": 0.21432871921502342,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_16_01",
+        "rank": 4,
+        "score": 0.14928633533495145,
+        "doc_id": "D01",
+        "pdf_pages": [
+          14
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_03",
+        "rank": 5,
+        "score": 0.14746113408606001,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D03_decision_article_1_02",
+        "rank": 1,
+        "score": 90.46880469861937,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_01",
+        "rank": 2,
+        "score": 60.86413678653529,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_2_01",
+        "rank": 3,
+        "score": 49.5328012521662,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_16_01",
+        "rank": 4,
+        "score": 30.73345276839857,
+        "doc_id": "D01",
+        "pdf_pages": [
+          14
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_2_01",
+        "rank": 5,
+        "score": 28.919445051975746,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D03_decision_article_1_02",
+        "rank": 1,
+        "score": 0.6846356391906738,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_01",
+        "rank": 2,
+        "score": 0.6603821516036987,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_2_01",
+        "rank": 3,
+        "score": 0.6581448912620544,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_16_01",
+        "rank": 4,
+        "score": 0.6402637958526611,
+        "doc_id": "D01",
+        "pdf_pages": [
+          14
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_05",
+        "rank": 5,
+        "score": 0.636115312576294,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ]
+  },
+  "Q12": {
+    "tfidf": [
+      {
+        "chunk_id": "D03_appendix_section_1_01",
+        "rank": 1,
+        "score": 0.3308019063743599,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_10",
+        "rank": 2,
+        "score": 0.31983503466511726,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_08",
+        "rank": 3,
+        "score": 0.2946211253793521,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_13",
+        "rank": 4,
+        "score": 0.29308770955041946,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_15",
+        "rank": 5,
+        "score": 0.2739803484252262,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D03_appendix_section_1_10",
+        "rank": 1,
+        "score": 86.22983296827232,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_01",
+        "rank": 2,
+        "score": 76.44027260664969,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_08",
+        "rank": 3,
+        "score": 73.86503491835623,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_13",
+        "rank": 4,
+        "score": 73.78142820309057,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_15",
+        "rank": 5,
+        "score": 72.42964154391184,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D03_appendix_section_1_10",
+        "rank": 1,
+        "score": 0.7570575475692749,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_07",
+        "rank": 2,
+        "score": 0.7540406584739685,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_06",
+        "rank": 3,
+        "score": 0.7538951635360718,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_05",
+        "rank": 4,
+        "score": 0.7517436742782593,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_04",
+        "rank": 5,
+        "score": 0.7505275011062622,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ]
+  },
+  "Q13": {
+    "tfidf": [
+      {
+        "chunk_id": "D03_appendix_section_1_10",
+        "rank": 1,
+        "score": 0.3545032838348525,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_01",
+        "rank": 2,
+        "score": 0.28930043935482813,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_13",
+        "rank": 3,
+        "score": 0.2744594967664735,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_08",
+        "rank": 4,
+        "score": 0.2586406000034032,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_15",
+        "rank": 5,
+        "score": 0.25653721398403606,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D03_appendix_section_1_10",
+        "rank": 1,
+        "score": 102.76559530985158,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_13",
+        "rank": 2,
+        "score": 75.84096268400137,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_15",
+        "rank": 3,
+        "score": 74.40330740207631,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_11",
+        "rank": 4,
+        "score": 74.35414113371729,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_02",
+        "rank": 5,
+        "score": 74.14336974502392,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D03_appendix_section_1_10",
+        "rank": 1,
+        "score": 0.706478476524353,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_11",
+        "rank": 2,
+        "score": 0.7017726302146912,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_06",
+        "rank": 3,
+        "score": 0.7016230821609497,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_07",
+        "rank": 4,
+        "score": 0.7015560269355774,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_04",
+        "rank": 5,
+        "score": 0.6989873647689819,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ]
+  },
+  "Q14": {
+    "tfidf": [
+      {
+        "chunk_id": "D03_appendix_section_1_03",
+        "rank": 1,
+        "score": 0.2804764989684303,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_09",
+        "rank": 2,
+        "score": 0.2804764989684303,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_14",
+        "rank": 3,
+        "score": 0.2804764989684303,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_01",
+        "rank": 4,
+        "score": 0.243245880819246,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_08",
+        "rank": 5,
+        "score": 0.2155884005481828,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D03_appendix_section_1_01",
+        "rank": 1,
+        "score": 41.1581577263826,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_08",
+        "rank": 2,
+        "score": 39.72420638297577,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_13",
+        "rank": 3,
+        "score": 39.681449313492145,
+        "doc_id": "D03",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_02",
+        "rank": 4,
+        "score": 39.124960181535236,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_15",
+        "rank": 5,
+        "score": 38.76960492515624,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D03_decision_article_1_01",
+        "rank": 1,
+        "score": 0.6285712718963623,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_02",
+        "rank": 2,
+        "score": 0.6269477009773254,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_07",
+        "rank": 3,
+        "score": 0.6238528490066528,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_05",
+        "rank": 4,
+        "score": 0.6232856512069702,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_2_01",
+        "rank": 5,
+        "score": 0.6227152943611145,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      }
+    ]
+  },
+  "Q15": {
+    "tfidf": [
+      {
+        "chunk_id": "D03_appendix_section_3_01",
+        "rank": 1,
+        "score": 0.2505402262924101,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_04",
+        "rank": 2,
+        "score": 0.19080285974108951,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_3_01",
+        "rank": 3,
+        "score": 0.1728921552893549,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_01",
+        "rank": 4,
+        "score": 0.17056574233347788,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_03",
+        "rank": 5,
+        "score": 0.16229245098407527,
+        "doc_id": "D03",
+        "pdf_pages": [
+          3
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D03_appendix_section_3_01",
+        "rank": 1,
+        "score": 94.07363379056804,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_04",
+        "rank": 2,
+        "score": 78.56614123946477,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_01",
+        "rank": 3,
+        "score": 61.63410448981548,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_3_01",
+        "rank": 4,
+        "score": 59.862986821609596,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_1_01",
+        "rank": 5,
+        "score": 56.41685371114701,
+        "doc_id": "D03",
+        "pdf_pages": [
+          2
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D03_appendix_section_3_01",
+        "rank": 1,
+        "score": 0.7821322679519653,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_3_01",
+        "rank": 2,
+        "score": 0.6537200212478638,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_1_01",
+        "rank": 3,
+        "score": 0.6474804878234863,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_04",
+        "rank": 4,
+        "score": 0.6473764181137085,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D03_decision_article_2_01",
+        "rank": 5,
+        "score": 0.6433537006378174,
+        "doc_id": "D03",
+        "pdf_pages": [
+          1
+        ]
+      }
+    ]
+  },
+  "Q16": {
+    "tfidf": [
+      {
+        "chunk_id": "D04_decision_article_2_01",
+        "rank": 1,
+        "score": 0.19976912941459163,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 2,
+        "score": 0.1597676976762284,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_3_01",
+        "rank": 3,
+        "score": 0.1393473072733398,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_02",
+        "rank": 4,
+        "score": 0.12077247246898151,
+        "doc_id": "D01",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_1_02",
+        "rank": 5,
+        "score": 0.1144508264767376,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 1,
+        "score": 41.61812517548186,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_2_01",
+        "rank": 2,
+        "score": 38.08243778039278,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_3_01",
+        "rank": 3,
+        "score": 37.699581872274806,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_7_02",
+        "rank": 4,
+        "score": 35.02879679107226,
+        "doc_id": "D01",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_10_01",
+        "rank": 5,
+        "score": 33.907533754359655,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 1,
+        "score": 0.6418853998184204,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_2_01",
+        "rank": 2,
+        "score": 0.6163344383239746,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_01",
+        "rank": 3,
+        "score": 0.6017524003982544,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_03",
+        "rank": 4,
+        "score": 0.5692723393440247,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_4_01",
+        "rank": 5,
+        "score": 0.5663488507270813,
+        "doc_id": "D04",
+        "pdf_pages": [
+          4
+        ]
+      }
+    ]
+  },
+  "Q17": {
+    "tfidf": [
+      {
+        "chunk_id": "D04_regulation_article_12_01",
+        "rank": 1,
+        "score": 0.2862333802305074,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 2,
+        "score": 0.251561712531719,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_9_01",
+        "rank": 3,
+        "score": 0.2510155282835649,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 4,
+        "score": 0.21698753104918284,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_11_01",
+        "rank": 5,
+        "score": 0.2120999161644419,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D04_regulation_article_9_01",
+        "rank": 1,
+        "score": 51.160761051065826,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_12_01",
+        "rank": 2,
+        "score": 46.31737654858773,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 3,
+        "score": 43.01290390668838,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D03_appendix_section_3_01",
+        "rank": 4,
+        "score": 40.97538444933056,
+        "doc_id": "D03",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_11_01",
+        "rank": 5,
+        "score": 40.28382927003683,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D04_regulation_article_7_01",
+        "rank": 1,
+        "score": 0.6463884711265564,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_04",
+        "rank": 2,
+        "score": 0.6331957578659058,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_9_01",
+        "rank": 3,
+        "score": 0.6322542428970337,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_01",
+        "rank": 4,
+        "score": 0.6282261610031128,
+        "doc_id": "D04",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 5,
+        "score": 0.6232362389564514,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      }
+    ]
+  },
+  "Q18": {
+    "tfidf": [
+      {
+        "chunk_id": "D04_regulation_article_6_01",
+        "rank": 1,
+        "score": 0.30020349268310764,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_9_01",
+        "rank": 2,
+        "score": 0.12722271337405133,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_01",
+        "rank": 3,
+        "score": 0.12716187673042995,
+        "doc_id": "D04",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 4,
+        "score": 0.11872837342494458,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_3_01",
+        "rank": 5,
+        "score": 0.11782250926902885,
+        "doc_id": "D04",
+        "pdf_pages": [
+          3,
+          4
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D04_regulation_article_6_01",
+        "rank": 1,
+        "score": 67.82911911978228,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_9_01",
+        "rank": 2,
+        "score": 32.926584715388245,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_2_01",
+        "rank": 3,
+        "score": 31.336725842885617,
+        "doc_id": "D04",
+        "pdf_pages": [
+          2
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 4,
+        "score": 29.01428672774525,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_10_01",
+        "rank": 5,
+        "score": 28.684890031837295,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D04_regulation_article_6_01",
+        "rank": 1,
+        "score": 0.6211963891983032,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_4_01",
+        "rank": 2,
+        "score": 0.6043596863746643,
+        "doc_id": "D04",
+        "pdf_pages": [
+          4
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_10_01",
+        "rank": 3,
+        "score": 0.5986471176147461,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_1_01",
+        "rank": 4,
+        "score": 0.5760748386383057,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 5,
+        "score": 0.5757255554199219,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      }
+    ]
+  },
+  "Q19": {
+    "tfidf": [
+      {
+        "chunk_id": "D04_regulation_article_11_01",
+        "rank": 1,
+        "score": 0.3784098063846778,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_3_01",
+        "rank": 2,
+        "score": 0.20211629515245863,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_12_01",
+        "rank": 3,
+        "score": 0.1886563267756872,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_18_03",
+        "rank": 4,
+        "score": 0.17856576473096186,
+        "doc_id": "D01",
+        "pdf_pages": [
+          16,
+          17
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_10_01",
+        "rank": 5,
+        "score": 0.1635069274168971,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D04_regulation_article_11_01",
+        "rank": 1,
+        "score": 83.68388965014745,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D01_regulation_article_18_03",
+        "rank": 2,
+        "score": 48.006090046314554,
+        "doc_id": "D01",
+        "pdf_pages": [
+          16,
+          17
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_10_01",
+        "rank": 3,
+        "score": 44.59818300436477,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_12_01",
+        "rank": 4,
+        "score": 39.857443590376135,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_01",
+        "rank": 5,
+        "score": 38.805055278120726,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D04_regulation_article_11_01",
+        "rank": 1,
+        "score": 0.702897310256958,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_10_01",
+        "rank": 2,
+        "score": 0.6090779304504395,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 3,
+        "score": 0.6021239757537842,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_3_01",
+        "rank": 4,
+        "score": 0.585142970085144,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      },
+      {
+        "chunk_id": "D04_decision_article_1_01",
+        "rank": 5,
+        "score": 0.5826185941696167,
+        "doc_id": "D04",
+        "pdf_pages": [
+          1
+        ]
+      }
+    ]
+  },
+  "Q20": {
+    "tfidf": [
+      {
+        "chunk_id": "D04_regulation_article_12_01",
+        "rank": 1,
+        "score": 0.45654427045921153,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 2,
+        "score": 0.3050175128325572,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_11_01",
+        "rank": 3,
+        "score": 0.23738377200894675,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_9_01",
+        "rank": 4,
+        "score": 0.21695175786796012,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 5,
+        "score": 0.19809929533185952,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      }
+    ],
+    "bm25": [
+      {
+        "chunk_id": "D04_regulation_article_12_01",
+        "rank": 1,
+        "score": 68.44795401767553,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 2,
+        "score": 48.876537992203644,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_11_01",
+        "rank": 3,
+        "score": 43.40001661048122,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_9_01",
+        "rank": 4,
+        "score": 42.8336796786956,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 5,
+        "score": 31.883207593410326,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      }
+    ],
+    "bge_m3": [
+      {
+        "chunk_id": "D04_regulation_article_12_01",
+        "rank": 1,
+        "score": 0.6818515062332153,
+        "doc_id": "D04",
+        "pdf_pages": [
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_02",
+        "rank": 2,
+        "score": 0.5839962363243103,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_8_01",
+        "rank": 3,
+        "score": 0.5718957781791687,
+        "doc_id": "D04",
+        "pdf_pages": [
+          6
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_10_01",
+        "rank": 4,
+        "score": 0.5644514560699463,
+        "doc_id": "D04",
+        "pdf_pages": [
+          7,
+          8
+        ]
+      },
+      {
+        "chunk_id": "D04_regulation_article_7_01",
+        "rank": 5,
+        "score": 0.5614681243896484,
+        "doc_id": "D04",
+        "pdf_pages": [
+          5,
+          6
+        ]
+      }
+    ]
+  }
+}
