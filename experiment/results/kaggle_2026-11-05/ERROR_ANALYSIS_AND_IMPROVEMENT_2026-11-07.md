@@ -1,5 +1,7 @@
 # Phân tích nguyên nhân lỗi và vị trí cần cải thiện
 
+**Phạm vi:** phân tích Task 7 này dùng lần chạy embedding ngày **05/11/2026**, không phải lần so sánh bốn nhánh sau đó. Đã có [đối chiếu với output Task 6 mới](../task6_4way/README.md): corpus/model/context embedding giữ nguyên nhưng system prompt và output budget đổi; một số ca lỗi đã thay đổi. Các số như 6/8 và mô tả đáp án cụ thể bên dưới chỉ áp dụng cho lần chạy cũ, không gộp vào thống kê mới.
+
 ## 1. Kết luận theo pipeline
 
 **Ưu tiên cải thiện khâu sinh đáp án và hậu kiểm; retrieval có những ca thiếu nguồn cần xử lý riêng.** Trong 8 câu RAG sai trọng yếu hoặc không có đáp án, **6 câu đã nhận đủ bằng chứng tham chiếu trong prompt**: Q03, Q04, Q05, Q12, Q13, Q19. Hai câu còn lại là Q07 và Q16 vừa thiếu nguồn vừa có lỗi sinh đáp án.

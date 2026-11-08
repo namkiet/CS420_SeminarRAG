@@ -1,0 +1,48 @@
+{
+  "review_type": "AI qualitative review, non-blind, provisional",
+  "reviewer": "GPT — AI review 2026-11-08; human verification pending",
+  "review_date": "2026-11-08",
+  "human_review_status": "pending",
+  "reviewed_answers": 80,
+  "source_archive": "s07_task6_4way_results.zip",
+  "source_archive_sha256": "d6e50bdd9631bb3252cb4fd9449ab5d0a843b0f1c11082ad6d1c0311eba7ad94",
+  "original_model_outputs_unchanged": true,
+  "original_blank_review_retained_in_source_archive": true,
+  "run_audit": {
+    "all_80_answers_present": true,
+    "common_system_prompt": true,
+    "exact_data_config_plan_hash_match": true,
+    "prompts_reconstructed_and_verified": 80,
+    "omitted_chunks": 0,
+    "truncated_answers": 0,
+    "rag_answers": 60,
+    "valid_rag_citations": 0
+  },
+  "grading_policy": {
+    "correctness": "2 substantive answer fully correct; 1 partially correct/incomplete; 0 wrong essential conclusion/no usable answer",
+    "completeness": "coverage of requested key points: 0/1/2; not an alternative accuracy score",
+    "unsupported_claim": "wrong or unsupported material factual claims/provenance against reference corpus; distinct from missing retrieval evidence",
+    "citation_support": "0 for all 60 RAG answers because no valid [chunk_id] citation; NA for baseline",
+    "minor_institution_aliases": "not used to change requested numeric/regulatory correctness unless they assert a materially different rule/source",
+    "formal_provenance_error": "Q19 TF-IDF content correct, invented decision suffix separately flagged as unsupported; Q13 wrong table-column semantics reduces correctness",
+    "abstentions": "no full credit on these 20 answerable questions; refusal can still contain fabricated source metadata",
+    "scores_are_not_retrieval_metrics": true
+  },
+  "borderline_review_priority": [
+    "Q03",
+    "Q05",
+    "Q11",
+    "Q13",
+    "Q14",
+    "Q15",
+    "Q16",
+    "Q17",
+    "Q19"
+  ],
+  "limitations": [
+    "No independent human adjudication yet",
+    "Source OCR still pending independent review",
+    "No blind randomized reviewer labels",
+    "Only this fixed set of 20 questions, not an independent test set"
+  ]
+}

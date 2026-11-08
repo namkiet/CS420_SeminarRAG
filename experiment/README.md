@@ -67,6 +67,19 @@ Xem [báo cáo BM25 và đối chiếu với TF-IDF](results/bm25_800/README.md)
 uv run --python .venv python -B -m unittest discover -s experiment/tests -p test_bm25_retrieval.py -v
 ```
 
+## G2 Task 6 — So sánh LLM có/không RAG
+
+Đã chuẩn bị [notebook so sánh bốn nhánh](notebooks/S07_Task6_RAG_Comparison.ipynb): **Qwen không RAG / Qwen + TF-IDF / Qwen + BM25 / Qwen + embedding**, cùng 20 câu hỏi, cùng system prompt/model revision và cấu hình sinh. Tái sử dụng top-5 có kiểm tra hash của Task 3–4, sinh mới cả 80 đáp án; không dùng lại đáp án embedding cũ để ghép bảng.
+
+Xem [TASK6.md](TASK6.md) để import/run Kaggle, tải output, chấm theo rubric và tổng hợp. **Đã nhận đủ 80 đáp án Kaggle và chấm AI sơ bộ ngày 08/11/2026**: [kết quả và phân tích Task 6](results/task6_4way/README.md). TF-IDF/embedding cùng đúng chính 10/20, BM25 9/20, không RAG 0/20; human review vẫn pending, cả 60 đáp án RAG thiếu citation-ID. Không kết luận embedding vượt riêng TF-IDF về accuracy.
+
+```powershell
+python experiment/scripts/build_task6_notebook.py
+python experiment/task6_comparison.py summarize --run-dir experiment/results/task6_4way
+```
+
+Lệnh thứ hai chỉ chạy sau khi đã tải output và điền `manual_review.csv`. Notebook cũ bên dưới được giữ làm lần chạy embedding trước, không bị thay đổi.
+
 ## Notebook RAG trên Kaggle
 
 Đã chạy benchmark chung TF-IDF, BM25 và BGE-M3 với cùng Qwen trên 20 câu. Có 60 đáp án, chỉ số retrieval và nhận xét từng phương pháp. [Kết quả benchmark 08/11](results/rag_methods_2026-11-08/README.md)

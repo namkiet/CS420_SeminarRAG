@@ -1,5 +1,7 @@
 # RAG embedding trên Kaggle
 
+**Task 6 mới:** dùng [S07_Task6_RAG_Comparison.ipynb](S07_Task6_RAG_Comparison.ipynb) để so sánh đồng bộ không RAG / TF-IDF / BM25 / embedding. Xem [hướng dẫn Task 6](../TASK6.md). Notebook mới dùng thứ hạng đã lưu và sinh mới 80 đáp án; không cần chạy BGE-M3 lại. Nội dung bên dưới mô tả notebook embedding cũ và output lần trước.
+
 Mở **S07_RAG_Embedding_Kaggle.ipynb** bằng Kaggle → Code → New Notebook → File → Import Notebook. Add Input → Your Datasets → **S07 HCMUS RAG Corpus**. Chọn GPU T4/P100 trong Settings, bật Internet và Run All. Notebook đọc Dataset trong `/kaggle/input`, không cần API key. Cài các thư viện trước khi import; nếu chạy trong session đã import Transformers phiên bản khác, restart session trước.
 
 Notebook đã được tạo trong tài khoản Kaggle: [S07 RAG Embedding HCMUS](https://www.kaggle.com/code/tunlnh/s07-rag-embedding-hcmus/edit). Quyền xem phụ thuộc cài đặt của chủ notebook.

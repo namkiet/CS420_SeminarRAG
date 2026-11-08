@@ -1,0 +1,5 @@
+﻿mode,questions,fully_correct,accuracy,partial_rate,completeness_mean,unsupported_claim_rate,abstention_rate,citation_support_applicable,fully_supported_citation_rate,delta_accuracy_vs_baseline,corrected_vs_baseline,regressed_vs_baseline
+baseline,20,0,0.0,0.15,0.15,0.75,0.4,0,NA,0.0,0,0
+tfidf,20,10,0.5,0.25,1.25,0.4,0.0,20,0.0,0.5,10,0
+bm25,20,9,0.45,0.3,1.2,0.35,0.0,20,0.0,0.45,9,0
+embedding,20,10,0.5,0.3,1.3,0.3,0.0,20,0.0,0.5,10,0

@@ -52,6 +52,8 @@ See [`experiment/README.md`](experiment/README.md) for the prepared dataset.
 - [Run instructions and evaluation](experiment/notebooks/README.md): 20-question retrieval evaluation at k=1/3/5, RAG vs. no-RAG generation, and manual review outputs.
 - [Verified Kaggle run, 2026-11-05](experiment/results/kaggle_2026-11-05/README.md): retrieval metrics, 20 answer pairs, model/data revisions, and observed failure cases. Answer correctness still requires human review.
 
+**G2 Task 6 — controlled answer comparison:** [Kaggle notebook](experiment/notebooks/S07_Task6_RAG_Comparison.ipynb), [guide](experiment/TASK6.md) and [80-answer results/AI review](experiment/results/task6_4way/README.md). Same Qwen, prompts and generation settings across no RAG, TF-IDF RAG, BM25 RAG and embedding RAG. Preliminary AI review: TF-IDF/embedding 10/20 main-content correct, BM25 9/20, baseline 0/20; all 60 RAG answers lack valid citation IDs. Independent human review is pending.
+
 ## References
 - **Lewis, P. et al. (2020).** *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.* NeurIPS 2020. [Paper Link](https://papers.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html)
 - **Schneider, J. (2024).** *Explainable Generative AI (GenXAI): a survey, conceptualization, and research agenda.* Artificial Intelligence Review 57, 289. [DOI](https://doi.org/10.1007/s10462-024-10916-x)

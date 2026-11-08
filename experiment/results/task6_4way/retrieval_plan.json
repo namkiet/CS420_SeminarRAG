@@ -1,0 +1,545 @@
+{
+  "schema": 1,
+  "top_k": 5,
+  "data_sha256": {
+    "corpus": "c6650ef101275582e947e2f0829f6fe1155c43f329a99135a6ded01758af6aa4",
+    "questions": "7fc7e9fd28ab39a37147ba4fb3e6744ae2258054db0ee1f00a681e63c41034b2",
+    "sources": "a9629304f87e1b157f5f036cb72f423843cc0441ce31aff111dc5a7800211790"
+  },
+  "question_ids": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q09",
+    "Q10",
+    "Q11",
+    "Q12",
+    "Q13",
+    "Q14",
+    "Q15",
+    "Q16",
+    "Q17",
+    "Q18",
+    "Q19",
+    "Q20"
+  ],
+  "chunk_count": 162,
+  "rankings": {
+    "Q01": {
+      "tfidf": [
+        "D01_regulation_article_3_03",
+        "D04_regulation_article_2_04",
+        "D01_regulation_article_4_01",
+        "D01_regulation_article_7_01",
+        "D01_decision_article_2_01"
+      ],
+      "bm25": [
+        "D01_regulation_article_3_03",
+        "D04_regulation_article_2_04",
+        "D01_regulation_article_4_01",
+        "D01_regulation_article_7_01",
+        "D01_regulation_article_15_01"
+      ],
+      "embedding": [
+        "D01_regulation_article_3_03",
+        "D01_regulation_article_27_01",
+        "D01_regulation_article_3_02",
+        "D01_regulation_article_6_02",
+        "D01_regulation_article_18_02"
+      ]
+    },
+    "Q02": {
+      "tfidf": [
+        "D01_regulation_article_3_04",
+        "D03_decision_article_1_02",
+        "D01_regulation_article_7_01",
+        "D03_decision_article_2_01",
+        "D01_regulation_article_4_01"
+      ],
+      "bm25": [
+        "D01_regulation_article_3_04",
+        "D03_decision_article_1_02",
+        "D01_regulation_article_7_01",
+        "D01_regulation_article_13_02",
+        "D01_regulation_article_4_01"
+      ],
+      "embedding": [
+        "D01_regulation_article_3_04",
+        "D01_regulation_article_4_01",
+        "D03_appendix_section_1_08",
+        "D01_regulation_article_16_05",
+        "D03_appendix_section_1_04"
+      ]
+    },
+    "Q03": {
+      "tfidf": [
+        "D01_regulation_article_7_02",
+        "D01_regulation_article_7_01",
+        "D03_decision_article_1_02",
+        "D01_regulation_article_6_01",
+        "D01_regulation_article_8_02"
+      ],
+      "bm25": [
+        "D01_regulation_article_7_02",
+        "D04_regulation_article_7_01",
+        "D01_regulation_article_6_01",
+        "D04_regulation_article_8_02",
+        "D01_regulation_article_7_01"
+      ],
+      "embedding": [
+        "D01_regulation_article_7_02",
+        "D03_decision_article_1_02",
+        "D03_decision_article_1_01",
+        "D03_appendix_section_3_01",
+        "D04_regulation_article_2_01"
+      ]
+    },
+    "Q04": {
+      "tfidf": [
+        "D01_regulation_article_27_01",
+        "D04_decision_article_2_01",
+        "D04_regulation_article_14_01",
+        "D01_regulation_article_21_02",
+        "D01_regulation_article_21_01"
+      ],
+      "bm25": [
+        "D01_regulation_article_27_01",
+        "D01_regulation_article_21_02",
+        "D04_decision_article_2_01",
+        "D04_regulation_article_14_01",
+        "D01_regulation_article_5_01"
+      ],
+      "embedding": [
+        "D01_regulation_article_27_01",
+        "D01_regulation_article_21_01",
+        "D01_regulation_article_21_02",
+        "D01_regulation_article_18_03",
+        "D01_regulation_article_18_02"
+      ]
+    },
+    "Q05": {
+      "tfidf": [
+        "D01_regulation_article_19_02",
+        "D01_regulation_article_19_01",
+        "D01_regulation_article_19_03",
+        "D01_regulation_article_12_02",
+        "D01_regulation_article_21_02"
+      ],
+      "bm25": [
+        "D01_regulation_article_19_01",
+        "D01_regulation_article_19_02",
+        "D01_regulation_article_19_03",
+        "D01_regulation_article_12_02",
+        "D01_regulation_article_21_02"
+      ],
+      "embedding": [
+        "D01_regulation_article_19_01",
+        "D01_regulation_article_18_02",
+        "D01_regulation_article_23_01",
+        "D01_regulation_article_18_01",
+        "D01_regulation_article_19_02"
+      ]
+    },
+    "Q06": {
+      "tfidf": [
+        "D02_regulation_article_4_01",
+        "D02_appendix_section_5_08",
+        "D02_regulation_article_6_01",
+        "D02_amendment_2023_article_1_03",
+        "D02_appendix_section_4_02"
+      ],
+      "bm25": [
+        "D02_regulation_article_4_01",
+        "D02_amendment_2023_article_1_03",
+        "D02_regulation_article_6_01",
+        "D02_appendix_section_5_01",
+        "D02_appendix_section_5_09"
+      ],
+      "embedding": [
+        "D02_amendment_2023_article_1_03",
+        "D02_amendment_2023_article_1_04",
+        "D02_regulation_article_4_01",
+        "D02_appendix_section_2_01",
+        "D02_appendix_section_5_01"
+      ]
+    },
+    "Q07": {
+      "tfidf": [
+        "D02_regulation_article_6_01",
+        "D02_amendment_2023_article_1_03",
+        "D02_regulation_article_12_01",
+        "D02_regulation_article_11_01",
+        "D02_amendment_2023_article_1_02"
+      ],
+      "bm25": [
+        "D02_amendment_2023_article_1_03",
+        "D02_regulation_article_6_01",
+        "D02_regulation_article_11_01",
+        "D02_amendment_2023_article_1_02",
+        "D02_regulation_article_4_01"
+      ],
+      "embedding": [
+        "D02_amendment_2023_article_1_03",
+        "D02_amendment_2023_article_1_04",
+        "D02_regulation_article_8_01",
+        "D02_regulation_article_4_01",
+        "D02_appendix_section_1_01"
+      ]
+    },
+    "Q08": {
+      "tfidf": [
+        "D02_amendment_2023_article_1_03",
+        "D01_regulation_article_20_02",
+        "D02_regulation_article_8_01",
+        "D01_regulation_article_20_01",
+        "D01_regulation_article_7_01"
+      ],
+      "bm25": [
+        "D02_amendment_2023_article_1_03",
+        "D02_regulation_article_8_01",
+        "D01_regulation_article_20_01",
+        "D01_regulation_article_20_02",
+        "D01_regulation_article_3_03"
+      ],
+      "embedding": [
+        "D02_regulation_article_8_01",
+        "D02_amendment_2023_article_1_03",
+        "D02_amendment_2023_article_1_02",
+        "D01_regulation_article_20_01",
+        "D02_amendment_2023_article_1_01"
+      ]
+    },
+    "Q09": {
+      "tfidf": [
+        "D02_amendment_2023_article_1_03",
+        "D02_regulation_article_6_01",
+        "D02_appendix_section_5_08",
+        "D02_amendment_2023_article_1_02",
+        "D02_regulation_article_4_01"
+      ],
+      "bm25": [
+        "D02_amendment_2023_article_1_03",
+        "D02_regulation_article_6_01",
+        "D02_amendment_2023_article_1_02",
+        "D02_regulation_article_4_01",
+        "D02_appendix_section_5_04"
+      ],
+      "embedding": [
+        "D02_amendment_2023_article_1_03",
+        "D02_appendix_section_1_04",
+        "D02_amendment_2023_article_1_04",
+        "D02_regulation_article_4_01",
+        "D02_appendix_section_5_09"
+      ]
+    },
+    "Q10": {
+      "tfidf": [
+        "D02_regulation_article_9_01",
+        "D02_regulation_article_12_01",
+        "D02_amendment_2023_article_2_01",
+        "D02_regulation_article_10_01",
+        "D02_decision_article_2_01"
+      ],
+      "bm25": [
+        "D02_regulation_article_9_01",
+        "D02_regulation_article_12_01",
+        "D02_regulation_article_10_01",
+        "D02_amendment_2023_article_1_02",
+        "D01_regulation_article_19_03"
+      ],
+      "embedding": [
+        "D02_amendment_2023_article_2_01",
+        "D02_regulation_article_9_01",
+        "D02_regulation_article_13_01",
+        "D02_decision_article_2_01",
+        "D02_amendment_2023_article_1_02"
+      ]
+    },
+    "Q11": {
+      "tfidf": [
+        "D03_decision_article_1_02",
+        "D03_decision_article_1_01",
+        "D03_decision_article_2_01",
+        "D01_regulation_article_16_01",
+        "D03_appendix_section_1_03"
+      ],
+      "bm25": [
+        "D03_decision_article_1_02",
+        "D03_decision_article_1_01",
+        "D03_decision_article_2_01",
+        "D01_regulation_article_16_01",
+        "D03_appendix_section_2_01"
+      ],
+      "embedding": [
+        "D03_decision_article_1_02",
+        "D03_decision_article_1_01",
+        "D03_decision_article_2_01",
+        "D01_regulation_article_16_01",
+        "D03_appendix_section_1_05"
+      ]
+    },
+    "Q12": {
+      "tfidf": [
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_08",
+        "D03_appendix_section_1_13",
+        "D03_appendix_section_1_15"
+      ],
+      "bm25": [
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_08",
+        "D03_appendix_section_1_13",
+        "D03_appendix_section_1_15"
+      ],
+      "embedding": [
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_07",
+        "D03_appendix_section_1_06",
+        "D03_appendix_section_1_05",
+        "D03_appendix_section_1_04"
+      ]
+    },
+    "Q13": {
+      "tfidf": [
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_13",
+        "D03_appendix_section_1_08",
+        "D03_appendix_section_1_15"
+      ],
+      "bm25": [
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_13",
+        "D03_appendix_section_1_15",
+        "D03_appendix_section_1_11",
+        "D03_appendix_section_1_02"
+      ],
+      "embedding": [
+        "D03_appendix_section_1_10",
+        "D03_appendix_section_1_11",
+        "D03_appendix_section_1_06",
+        "D03_appendix_section_1_07",
+        "D03_appendix_section_1_04"
+      ]
+    },
+    "Q14": {
+      "tfidf": [
+        "D03_appendix_section_1_03",
+        "D03_appendix_section_1_09",
+        "D03_appendix_section_1_14",
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_08"
+      ],
+      "bm25": [
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_08",
+        "D03_appendix_section_1_13",
+        "D03_appendix_section_1_02",
+        "D03_appendix_section_1_15"
+      ],
+      "embedding": [
+        "D03_decision_article_1_01",
+        "D03_appendix_section_1_02",
+        "D03_appendix_section_1_07",
+        "D03_appendix_section_1_05",
+        "D03_decision_article_2_01"
+      ]
+    },
+    "Q15": {
+      "tfidf": [
+        "D03_appendix_section_3_01",
+        "D04_regulation_article_2_04",
+        "D04_regulation_article_3_01",
+        "D03_appendix_section_1_01",
+        "D03_appendix_section_1_03"
+      ],
+      "bm25": [
+        "D03_appendix_section_3_01",
+        "D04_regulation_article_2_04",
+        "D04_regulation_article_7_01",
+        "D04_regulation_article_3_01",
+        "D03_appendix_section_1_01"
+      ],
+      "embedding": [
+        "D03_appendix_section_3_01",
+        "D04_regulation_article_3_01",
+        "D03_decision_article_1_01",
+        "D04_regulation_article_2_04",
+        "D03_decision_article_2_01"
+      ]
+    },
+    "Q16": {
+      "tfidf": [
+        "D04_decision_article_2_01",
+        "D04_regulation_article_8_01",
+        "D03_appendix_section_3_01",
+        "D01_regulation_article_7_02",
+        "D04_decision_article_1_02"
+      ],
+      "bm25": [
+        "D04_regulation_article_8_01",
+        "D04_decision_article_2_01",
+        "D03_appendix_section_3_01",
+        "D01_regulation_article_7_02",
+        "D04_regulation_article_10_01"
+      ],
+      "embedding": [
+        "D04_regulation_article_8_01",
+        "D04_decision_article_2_01",
+        "D04_regulation_article_7_01",
+        "D04_regulation_article_2_03",
+        "D04_regulation_article_4_01"
+      ]
+    },
+    "Q17": {
+      "tfidf": [
+        "D04_regulation_article_12_01",
+        "D04_regulation_article_7_02",
+        "D04_regulation_article_9_01",
+        "D04_regulation_article_8_01",
+        "D04_regulation_article_11_01"
+      ],
+      "bm25": [
+        "D04_regulation_article_9_01",
+        "D04_regulation_article_12_01",
+        "D04_regulation_article_7_02",
+        "D03_appendix_section_3_01",
+        "D04_regulation_article_11_01"
+      ],
+      "embedding": [
+        "D04_regulation_article_7_01",
+        "D04_regulation_article_2_04",
+        "D04_regulation_article_9_01",
+        "D04_regulation_article_2_01",
+        "D04_regulation_article_7_02"
+      ]
+    },
+    "Q18": {
+      "tfidf": [
+        "D04_regulation_article_6_01",
+        "D04_regulation_article_9_01",
+        "D04_regulation_article_2_01",
+        "D04_regulation_article_7_02",
+        "D04_regulation_article_3_01"
+      ],
+      "bm25": [
+        "D04_regulation_article_6_01",
+        "D04_regulation_article_9_01",
+        "D04_regulation_article_2_01",
+        "D04_regulation_article_7_02",
+        "D04_regulation_article_10_01"
+      ],
+      "embedding": [
+        "D04_regulation_article_6_01",
+        "D04_regulation_article_4_01",
+        "D04_regulation_article_10_01",
+        "D04_decision_article_1_01",
+        "D04_regulation_article_8_01"
+      ]
+    },
+    "Q19": {
+      "tfidf": [
+        "D04_regulation_article_11_01",
+        "D04_decision_article_3_01",
+        "D04_regulation_article_12_01",
+        "D01_regulation_article_18_03",
+        "D04_regulation_article_10_01"
+      ],
+      "bm25": [
+        "D04_regulation_article_11_01",
+        "D01_regulation_article_18_03",
+        "D04_regulation_article_10_01",
+        "D04_regulation_article_12_01",
+        "D04_regulation_article_7_01"
+      ],
+      "embedding": [
+        "D04_regulation_article_11_01",
+        "D04_regulation_article_10_01",
+        "D04_regulation_article_8_01",
+        "D04_decision_article_3_01",
+        "D04_decision_article_1_01"
+      ]
+    },
+    "Q20": {
+      "tfidf": [
+        "D04_regulation_article_12_01",
+        "D04_regulation_article_7_02",
+        "D04_regulation_article_11_01",
+        "D04_regulation_article_9_01",
+        "D04_regulation_article_8_01"
+      ],
+      "bm25": [
+        "D04_regulation_article_12_01",
+        "D04_regulation_article_7_02",
+        "D04_regulation_article_11_01",
+        "D04_regulation_article_9_01",
+        "D04_regulation_article_8_01"
+      ],
+      "embedding": [
+        "D04_regulation_article_12_01",
+        "D04_regulation_article_7_02",
+        "D04_regulation_article_8_01",
+        "D04_regulation_article_10_01",
+        "D04_regulation_article_7_01"
+      ]
+    }
+  },
+  "provenance": {
+    "tfidf": {
+      "file": "results\\tfidf_800\\evaluation_details.json",
+      "sha256": "87eaa492a4f7afa69538704a96013d31eab3e07ac855a8339524e7f8ce48520e",
+      "method": "tfidf_cosine",
+      "params": {
+        "analyzer": "word",
+        "ngram_range": [
+          1,
+          2
+        ],
+        "lowercase": true,
+        "strip_accents": null,
+        "token_pattern": "(?u)\\b\\w+\\b",
+        "stop_words": null,
+        "min_df": 1,
+        "max_df": 1.0,
+        "norm": "l2",
+        "smooth_idf": true,
+        "sublinear_tf": true
+      }
+    },
+    "bm25": {
+      "file": "results\\bm25_800\\evaluation_details.json",
+      "sha256": "5c9d6caa1b1b3f7311b32ef86941d9a93923270f3a8f0ba9b2fe0683bf7f39d2",
+      "method": "bm25_lucene",
+      "params": {
+        "analyzer": "word",
+        "ngram_range": [
+          1,
+          2
+        ],
+        "lowercase": true,
+        "strip_accents": null,
+        "token_pattern": "(?u)\\b\\w+\\b",
+        "stop_words": null,
+        "k1": 1.5,
+        "b": 0.75,
+        "idf_formula": "ln(1 + (N - df + 0.5) / (df + 0.5))",
+        "doc_len_unit": "ngram_tokens_in_range"
+      }
+    },
+    "embedding": {
+      "file": "results/kaggle_2026-11-05/answers_comparison.json",
+      "sha256": "a1c6d90cfe5bf0942d075426fd743dd90b431cd54e3106900f61386c03b0582a",
+      "run_manifest_sha256": "8215192437ed144eb79547dc71e6ddd15affd26d42881739c211856eebce28bb",
+      "model": "BAAI/bge-m3",
+      "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "method": "saved original top-5 context_ids; no omissions; old generated answers excluded"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+﻿mode,questions,mean_input_tokens,mean_output_tokens,mean_generation_seconds,truncated_answers,answers_with_valid_citation_id,answers_with_unknown_citation_id
+baseline,20,236.05,89.45,3.335815916400006,0,0,0
+tfidf,20,2748.9,86.9,6.800671109800004,0,0,0
+bm25,20,3013.8,95.7,7.857124418099997,0,0,0
+embedding,20,3204.9,94.05,8.129997936249998,0,0,0
