@@ -1,0 +1,379 @@
+% !TeX program = xelatex
+% UTF-8. Compile twice from this directory:
+% xelatex -interaction=nonstopmode -halt-on-error S07_Bao_Cao_RAG_HCMUS.tex
+% The figure and equations are native LaTeX; no external assets are required.
+\documentclass[12pt,a4paper]{article}
+\usepackage[top=2.05cm,bottom=2.05cm,left=2.2cm,right=2.2cm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{\setsansfont{TeX Gyre Heros}}
+\usepackage{amsmath,amssymb}
+\usepackage{array,booktabs,tabularx}
+\usepackage{float,caption,needspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[unicode,hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Đánh giá truy hồi và độ tin cậy của RAG trong hỏi đáp quy định đào tạo},
+  pdfauthor={Trịnh Võ Nam Kiệt, Tuấn Lĩnh, Trần Đăng Lê Huy},
+  pdfsubject={Nghiên cứu thực nghiệm trên dữ liệu HCMUS}
+}
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+\renewcommand{\refname}{Tài liệu tham khảo}
+\captionsetup{font=small,labelfont=bf,labelsep=period,skip=6pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\small CS420 \textperiodcentered{} S07\quad /\quad \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.17}
+\linespread{1.10}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\newcommand{\chunkid}[1]{{\footnotesize\nolinkurl{#1}}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Đánh giá truy hồi và độ tin cậy của RAG\\[3pt]
+trong hỏi đáp quy định đào tạo\par}
+\vspace{6pt}
+{\itshape Nghiên cứu thực nghiệm trên dữ liệu HCMUS\par}
+\vspace{7pt}
+Trịnh Võ Nam Kiệt \textperiodcentered{} Tuấn Lĩnh \textperiodcentered{} Trần Đăng Lê Huy\par
+Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM
+\end{center}
+
+
+\section*{Tóm tắt}
+
+Retrieval-Augmented Generation (RAG) cung cấp tài liệu ngoài cho mô hình ngôn ngữ nhằm hỗ trợ các tác vụ đòi hỏi tri thức có căn cứ. Bài báo đánh giá mối quan hệ giữa độ bao phủ bằng chứng và độ tin cậy của câu trả lời trên bốn văn bản đào tạo của HCMUS. Tập thực nghiệm gồm 162 đoạn và 20 câu hỏi với 30 nhóm bằng chứng. Ba bộ truy hồi TF-IDF, BM25 và BGE-M3 được so sánh tại k = 1, 3, 5. BM25 đạt Evidence Recall@1 cao nhất, 80,00\%, trong khi BGE-M3 đạt Evidence Recall@5 cao nhất, 89,17\%. Thí nghiệm sinh gồm 80 đáp án từ cùng Qwen2.5-1.5B-Instruct, với một cấu hình không truy hồi và ba cấu hình RAG. Theo chấm GPT sơ bộ, tỷ lệ đúng nội dung chính đạt 45–50\% với RAG và 0\% ở cấu hình đối chứng. Cả 60 đáp án RAG đều thiếu mã trích dẫn hợp lệ. Phân tích trường hợp ghi nhận lỗi chọn điều kiện và đọc bảng ngay khi bằng chứng phù hợp đã có trong ngữ cảnh. Các quan sát cho thấy cung cấp tài liệu có thể cải thiện chất lượng đáp án, đồng thời cần thêm cơ chế kiểm chứng kết luận và nguồn. Phạm vi suy luận bị giới hạn bởi tập câu hỏi nhỏ và tình trạng xác minh nhãn đánh giá.
+
+\textbf{Từ khóa} \textperiodcentered{} RAG, truy hồi thông tin, hallucination, quy chế đào tạo, trích dẫn.
+
+\section{Giới thiệu}
+
+Hỏi đáp quy định đào tạo đòi hỏi đồng thời tính chính xác của nội dung và khả năng xác định văn bản áp dụng. Một kết luận về điều kiện tốt nghiệp hoặc học phí phụ thuộc vào khóa tuyển, chương trình, thời điểm và các ngoại lệ. RAG hỗ trợ yêu cầu này bằng cách kết hợp bộ nhớ tham số của mô hình sinh với tài liệu truy hồi ở thời điểm suy luận \cite{ref1}. Tuy nhiên, bằng chứng có thể bị bỏ sót, nằm cạnh thông tin gây nhiễu hoặc được diễn giải sai. Câu hỏi nghiên cứu là liệu cung cấp tài liệu ngoài có loại bỏ các khẳng định sai hoặc thiếu căn cứ trong miền quy định đào tạo hay không.
+
+Nghiên cứu khảo sát ba khía cạnh. Thứ nhất là ảnh hưởng của phương pháp truy hồi và giá trị k đến độ bao phủ bằng chứng. Thứ hai là chất lượng câu trả lời khi giữ cố định mô hình sinh và thay đổi ngữ cảnh cung cấp. Thứ ba là vị trí phát sinh lỗi qua đối chiếu câu hỏi, các đoạn truy hồi và đáp án. Đóng góp thực nghiệm gồm so sánh ba bộ truy hồi trên cùng nhãn bằng chứng, đánh giá bốn cấu hình sinh và phân tích năm trường hợp lỗi có thể truy vết. Các kết quả được diễn giải trong phạm vi bộ văn bản và câu hỏi của nghiên cứu.
+
+\section{Cơ sở lý thuyết và nghiên cứu liên quan}
+
+\subsection{Bộ nhớ tham số và bộ nhớ ngoài}
+
+Bộ nhớ tham số lưu thông tin trong trọng số được học của mô hình. Bộ nhớ ngoài cung cấp các tài liệu có thể truy cập khi suy luận. Trong RAG, bộ truy hồi chọn các đoạn liên quan đến câu hỏi, sau đó mô hình sinh sử dụng câu hỏi cùng các đoạn này để tạo đáp án. Lưu định danh các đoạn đã cung cấp cho phép truy vết căn cứ của một lần suy luận. \cite{ref1}
+
+Fine-tuning cập nhật trọng số từ dữ liệu huấn luyện bổ sung, qua đó điều chỉnh hành vi hoặc tri thức của mô hình. Ghép toàn bộ tài liệu vào đầu vào cung cấp trực tiếp bộ nhớ ngoài, với chi phí xử lý phụ thuộc vào tổng số token. RAG bổ sung bước chọn đoạn trước khi sinh để giới hạn ngữ cảnh đầu vào. Cách tiếp cận này cho phép cập nhật chỉ mục khi văn bản thay đổi, nhưng chất lượng đầu ra phụ thuộc vào việc bằng chứng cần thiết có được truy hồi hay không.
+
+\subsection{Kiến trúc trong nghiên cứu của Lewis và cộng sự}
+
+Lewis và cộng sự \cite{ref1} nghiên cứu cách phối hợp bộ nhớ tham số của mô hình sinh với một chỉ mục đoạn Wikipedia. Bộ truy hồi dày DPR mã hóa truy vấn và đoạn để tìm ứng viên theo tích vô hướng. Generator BART sinh đầu ra có điều kiện theo truy vấn và đoạn. Tài liệu được xem là biến ẩn. RAG-Sequence lấy tổng có trọng số ở cấp chuỗi, còn RAG-Token lấy tổng ở từng bước token.
+
+Trên Natural Questions, Bảng 1 của bài báo ghi điểm Exact Match 44,5 cho RAG-Sequence, 44,1 cho RAG-Token và 36,6 cho baseline T5-11B+SSM chỉ dùng bộ nhớ tham số. Trên WebQuestions, RAG-Token đạt 45,5 và RAG-Sequence đạt 45,2, cho thấy thứ tự có thể đổi theo bộ câu hỏi. Các tác giả cũng quan sát ít lỗi thực tế hơn BART trong phân tích định tính ở bài toán sinh đáp án MS MARCO \cite{ref1}. Thí nghiệm HCMUS dùng Qwen và ghép các đoạn top-k vào cùng một prompt để khảo sát văn bản quy chế \cite{ref6,ref11,ref12}.
+
+\subsection{Khả năng xác minh của câu trả lời}
+
+Schneider \cite{ref2} thảo luận các yêu cầu về giải thích trong AI sinh, trong đó khả năng xác minh hỗ trợ đối chiếu kết quả với căn cứ. Nghiên cứu này vận dụng định hướng đó qua ba thành phần đánh giá. Độ bao phủ truy hồi đo khả năng tìm được bằng chứng. Độ đúng nội dung xét kết luận và điều kiện áp dụng. Khả năng truy vết nguồn xét mã trích dẫn và mức hỗ trợ của đoạn được dẫn. Ba thành phần được đo riêng để phân tích các lỗi ở những bước khác nhau.
+
+Một đáp án học phí có thể nêu đúng số tiền nhưng gán giá trị cho sai cột hoặc sai chương trình. Tương tự, mã nguồn hợp lệ về định dạng vẫn có thể trỏ đến đoạn không hỗ trợ kết luận. Do đó, kiểm chứng cần xét quan hệ giữa mệnh đề, bằng chứng và phạm vi áp dụng. Việc lưu đầu vào cùng đáp án tạo cơ sở cho phân tích lỗi ở cấp trường hợp.
+
+\section{Mô hình xác suất và ví dụ số}
+
+\subsection{Hai cách biên hóa tài liệu}
+
+Gọi x là chuỗi token câu hỏi, y = (y\textsubscript{1}, …, y\textsubscript{T}) là đáp án dài T token và Z là kho đoạn. Z\textsubscript{k}(x) gồm tối đa k đoạn có điểm truy hồi cao nhất. Với i \ensuremath{\in} \{1, …, T\}, y\textsubscript{i} là token thứ i và \(y_{<i}\) là tiền tố đứng trước nó. \ensuremath{\eta} và \ensuremath{\theta} lần lượt là tham số bộ truy hồi và mô hình sinh. p\ensuremath{\eta}(z | x) là xác suất chọn đoạn z, còn p\ensuremath{\theta}(y\textsubscript{i} | x, z, \(y_{<i}\)) là xác suất token có điều kiện. Các xác suất thuộc [0, 1], không có đơn vị. k và T là số nguyên, với 1 \ensuremath{\leq} k \ensuremath{\leq} |Z| và T \ensuremath{\geq} 1. \cite{ref1}
+
+\textbf{RAG-Sequence.} Với mỗi đoạn, tính xác suất cả chuỗi bằng tích các xác suất token có điều kiện. Sau đó cộng các xác suất chuỗi theo trọng số retriever. Cùng một z được giữ trong toàn bộ tích của một hạng tử.
+
+\begin{equation}
+\label{eq:rag-sequence}
+p_{\mathrm{Seq}}(y\mid x) \approx
+\sum_{z\in Z_k(x)} p_\eta(z\mid x)
+\prod_{i=1}^{T}p_\theta(y_i\mid x,z,y_{<i}).
+\end{equation}
+
+\textbf{RAG-Token.} Ở từng bước i, lấy tổng xác suất token theo các đoạn và trọng số retriever. Nhân các tổng theo thứ tự token để có xác suất chuỗi. Mỗi bước có thể dựa nhiều hơn vào một đoạn khác.
+
+\begin{equation}
+\label{eq:rag-token}
+p_{\mathrm{Tok}}(y\mid x) \approx
+\prod_{i=1}^{T}\left[
+\sum_{z\in Z_k(x)}p_\eta(z\mid x)
+p_\theta(y_i\mid x,z,y_{<i})\right].
+\end{equation}
+
+Các công thức dùng top-k để xấp xỉ biên hóa trên toàn kho đoạn. Điều kiện theo tiền tố thể hiện mô hình tự hồi quy. Tổng khối lượng xác suất của tập top-k có thể nhỏ hơn 1 nếu trọng số được định nghĩa trên toàn kho. Ví dụ dưới giả định hai đoạn giữ toàn bộ khối lượng. Điểm cosine và BM25 trong benchmark dùng để xếp hạng. Chúng được lưu dưới dạng score, còn xác suất ở ví dụ số được giả định riêng.
+
+\subsection{Ví dụ số hai đoạn và hai token}
+
+Xét một câu hỏi x và một đáp án ứng viên y = (a, b). Bảng 1 đặt p\ensuremath{\eta}(z\textsubscript{1} | x) = 0,70 và p\ensuremath{\eta}(z\textsubscript{2} | x) = 0,30. Xác suất sinh b trong cột cuối được tính khi a đã có trong tiền tố. Các số là giả định để minh họa hai phép tính từ \cite{ref1}.
+
+\begin{table}[H]
+\centering
+\caption{Ví dụ hai đoạn và hai token}
+\label{tab:1}
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.560\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.200\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=1.080\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=1.160\hsize\linewidth=\hsize\centering\arraybackslash}X}
+\toprule
+\textbf{Đoạn} & \textbf{Trọng số retriever} & \textbf{p\ensuremath{\theta}(a \ensuremath{\mid} x, z)} & \textbf{p\ensuremath{\theta}(b \ensuremath{\mid} x, z, a)} \\
+\midrule
+z\textsubscript{1} & 0,70 & 0,80 & 0,90 \\
+z\textsubscript{2} & 0,30 & 0,40 & 0,20 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Với RAG-Sequence, hai xác suất chuỗi có điều kiện lần lượt là 0,80 \ensuremath{\times} 0,90 = 0,72 và 0,40 \ensuremath{\times} 0,20 = 0,08. Tổng có trọng số là 0,70 \ensuremath{\times} 0,72 + 0,30 \ensuremath{\times} 0,08 = \textbf{0,5280}.
+
+Với RAG-Token, xác suất hỗn hợp ở bước a là 0,70 \ensuremath{\times} 0,80 + 0,30 \ensuremath{\times} 0,40 = 0,68. Ở bước b là 0,70 \ensuremath{\times} 0,90 + 0,30 \ensuremath{\times} 0,20 = 0,69. Xác suất chuỗi là 0,68 \ensuremath{\times} 0,69 = \textbf{0,4692}. Khác biệt đến từ vị trí phép tổng so với phép tích. Hai giá trị mô tả cùng một chuỗi ứng viên dưới hai giả định mô hình.
+
+\section{Phương pháp thực nghiệm}
+
+\subsection{Kho tài liệu và câu hỏi}
+
+Kho dữ liệu gồm bốn văn bản công khai về đào tạo, rèn luyện, học phí và ngoại ngữ của HCMUS. Bảng 2 trình bày số trang của từng bản PDF. Mỗi nguồn được lưu cùng định danh quyết định, phiên bản, vị trí trang, phạm vi áp dụng và mã băm SHA-256. D02 bao gồm bản năm 2020 và phần sửa đổi năm 2023. Siêu dữ liệu về đối tượng áp dụng được gắn với đoạn để hỗ trợ phân biệt các quy định có điều kiện khác nhau. \cite{ref7,ref8,ref9,ref10}
+
+\begin{table}[H]
+\centering
+\caption{Bốn văn bản trong kho thực nghiệm}
+\label{tab:2}
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.360\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=2.280\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=0.360\hsize\linewidth=\hsize\centering\arraybackslash}X}
+\toprule
+\textbf{Mã} & \textbf{Văn bản trong corpus} & \textbf{Trang} \\
+\midrule
+D01 & Quy chế đào tạo đại học năm 2026, QĐ 3087 \cite{ref7} & 21 \\
+D02 & Quy chế rèn luyện năm 2020 và sửa đổi năm 2023 \cite{ref8} & 16 \\
+D03 & Định mức học phí 2026–2027, QĐ 3317 \cite{ref9} & 5 \\
+D04 & Quy định học ngoại ngữ và chuẩn đầu ra, QĐ 2464 \cite{ref10} & 9 \\
+Tổng & Snapshot bốn tài liệu & 51 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Văn bản được tổ chức thành 80 điều hoặc mục cha, sau đó chia thành 162 đoạn với trần 800 token theo cl100k\_base, kể cả ngữ cảnh lặp. Chú giải bảng học phí được đưa vào các đoạn liên quan để bảo toàn ý nghĩa của cột. Tập đánh giá gồm 20 câu hỏi và 30 nhóm bằng chứng. Mỗi nhóm gắn với trích đoạn tham chiếu, có thể ánh xạ đến nhiều đoạn chứa cùng bằng chứng. Câu hỏi và đáp án chuẩn được lưu riêng khỏi chỉ mục truy hồi. \cite{ref11,ref12}
+
+\subsection{Pipeline và các điểm phát sinh lỗi}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  stage/.style={draw=black!45,fill=black!3,text width=4.25cm,
+    minimum height=1.12cm,align=center,font=\small,inner sep=4pt},
+  flow/.style={-{Stealth[length=2.5mm]},thick,draw=black!65}
+]
+\node[stage] (ingest) at (0,0) {\textbf{1. Tiếp nhận}\\PDF và phiên bản};
+\node[stage] (chunk) at (5.5,0) {\textbf{2. Chia đoạn}\\Điều, mục và siêu dữ liệu};
+\node[stage] (index) at (11,0) {\textbf{3. Lập chỉ mục}\\Từ khóa hoặc vector};
+\node[stage] (retrieve) at (11,-1.9) {\textbf{4. Truy hồi}\\Chọn các đoạn top-$k$};
+\node[stage] (prompt) at (5.5,-1.9) {\textbf{5. Ghép đầu vào}\\Câu hỏi và đoạn nguồn};
+\node[stage] (generate) at (0,-1.9) {\textbf{6. Sinh đáp án}\\Qwen và nhật ký kết quả};
+\draw[flow] (ingest) -- (chunk);
+\draw[flow] (chunk) -- (index);
+\draw[flow] (index) -- (retrieve);
+\draw[flow] (retrieve) -- (prompt);
+\draw[flow] (prompt) -- (generate);
+\end{tikzpicture}
+\caption{Nhóm tự vẽ, phỏng theo kiến trúc RAG và pipeline triển khai \cite{ref1,ref11,ref12}.}
+\label{fig:pipeline}
+\end{figure}
+
+Ở bước tiếp nhận, OCR có thể làm sai văn bản hoặc cấu trúc bảng. Chia đoạn có thể tách điều kiện khỏi quy tắc, còn chỉ mục sai phiên bản có thể đưa vào quy định hết hiệu lực. Truy hồi có thể bỏ sót bằng chứng hoặc ưu tiên đoạn nhiễu. Tạo đầu vào có thể mất điều kiện khi rút ngắn ngữ cảnh. Mô hình sinh có thể diễn giải sai bằng chứng đã nhận. Nhật ký lưu định danh đoạn, ngữ cảnh và đáp án để xác định bước phát sinh lỗi.
+
+\subsection{Ba cấu hình truy hồi}
+
+TF-IDF biểu diễn đoạn bằng unigram và bigram, sau đó xếp hạng theo cosine \cite{ref3}. BM25 dùng phân đoạn từ tương ứng và biến thể IDF không âm, với k\textsubscript{1} = 1,5 và b = 0,75 để điều chỉnh bão hòa tần suất và chuẩn hóa độ dài \cite{ref4,ref11}. BGE-M3 mã hóa câu hỏi và đoạn bằng nhánh dense, chuẩn hóa L2 rồi xếp hạng theo cosine \cite{ref5}. Ba phương pháp dùng cùng kho đoạn, câu hỏi và quy tắc ánh xạ bằng chứng.
+
+\section{Thiết kế đánh giá}
+
+\subsection{Phép đo và điều kiện sinh}
+
+Với một câu q có m nhóm bằng chứng và tìm được r nhóm trong top-k, Evidence Recall@k(q) = r/m. Hit@k(q) = 1 nếu r \ensuremath{\geq} 1, còn All Evidence Hit@k(q) = 1 nếu r = m. Lấy trung bình theo 20 câu để mỗi câu có trọng số ngang nhau. MRR@k dùng nghịch đảo hạng của hit đầu tiên, gán 0 nếu top-k hụt. Nhãn gộp phần thân và chú giải lặp khi đoạn trích đối chiếu được vị trí trên trang nguồn. \cite{ref11}
+
+Thí nghiệm sinh câu trả lời gồm 20 câu hỏi \ensuremath{\times} 4 cấu hình. Mọi nhánh dùng cùng revision Qwen2.5-1.5B-Instruct, system prompt, greedy decoding, FP32 + SDPA và trần 768 token sinh. Baseline nhận câu hỏi và mục NGUỒN ghi “Không có tài liệu được cung cấp.” Ba nhánh RAG nhận cùng câu hỏi và thêm top-5 đoạn. System prompt yêu cầu dựa vào nguồn khi có nguồn, còn khi thiếu nguồn thì dùng kiến thức sẵn có và nêu rõ nếu không biết. Log lưu toàn bộ prompt, ID context và đáp án. Qwen sinh một đáp án từ prompt đã ghép. Công thức ở Mục 3 giải thích mô hình của Lewis và cộng sự \cite{ref1,ref6,ref12}.
+
+\subsection{Minh họa truy vết bằng chứng}
+
+\textbf{Câu hỏi.} Theo Quy chế 2026, học phần tiên quyết khác học phần học trước như thế nào?
+
+\begin{table}[H]
+\centering
+\caption{Năm đoạn được BGE-M3 truy hồi cho Q01}
+\label{tab:3}
+\footnotesize
+\begin{tabularx}{\textwidth}{>{\hsize=0.360\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=1.260\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.380\hsize\linewidth=\hsize\raggedright\arraybackslash}X}
+\toprule
+\textbf{Hạng embedding} & \textbf{Chunk ID} & \textbf{Nội dung dùng để đối chiếu} \\
+\midrule
+1 & \chunkid{D01_regulation_article_3_03} & Điều 3 khoản 3(c), trang PDF 4, có cả hai định nghĩa \\
+2 & \chunkid{D01_regulation_article_27_01} & Điều khoản chuyển tiếp \\
+3 & \chunkid{D01_regulation_article_3_02} & Mảnh khác thuộc Điều 3 \\
+4 & \chunkid{D01_regulation_article_6_02} & Mảnh thuộc Điều 6 \\
+5 & \chunkid{D01_regulation_article_18_02} & Mảnh thuộc Điều 18 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Bảng 3 ghi thứ tự các đoạn trong log của nhánh BGE-M3 \cite{ref12}. Prompt đặt các đoạn dưới nhãn NGUỒN, kèm ID, tên văn bản, vị trí, phạm vi và URL. Câu hỏi đặt sau context. System prompt yêu cầu dùng nguồn, giữ điều kiện áp dụng và báo thiếu căn cứ khi cần. Đoạn hạng 1 chứa cả yêu cầu học và thi đạt đối với học phần tiên quyết lẫn yêu cầu hoàn thành quá trình học tập đối với học phần học trước. \cite{ref7,ref12}
+
+\textbf{Đáp án minh họa đã gắn nguồn.} Để được đăng ký và theo học học phần A, sinh viên phải học và thi đạt học phần tiên quyết. Với học phần học trước, điều khoản yêu cầu hoàn thành quá trình học tập trước khi đăng ký và theo học A. [\chunkid{D01_regulation_article_3_03}] \cite{ref7}
+
+Đây là diễn giải từ đáp án embedding thật. Mô hình viết “phải học và thi đạt” cho học phần tiên quyết và “phải hoàn thành quá trình học tập” cho học phần học trước. Mã trích dẫn được bổ sung khi đối chiếu Điều 3 khoản 3(c). Baseline nói chung về học trước và bỏ khác biệt thi đạt. \cite{ref12}
+
+\subsection{Đánh giá chất lượng câu trả lời}
+
+Đơn vị đánh giá là một cặp câu hỏi và cấu hình sinh. Mỗi đáp án được đối chiếu với đáp án chuẩn, các ý cần có và điều khoản liên quan. Thang đúng nội dung gồm ba mức. Mức 2 tương ứng với đúng nội dung chính, mức 1 tương ứng với đúng một phần hoặc thiếu ý, và mức 0 tương ứng với sai kết luận trọng yếu hoặc chưa cung cấp đáp án sử dụng được. Tỷ lệ đúng nội dung chính được tính bằng số đáp án đạt mức 2 chia cho 20 câu của từng cấu hình. \cite{ref12}
+
+Khẳng định sai hoặc ngoài nguồn được ghi nhận bằng một nhãn riêng ở cấp đáp án. Phép kiểm tra xét cả nội dung quy định và thông tin dùng để dẫn nguồn. Chẳng hạn, đáp án Q19 của TF-IDF nêu đúng nội dung được hỏi nhưng thêm hậu tố quyết định sai. Trường hợp này minh họa việc độ đúng nội dung chính và độ chính xác của thông tin nguồn phản ánh các thuộc tính khác nhau. Các nhãn được tổng hợp riêng trong Bảng 5 để giữ được khác biệt đó. \cite{ref12}
+
+Trích dẫn được đánh giá theo tính hợp lệ của mã đoạn và quan hệ hỗ trợ giữa đoạn được dẫn với kết luận. Mã phải tồn tại trong ngữ cảnh đầu vào. Việc có mã hợp lệ là điều kiện cần cho kiểm tra hỗ trợ theo đoạn. Toàn bộ 60 đáp án RAG thiếu mã hợp lệ nên kết quả trích dẫn được báo cáo ở bước kiểm tra này. Với cấu hình không nhận tài liệu, chỉ số trích dẫn theo mã đoạn được xem là không áp dụng. \cite{ref12}
+
+Nhãn nội dung được tạo bằng GPT trong lượt đánh giá ngày 08/11/2026. Người đánh giá AI nhận biết cấu hình sinh và kết quả được xem là sơ bộ. Hồ sơ rà soát ghi nhận đã kiểm tra dữ liệu và các bảng tổng hợp, nhưng chưa cung cấp nhãn chấm độc lập bởi người cho từng đáp án. Định danh cụ thể của mô hình GPT cũng chưa được lưu. Các yếu tố này giới hạn khả năng tái lập phép chấm và độ chắc chắn của so sánh chất lượng sinh. \cite{ref12,ref15}
+
+\subsection{Khả năng tái lập và phạm vi so sánh}
+
+Bảng truy hồi sử dụng bản kết quả tại commit 5771d80. So sánh chất lượng sinh sử dụng 80 đáp án tại commit 3bb5f3a, với cùng mô hình, chỉ dẫn hệ thống và tham số suy luận giữa bốn cấu hình. Hồ sơ lưu câu hỏi, đáp án chuẩn, danh sách đoạn, đầu vào thực tế, đầu ra và cấu hình chạy. Các bảng có thể được tổng hợp lại từ dữ liệu đã lưu. Phân tích lỗi sử dụng cùng lượt sinh 768 token để đối chiếu khả năng truy hồi với hành vi tạo đáp án. \cite{ref11,ref12}
+
+\section{Kết quả thực nghiệm}
+
+\textbf{Hiệu quả truy hồi.} Bảng 4 trình bày kết quả trên 20 câu hỏi với 30 nhóm bằng chứng. Evidence Recall@k là trung bình tỷ lệ nhóm bằng chứng tìm thấy theo câu hỏi. Hit@5 ghi nhận ít nhất một nhóm, còn cột đủ nguồn yêu cầu bao phủ toàn bộ nhóm của câu. MRR@5 phản ánh thứ hạng của bằng chứng đầu tiên. Cùng quy tắc ánh xạ phần thân và chú giải lặp được áp dụng cho cả ba phương pháp. \cite{ref11}
+
+\begin{table}[H]
+\centering
+\caption{Kết quả truy hồi trên 20 câu hỏi \cite{ref11}}
+\label{tab:4}
+\footnotesize
+\begin{tabularx}{\textwidth}{>{\hsize=1.120\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.190\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=0.910\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=0.910\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=0.770\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=1.120\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=0.980\hsize\linewidth=\hsize\centering\arraybackslash}X}
+\toprule
+\textbf{Retriever} & \textbf{Evidence Recall@1} & \textbf{Recall@3} & \textbf{Recall@5} & \textbf{Hit@5} & \textbf{Đủ nguồn@5} & \textbf{MRR@5} \\
+\midrule
+TF-IDF & 70,83\% & 82,50\% & 82,50\% & 90\% & 15/20 & 0,8250 \\
+BM25 & 80,00\% & 84,17\% & 84,17\% & 90\% & 16/20 & 0,8667 \\
+BGE-M3 & 65,00\% & 81,67\% & 89,17\% & 95\% & 16/20 & 0,7867 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+BM25 đạt Evidence Recall cao nhất tại k = 1 và k = 3, đồng thời dẫn MRR@5 với 0,8667. BGE-M3 đạt Recall@5 cao nhất, hơn BM25 5,00 điểm phần trăm và TF-IDF 6,67 điểm phần trăm. Khi tăng k từ 3 lên 5, Recall của BGE-M3 tăng 7,50 điểm phần trăm, trong khi hai phương pháp từ khóa giữ nguyên. Tuy nhiên, BGE-M3 và BM25 cùng đạt 16/20 câu đủ bằng chứng. Kết quả cho thấy mức tăng độ bao phủ trung bình của BGE-M3 chưa làm tăng số câu có đầy đủ tất cả bằng chứng so với BM25.
+
+\textbf{Chất lượng sinh.} Bảng 5 tổng hợp 80 đáp án được tạo trên Tesla T4 bằng Qwen2.5-1.5B-Instruct. Mọi cấu hình dùng cùng chỉ dẫn hệ thống, giải mã tham lam và trần 768 token. Cấu hình đối chứng nhận câu hỏi với phần nguồn rỗng, còn các cấu hình RAG nhận thêm năm đoạn truy hồi. Các nhãn phản ánh lượt chấm GPT sơ bộ theo thang 0–2 được mô tả trong Mục 5.3. \cite{ref12}
+
+\begin{table}[H]
+\centering
+\caption{Kết quả sinh của bốn nhánh theo chấm GPT sơ bộ \cite{ref12}}
+\label{tab:5}
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.850\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=0.750\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=0.800\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=1.150\hsize\linewidth=\hsize\centering\arraybackslash}X>{\hsize=1.450\hsize\linewidth=\hsize\centering\arraybackslash}X}
+\toprule
+\textbf{Nhánh} & \textbf{Đúng chính} & \textbf{Một phần} & \textbf{Sai hoặc thiếu đáp án} & \textbf{Có khẳng định sai hoặc ngoài nguồn} \\
+\midrule
+Không RAG & 0/20 & 3/20 & 17/20 & 15/20 \\
+TF-IDF & 10/20 & 5/20 & 5/20 & 8/20 \\
+BM25 & 9/20 & 6/20 & 5/20 & 7/20 \\
+BGE-M3 & 10/20 & 6/20 & 4/20 & 6/20 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+TF-IDF và BGE-M3 cùng đạt 10/20 câu đúng nội dung chính, còn BM25 đạt 9/20. Số đáp án có khẳng định sai hoặc ngoài nguồn giảm từ 15/20 ở đối chứng xuống 8/20, 7/20 và 6/20 tương ứng với TF-IDF, BM25 và BGE-M3. Mặc dù BGE-M3 có Recall@5 cao nhất, tỷ lệ đúng nội dung chính ngang với TF-IDF. Cả 60 đáp án RAG đều thiếu mã trích dẫn hợp lệ. Các quan sát này cho thấy độ bao phủ truy hồi, chất lượng nội dung và khả năng truy vết nguồn cần được đánh giá đồng thời.
+
+\section{Thảo luận lỗi và cơ chế kiểm tra}
+
+\begin{table}[H]
+\centering
+\caption{Năm ca lỗi tiêu biểu khi sinh câu trả lời \cite{ref12}}
+\label{tab:6}
+\small
+\begin{tabularx}{\textwidth}{>{\hsize=0.300\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.410\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.290\hsize\linewidth=\hsize\raggedright\arraybackslash}X}
+\toprule
+\textbf{Câu hỏi} & \textbf{Quan sát từ prompt và đáp án} & \textbf{Vị trí cần xử lý} \\
+\midrule
+Q07 & Cả ba top-5 thiếu đoạn xếp loại 65–79 điểm. BGE-M3 trả Trung bình 50 điểm cho trường hợp 68 điểm. & Truy hồi thiếu ngưỡng cần hỏi. Mô hình sinh cần nhận ra phần thiếu trước khi kết luận. \\
+Q01 & Đoạn định nghĩa đúng đứng đầu ở cả ba nhánh. TF-IDF và BM25 có thêm đoạn về Anh văn ở hạng 2, và đáp án chuyển sang quy định Anh văn. & Có đoạn nhiễu cùng từ khóa. Cần kiểm tra câu trả lời có giải quyết đúng cặp khái niệm được hỏi. \\
+Q05 & BGE-M3 đã nhận Điều 19 nhưng khẳng định đủ tín chỉ là đủ tốt nghiệp. BM25 liệt kê thêm điều kiện nhưng bỏ điều kiện về đình chỉ. & Mô hình sinh chọn sai hoặc bỏ điều kiện có sẵn. Cần đối chiếu danh sách điều kiện trước khi trả lời. \\
+Q13 & Cả ba nhận đủ bảng và chú giải. BM25 và BGE-M3 lấy sai cột. TF-IDF nêu chênh 40.000 đồng nhưng gán nhãn C1 cho khối chuyên nghiệp. & Trích xuất bảng và gán nguồn cho số liệu. Cần kiểm tra cột C5 và tính hiệu từ hai ô đã xác minh. \\
+Q19 & TF-IDF nêu được thời hạn và các mốc nhưng thêm hậu tố quyết định sai. BGE-M3 bỏ mất thời hạn hai năm. & Kiểm tra cả nội dung quy định và thông tin văn bản dùng để dẫn nguồn. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Năm trường hợp trong Bảng 6 cho thấy lỗi xuất hiện ở nhiều bước. Q07 phản ánh thiếu bằng chứng truy hồi, sau đó mô hình suy diễn từ thông tin gần chủ đề. Q01 cho thấy đoạn liên quan có thể đi kèm nguồn gây nhiễu. Q05 và Q13 phản ánh sai điều kiện hoặc sai cột dù bằng chứng phù hợp đã vào đầu vào. Q19 thể hiện lỗi định danh nguồn và bỏ sót nội dung. Nhật ký ghi nhận toàn bộ đoạn đã chọn được đưa vào ngữ cảnh và không có đáp án chạm trần 768 token. Do đó, hiện tượng thiếu bằng chứng ở đầu vào và lỗi diễn giải sau truy hồi cần được xử lý ở các khâu tương ứng. \cite{ref12}
+
+\textbf{Hàm ý đối với kiểm chứng.} Một hướng cải thiện là biểu diễn đầu ra dưới dạng kết luận, điều kiện áp dụng, mã đoạn và trích dẫn hỗ trợ. Bộ kiểm tra có thể xác nhận mã thuộc ngữ cảnh, đối chiếu trích đoạn và xét các điều kiện như khóa tuyển, chương trình hoặc trạng thái chứng chỉ. Với dữ liệu bảng, mỗi giá trị cần gắn với hàng, cột và đơn vị trước khi thực hiện phép tính. Khi bằng chứng chưa đủ, hệ thống có thể truy hồi bổ sung hoặc nêu rõ giới hạn của đáp án. Cơ chế này vận dụng định hướng xác minh của GenXAI \cite{ref2}. Hiệu quả của cơ chế cần được đánh giá trong thí nghiệm bổ sung.
+
+\textbf{Cập nhật kho tri thức.} Việc quản lý phiên bản cần lưu định danh quyết định, ngày áp dụng, quan hệ sửa đổi, trang nguồn và mã băm. Khi văn bản thay đổi, các đoạn bị ảnh hưởng được xác định để cập nhật chỉ mục và chạy lại những câu hỏi liên quan. Lưu phiên bản chỉ mục cùng kết quả suy luận cho phép truy lại căn cứ tại thời điểm trả lời. Phạm vi áp dụng của mỗi đoạn cũng cần được kiểm tra khi đồng thời truy hồi văn bản gốc và văn bản sửa đổi.
+
+\section{Giới hạn và điều kiện áp dụng}
+
+Nghiên cứu sử dụng 51 trang từ bốn văn bản của cùng một cơ sở đào tạo. Phạm vi này mở rộng so với quy mô khoảng 5–10 trang nêu trong đề S07 \cite{ref13}. Các chỉ số phản ánh toàn bộ corpus 51 trang cùng cách chia 162 đoạn. Kết quả có thể thay đổi khi thu hẹp kho tài liệu, sử dụng văn bản khác hoặc đặt câu hỏi ngoài miền đã khảo sát.
+
+Tập 20 câu hỏi được xây dựng từ chính miền tài liệu, chưa có tập kiểm tra giữ lại độc lập. Chênh lệch một câu tương ứng 5 điểm phần trăm về tỷ lệ đúng. Nghiên cứu chưa thực hiện kiểm định ý nghĩa thống kê, do đó thứ tự giữa các cấu hình chỉ được diễn giải cho mẫu hiện tại. Nhãn bằng chứng cũng ảnh hưởng đến phép đo, đặc biệt với câu hỏi nhiều điều khoản. Metadata phạm vi có thể hỗ trợ kết luận Q14 dù đoạn chứa trích dẫn tham chiếu chưa xuất hiện trong top-5. \cite{ref11,ref12}
+
+Một giới hạn khác nằm ở chất lượng đo lường. Corpus có 29 trang qua OCR và hồ sơ chưa ghi nhận đầy đủ phạm vi xác minh độc lập. Nhãn nội dung có nguồn gốc GPT, trong khi kết quả kiểm tra bởi người chưa được lưu ở cấp từng đáp án. Thí nghiệm cũng chưa tách riêng tác động của đoạn nhiễu, cách diễn đạt chỉ dẫn và năng lực mô hình sinh. Các phép thử kiểm soát từng yếu tố, cùng chấm chéo bởi người, là hướng tiếp theo để tăng độ tin cậy của kết luận. \cite{ref11,ref12,ref15}
+
+Chi phí ngữ cảnh là một yếu tố bổ sung khi lựa chọn cấu hình. Đầu vào trung bình của ba nhánh RAG khoảng 2.749–3.205 token, so với 236 token ở đối chứng \cite{ref12}. Tăng k có thể nâng độ bao phủ nhưng đồng thời làm tăng lượng thông tin mô hình phải xử lý. Dữ liệu hiện tại cho thấy BM25 có lợi thế về thứ hạng sớm và BGE-M3 về độ bao phủ top-5. Việc lựa chọn cần xét thêm yêu cầu đủ bằng chứng và khả năng xử lý ngữ cảnh của mô hình sinh.
+
+\section{Kết luận}
+
+Thực nghiệm trên quy định đào tạo HCMUS cho thấy cung cấp tài liệu truy hồi đi kèm mức tăng tỷ lệ đúng nội dung chính từ 0\% lên 45–50\% theo chấm GPT sơ bộ. BM25 đạt thứ hạng bằng chứng tốt hơn ở đầu danh sách, còn BGE-M3 đạt độ bao phủ cao nhất tại k = 5. Tuy nhiên, lỗi diễn giải điều kiện, đọc bảng và dẫn nguồn vẫn xuất hiện, kể cả khi bằng chứng phù hợp đã được cung cấp. Các kết quả ủng hộ việc kết hợp truy hồi với kiểm chứng ở cấp kết luận. Đánh giá trên tập câu hỏi độc lập và nhãn được người xác minh là bước tiếp theo để kiểm tra khả năng khái quát.
+
+\textbf{Khai báo sử dụng AI.} GPT hỗ trợ chấm định tính đáp án. Codex hỗ trợ tổng hợp, soạn thảo, rà tính nhất quán và dàn trang. Công thức, số liệu và các ca lỗi được đối chiếu với paper cùng dữ liệu thực nghiệm đã lưu. Các tác giả chịu trách nhiệm về nội dung và việc xác nhận kết quả. \cite{ref1,ref11,ref12,ref14}
+
+\clearpage
+\begin{thebibliography}{99}
+\small
+
+\bibitem{ref1}
+Lewis, P. và cộng sự (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. NeurIPS 33, 9459–9474. \href{https://papers.neurips.cc/paper_files/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html}{Bài báo}.
+
+\bibitem{ref2}
+Schneider, J. (2024). Explainable Generative AI (GenXAI): a survey, conceptualization, and research agenda. Artificial Intelligence Review, 57, 289. \href{https://doi.org/10.1007/s10462-024-10916-x}{DOI 10.1007/s10462-024-10916-x}.
+
+\bibitem{ref3}
+Salton, G. và Buckley, C. (1988). Term-weighting approaches in automatic text retrieval. Information Processing \& Management, 24(5), 513–523. \href{https://doi.org/10.1016/0306-4573(88)90021-0}{DOI 10.1016/0306-4573(88)90021-0}.
+
+\bibitem{ref4}
+Robertson, S. và Zaragoza, H. (2009). The Probabilistic Relevance Framework BM25 and Beyond. Foundations and Trends in Information Retrieval, 3(4), 333–389. \href{https://doi.org/10.1561/1500000019}{DOI 10.1561/1500000019}.
+
+\bibitem{ref5}
+Chen, J. và cộng sự (2024). M3-Embedding Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation. \href{https://arxiv.org/abs/2402.03216}{arXiv 2402.03216}.
+
+\bibitem{ref6}
+Qwen Team (2024). Qwen2.5 Technical Report. \href{https://arxiv.org/abs/2412.15115}{arXiv 2412.15115}.
+
+\bibitem{ref7}
+Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM (2026). Quy chế đào tạo trình độ đại học, QĐ 3087/QĐ-KHTN. \href{https://hcmus.edu.vn/quy-che-dao-tao-trinh-do-dai-hoc-nam-2026/}{Trang công bố}.
+
+\bibitem{ref8}
+Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM. Quy chế đánh giá kết quả rèn luyện năm 2020 và sửa đổi năm 2023. \href{https://hcmus.edu.vn/quy-che-danh-gia-ket-qua-ren-luyen-sinh-vien-he-chinh-quy/}{Trang công bố}, truy cập 10/11/2026. \href{https://github.com/namkiet/CS420_SeminarRAG/blob/3bb5f3a/experiment/data/raw/D02_quy_che_diem_ren_luyen_2020_sua_2023.pdf}{Bản PDF dùng trong thí nghiệm}.
+
+\bibitem{ref9}
+Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM (2026). Định mức học phí năm học 2026–2027, QĐ 3317/QĐ-KHTN. \href{https://hcmus.edu.vn/thong-bao-nop-hoc-phi-hoc-ky-1-2026-2027-chuong-trinh-dai-tra/}{Trang công bố}, truy cập 10/11/2026. \href{https://github.com/namkiet/CS420_SeminarRAG/blob/3bb5f3a/experiment/data/raw/D03_hoc_phi_2026_2027_K2022_ve_sau.pdf}{Bản PDF dùng trong thí nghiệm}.
+
+\bibitem{ref10}
+Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM (2026). Quy định về việc học ngoại ngữ và chuẩn trình độ ngoại ngữ khi tốt nghiệp, QĐ 2464/QĐ-KHTN. \href{https://hcmus.edu.vn/quy-dinh-ve-viec-hoc-ngoai-ngu-va-chuan-trinh-do-ngoai-ngu-khi-tot-nghiep-dai-hoc/}{Trang công bố}, truy cập 10/11/2026. \href{https://github.com/namkiet/CS420_SeminarRAG/blob/3bb5f3a/experiment/data/raw/D04_chuan_ngoai_ngu_tot_nghiep_2026.pdf}{Bản PDF dùng trong thí nghiệm}.
+
+\bibitem{ref11}
+Nhóm S07 (08/11/2026). Benchmark truy hồi TF-IDF, BM25 và BGE-M3, commit 5771d80. \href{https://github.com/namkiet/CS420_SeminarRAG/tree/5771d80/experiment/results/rag_methods_2026-11-08}{Kết quả, cấu hình và dữ liệu}.
+
+\bibitem{ref12}
+Nhóm S07 (08/11/2026). Thí nghiệm so sánh bốn cấu hình sinh câu trả lời, 80 đáp án. \href{https://github.com/namkiet/CS420_SeminarRAG/commit/3bb5f3a1298abe0b9af3064becab6f0a356801bc}{Kết quả, cấu hình và điểm GPT sơ bộ, commit 3bb5f3a}.
+
+\bibitem{ref13}
+CS420 Nhập môn Trí tuệ nhân tạo. Đề tài seminar S07. \href{https://github.com/namkiet/CS420_SeminarRAG/blob/3bb5f3a/docs/S07_Seminar_RAG.pdf}{Đề bài}.
+
+\bibitem{ref14}
+OpenAI (2026). \href{https://openai.com/codex/}{Codex}, công cụ hỗ trợ tổng hợp, soạn thảo, rà soát và dàn trang. GPT được sử dụng để chấm định tính theo metadata của bộ kết quả \cite{ref12}.
+
+\bibitem{ref15}
+Nhóm S07 (09/11/2026). Hồ sơ rà soát báo cáo và xác nhận dữ liệu. \href{https://github.com/namkiet/CS420_SeminarRAG/blob/1182442/report/G3_TASK3_REVIEW.md}{Biên bản rà soát}, \href{https://github.com/namkiet/CS420_SeminarRAG/blob/1182442/docs/FINAL_CHECKLIST.md}{trạng thái kiểm tra}.
+
+\end{thebibliography}
+
+\end{document}
