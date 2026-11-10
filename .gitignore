@@ -14,6 +14,13 @@ venv/
 # Temporary PDF renders and local working files
 tmp/
 *.tmp
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
 
 # RAG runtime outputs and model caches
 experiment/outputs/

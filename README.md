@@ -2,7 +2,7 @@
 
 ## Team Members
 - **Trịnh Võ Nam Kiệt** — `24125013`
-- **Tuấn Lĩnh** — `241250XX`
+- **Bùi Trọng Tuấn Lĩnh** — `24125066`
 - **Trần Đăng Lê Huy** — `24125057`
 
 ## Research Question & Objective

@@ -40,7 +40,7 @@ Quy ước: **Đạt** = có tài liệu/bằng chứng hiện tại; **Cần s�
 | Chạy thử đủ ba người trong 15 phút | Chưa xác nhận | Bấm giờ, ghi thời lượng từng người và tổng; rút gọn nếu vượt. Mọi người đều phải trình bày. | Nhóm |
 | Bộ Q&A có đáp án, người chính/dự phòng, nguồn | Đạt | [QA.md](QA.md): 15 câu bao phủ lý thuyết, toán, retrieval, kết quả, hallucination và limitations. | Huy |
 | Mỗi thành viên trả lời ít nhất một câu | Chưa xác nhận | Tập Kiệt Q03, Huy Q09/Q10, Lĩnh Q13; đổi câu để kiểm tra hiểu nội dung. Xác nhận thực tế trong phiên Q&A. | Nhóm |
-| Thông tin thành viên hoàn chỉnh | Cần sửa | [README gốc](../README.md) còn MSSV `241250XX`; thành viên liên quan điền thông tin thật, không suy đoán. | Lĩnh |
+| Thông tin thành viên hoàn chỉnh | Đạt | Đã cập nhật đầy đủ thông tin: Bùi Trọng Tuấn Lĩnh (`24125066`). | Lĩnh |
 
 ## 3. Bộ sản phẩm để nộp
 
