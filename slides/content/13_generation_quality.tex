@@ -1,0 +1,33 @@
+% Slide 13: Experiment 2: 4-Way Answer Quality
+\begin{frame}{Experiment 2: 4-Way Answer Quality}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{3.4cm} *{5}{>{\centering\arraybackslash}X}}
+      \toprule
+      \rowcolor{tableheader}
+      Configuration & Fully Correct & Partial & Incorrect & Unsupported & Valid Citations \\
+      \midrule
+      Baseline (No RAG) & 0/20 (0.0\%) & 3/20 (15.0\%) & 17/20 (85.0\%) & 15/20 (75.0\%) & 0/20 (0.0\%) \\
+      RAG (TF-IDF) & \textbf{10/20 (50.0\%)} & 5/20 (25.0\%) & 5/20 (25.0\%) & 8/20 (40.0\%) & 0/20 (0.0\%) \\
+      RAG (BM25) & 9/20 (45.0\%) & 6/20 (30.0\%) & 5/20 (25.0\%) & 7/20 (35.0\%) & 0/20 (0.0\%) \\
+      RAG (BGE-M3) & \textbf{10/20 (50.0\%)} & 6/20 (30.0\%) & 4/20 (20.0\%) & \textbf{6/20 (30.0\%)} & 0/20 (0.0\%) \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.1cm}
+  {\centering\large\textbf{\textcolor{primaryblue}{+45.0 to +50.0 pp accuracy gain over unaugmented baseline (0\% $\to$ 50\%)}}\par}
+  \vspace{0.1cm}
+
+  \begin{itemize}
+    \setlength{\itemsep}{0.18cm}
+    \item \textbf{Recall $\neq$ Accuracy Bottleneck:} Despite higher Evidence Recall@5 (89.17\%), BGE-M3 ties with TF-IDF at 50\% accuracy.
+    \item \textbf{Significant Hallucination Drop:} Unsupported claims decrease from 75\% in baseline to 30\% in BGE-M3 and 35\% in BM25.
+    \item \textbf{Universal Citation Blindness:} All 60 RAG answers omitted formal citation tags despite explicit prompt constraints.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S5, Table 5. Evaluated on Qwen2.5-1.5B-Instruct across 80 completions (commit \commitlink{3bb5f3a}).}
+\end{frame}

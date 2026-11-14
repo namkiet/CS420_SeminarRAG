@@ -1,0 +1,34 @@
+% Slide 08: Experimental Corpus: HCMUS Regulations
+\begin{frame}{Experimental Corpus: HCMUS Regulatory Documents}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{>{\bfseries}l X l c}
+      \toprule
+      \rowcolor{tableheader}
+      ID & Regulatory Document Title and Reference & Scope & Pages \\
+      \midrule
+      D01 & Undergraduate Academic Regulations 2026 (Dec.\ 3087/QĐ-KHTN) & Academic Rules & 21 \\
+      D02 & Student Conduct Assessment 2020 \& Amendment 2023 & Conduct Scoring & 16 \\
+      D03 & Tuition Fee Rates AY 2026--2027 (Dec.\ 3317/QĐ-KHTN) & Fees (K2022+) & 5 \\
+      D04 & Foreign Language Graduation Standards (Dec.\ 2464/QĐ-KHTN) & Exit Standards & 9 \\
+      \midrule
+      \rowcolor{tablehighlight}
+      Total & Authoritative four-document regulatory snapshot & PDF Corpus & \textbf{51} \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{Corpus Scale:} 51 pages segmented into 80 parent sections and 162 chunks under an 800-token ceiling (\texttt{cl100k\_base}).
+    \item \textbf{Evaluation Benchmark:} 20 administrative queries mapped to 30 gold evidence groups (held out from indexing).
+    \item \textbf{Metadata Preservation:} Articles, PDF page numbers, cohort scopes, and table footnotes injected into chunk headers.
+    \item \textbf{Scope Distinction:} Exceeds standard 5--10 page guideline to test real-world administrative cross-referencing.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S4.1, Table 2. Verified against official HCMUS portals (commit 3bb5f3a).}
+\end{frame}

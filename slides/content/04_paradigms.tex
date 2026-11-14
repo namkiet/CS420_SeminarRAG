@@ -1,0 +1,29 @@
+% Slide 04: Knowledge Grounding Paradigms
+\begin{frame}{Knowledge Grounding Paradigms}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{>{\bfseries}l X l l}
+      \toprule
+      \rowcolor{tableheader}
+      Paradigm & Operating Mechanism & Latency / Compute & Knowledge Update \\
+      \midrule
+      Fine-Tuning & Updates parametric neural weights & High training cost & Requires retraining \\
+      Long-Context & Appends all source text into prompt & Quadratic token cost & Dynamic per query \\
+      RAG (Hybrid) & Pairs top-$k$ retrieval with LLM generation & Bounded context cost & Hot-swappable index \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{Decoupled Architecture:} Parametric model acts as a language synthesizer; non-parametric index acts as the verifiable knowledge store.
+    \item \textbf{Efficiency \& Precision:} Mitigates ``Lost-in-the-Middle'' phenomena and context dilution by filtering large corpora into top-$k$ evidence.
+    \item \textbf{Lewis et al.\ Finding:} RAG-Sequence achieved 44.5 Exact Match on Natural Questions, outperforming a 50$\times$ larger parametric T5-11B model (36.6).
+  \end{itemize}
+
+  \source{Lewis et al. (NeurIPS 2020), Table 1; Liu et al. (2024), TACL.}
+\end{frame}

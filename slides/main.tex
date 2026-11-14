@@ -1,0 +1,88 @@
+% !TeX program = xelatex
+% Presentation Slides for Seminar S07: Retrieval-Augmented Generation (RAG)
+% Course: CS420 - Introduction to Artificial Intelligence, VNU-HCM US
+% Style inspired by GraphPlanner (Minimalist Beamer, 1 visual/table + concise bullets per slide)
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+% --- Packages ---
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% --- Madrid Theme & Custom Palette (Indigo / Royal Blue) ---
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\definecolor{primaryblue}{RGB}{35, 55, 145}
+\definecolor{darkblue}{RGB}{20, 35, 100}
+\definecolor{medblue}{RGB}{50, 75, 175}
+\definecolor{tableheader}{RGB}{236, 240, 252}
+\definecolor{tablehighlight}{RGB}{220, 230, 252}
+\definecolor{alertred}{RGB}{190, 30, 30}
+\definecolor{darkgreen}{RGB}{25, 130, 40}
+
+\setbeamercolor{palette primary}{bg=primaryblue,fg=white}
+\setbeamercolor{palette secondary}{bg=medblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=darkblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=darkblue,fg=white}
+\setbeamercolor{structure}{fg=primaryblue}
+\setbeamercolor{frametitle}{bg=primaryblue,fg=white}
+\setbeamercolor{title}{bg=primaryblue,fg=white}
+\setbeamercolor{item}{fg=black}
+\setbeamercolor{subitem}{fg=black}
+
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\raisebox{0.15ex}{\tiny$\blacksquare$}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.15ex}{\tiny$\blacktriangleright$}}
+
+% --- Custom Source Footnote & Formatting Commands ---
+\newcommand{\source}[1]{\vfill\vspace*{-2mm}{\tiny\textcolor{gray!80!black}{#1}\par}}
+\newcommand{\chunkid}[1]{{\footnotesize\texttt{#1}}}
+\newcommand{\commitlink}[1]{\href{https://github.com/namkiet/CS420_SeminarRAG/commit/#1}{\textcolor{primaryblue}{\textbf{\texttt{#1}}}}}
+
+% --- Metadata ---
+\title[Retrieval-Augmented Generation (RAG)]{[S07] Retrieval-Augmented Generation (RAG)}
+\subtitle{Grounding LLM Responses in Documents: An Empirical Study on HCMUS Regulatory Data}
+\author[Nam Kiet - Le Huy - Tuan Linh]{Trịnh Võ Nam Kiệt \and Trần Đăng Lê Huy \and Bùi Trọng Tuấn Lĩnh}
+\institute[HCMUS]{Faculty of Information Technology\\University of Science, VNU-HCM}
+\date[November 2026]{CS420 Seminar \textperiodcentered{} November 2026}
+
+\begin{document}
+
+% Slide 01: Title Page
+\input{content/01_title}
+
+% Slide 02: Outline Roadmap
+\input{content/02_outline}
+
+% --- PART 1: Theoretical Foundation & Probabilistic Modeling (Speaker 1: Nam Kiệt, 00:00 - 05:00) ---
+\input{content/03_intro_question}
+\input{content/04_paradigms}
+\input{content/05_pipeline}
+\input{content/06_formulation}
+\input{content/07_numerical_example}
+
+% --- PART 2: HCMUS Corpus & Retrieval Experiments (Speaker 2: Lê Huy, 05:00 - 10:00) ---
+\input{content/08_corpus}
+\input{content/09_retrieval_setup}
+\input{content/10_retrieval_results}
+\input{content/11_worked_example_retrieval}
+\input{content/12_worked_example_generation}
+
+% --- PART 3: Answer Quality, Failure Analysis & Verification (Speaker 3: Tuấn Lĩnh, 10:00 - 15:00) ---
+\input{content/13_generation_quality}
+\input{content/14_failure_archetypes}
+\input{content/15_discussion_hallucination}
+\input{content/16_limitations}
+\input{content/17_verification_maintenance}
+\input{content/18_conclusions}
+\input{content/19_references}
+\input{content/20_qa}
+
+\end{document}

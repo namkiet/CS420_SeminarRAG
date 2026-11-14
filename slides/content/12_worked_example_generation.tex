@@ -1,0 +1,30 @@
+% Slide 12: Worked Example (Q01): Grounded vs. Baseline Output
+\begin{frame}{Worked Example (Q01): Grounded vs.\ Baseline Output}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{>{\bfseries}l c X}
+      \toprule
+      \rowcolor{tableheader}
+      Configuration & Score & Generated Response Content \& Attribution \\
+      \midrule
+      Baseline (No RAG) & 0 / 2 & Hallucinates generic academic progression; falsely claims both course types require passing grades; lacks any regulatory citation. \\
+      \midrule
+      \rowcolor{tablehighlight}
+      Grounded RAG (BGE-M3) & \textbf{2 / 2} & Correctly states prerequisite requires \textbf{``passing''} (thi đạt), while pre-learning only requires \textbf{``completing the study process''}. \newline {\scriptsize[\chunkid{D01\_regulation\_article\_3\_03}]$^*$} \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{Prompt Augmentation:} Context injected under structured \texttt{SOURCES} block with chunk IDs, article titles, and page numbers.
+    \item \textbf{Factual Grounding Contrast:} Parametric memory guesses incorrectly; RAG context enables precise legal differentiation.
+    \item \textbf{$^*$Human Attribution Caveat:} Qwen generated the correct text but failed to emit the citation ID; the reference tag was verified and added post-hoc by human auditors.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S4.2; Task 6 answer comparison logs. $^*$Citation verified and appended during human audit.}
+\end{frame}

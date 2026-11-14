@@ -1,0 +1,30 @@
+% Slide 14: Empirical Failure Archetypes
+\begin{frame}{Empirical Failure Modes: 5 Representative Cases}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{c X X}
+      \toprule
+      \rowcolor{tableheader}
+      Query & Observed Prompt and Generation Behavior & Root Cause and Remediation Stage \\
+      \midrule
+      \textbf{Q07} & Top-5 misses the 65--79 score band chunk. BGE-M3 fabricates ``Average 50 points'' for a 68-point score. & \textbf{Retrieval Omission:} Gold threshold missing; model guesses parametrically. \\
+      \textbf{Q01} & Correct definition ranks 1. TF-IDF/BM25 rank English prerequisite at rank 2, derailing output focus. & \textbf{Distractor Interference:} Lexical match confuses cross-attention context. \\
+      \textbf{Q05} & Model receives Article 19 but asserts credit completion alone suffices for graduation. & \textbf{Condition Pruning:} Generator overlooks secondary administrative rules. \\
+      \textbf{Q13} & All retrievers capture tuition table. Model reads column C1 (488k) instead of C5 (1,014k vs.\ 974k). & \textbf{Tabular Misalignment:} 1.5B LLM struggles with row-column intersections. \\
+      \textbf{Q19} & Model captures valid deadlines but fabricates a non-existent decision suffix identifier. & \textbf{Metadata Hallucination:} Generates plausible-sounding official numbers. \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.05cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.15cm}
+    \item \textbf{Comprehensive Distribution:} Failures occur across retrieval (Q07, Q01), reasoning (Q05), tables (Q13), and citations (Q19).
+    \item \textbf{High Risk of Structured Data:} Multi-column tables and multi-condition checklists require specialized extraction pipelines.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S6, Table 6. Case analysis from 80-answer generation logs (commit \commitlink{3bb5f3a}).}
+\end{frame}

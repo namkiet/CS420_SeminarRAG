@@ -1,0 +1,14 @@
+% Slide 16: Limitations & Applicability Boundaries
+\begin{frame}{Limitations \& Applicability Boundaries}
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.28cm}
+    \item \textbf{Benchmark Sample Size:} 20 curated administrative queries; a single outcome change shifts performance by 5.0 percentage points (requires cautious statistical interpretation).
+    \item \textbf{Corpus Scope:} 51 pages across 4 documents from a single university; 29 pages OCR-processed without complete token-level human audit.
+    \item \textbf{Evaluation Methodology:} Correctness scores were assigned via automated GPT-based qualitative review; double-blind human cross-annotation remains pending.
+    \item \textbf{Generator Scale:} Evaluated on a frozen 1.5B instruction-tuned model (\texttt{Qwen2.5-1.5B-Instruct}); larger models (7B/72B) may better interpret complex tables.
+    \item \textbf{Inference Context Overhead:} Top-5 RAG increases prompt tokens from 236 to 2,749--3,205 tokens ($\approx 12\times$ latency and API cost increase).
+  \end{itemize}
+
+  \source{CS420 S07 Report \S7. Limitations documented in accordance with seminar evaluation standards.}
+\end{frame}

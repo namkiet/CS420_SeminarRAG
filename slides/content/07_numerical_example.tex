@@ -1,0 +1,35 @@
+% Slide 07: Worked Numerical Example (k=2, T=2)
+\begin{frame}{Worked Numerical Example ($k=2, T=2$)}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{2.5cm} *{3}{>{\centering\arraybackslash}X}}
+      \toprule
+      \rowcolor{tableheader}
+      Passage ($z$) & Retriever Weight $p_\eta(z \mid x)$ & $p_\theta(a \mid x, z)$ & $p_\theta(b \mid x, z, a)$ \\
+      \midrule
+      $z_1$ & 0.70 & 0.80 & 0.90 \\
+      $z_2$ & 0.30 & 0.40 & 0.20 \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{RAG-Sequence Calculation:}
+      \[
+        p_{\mathrm{Seq}} = 0.70 \times (0.80 \times 0.90) + 0.30 \times (0.40 \times 0.20) = 0.5040 + 0.0240 = \mathbf{0.5280}
+      \]
+    \item \textbf{RAG-Token Calculation:}
+      \[
+        p_{\mathrm{Tok}} = (0.70 \times 0.80 + 0.30 \times 0.40) \times (0.70 \times 0.90 + 0.30 \times 0.20) = 0.6800 \times 0.6900 = \mathbf{0.4692}
+      \]
+    \item \textbf{Operator Inversion:} The discrepancy ($0.5280$ vs.\ $0.4692$) reflects the non-commutativity of $\sum$ and $\prod$.
+    \item \textbf{Implementation Distinction:} Modern instruction-tuned QA (e.g., Qwen) performs prompt conditioning rather than explicit marginalization.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S3.2, Table 1. Probabilities parameterized to demonstrate mathematical formulation.}
+\end{frame}

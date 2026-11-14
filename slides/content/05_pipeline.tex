@@ -1,0 +1,33 @@
+% Slide 05: RAG Pipeline & Failure Points
+\begin{frame}{RAG Architecture \& Theoretical Failure Points}
+  \vspace{-0.1cm}
+  \centering
+  \begin{tikzpicture}[
+    stage/.style={draw=primaryblue!70,fill=tableheader,rounded corners=2pt,text width=2.05cm,
+      minimum height=0.72cm,align=center,font=\scriptsize,inner sep=1.5pt},
+    flow/.style={-{Stealth[length=2mm]},thick,draw=primaryblue!80}
+  ]
+    \node[stage] (s1) at (0,0) {\textbf{1. Ingestion}\\\tiny PDF / OCR parsing};
+    \node[stage] (s2) at (2.45,0) {\textbf{2. Chunking}\\\tiny Boundaries \& overlap};
+    \node[stage] (s3) at (4.9,0) {\textbf{3. Indexing}\\\tiny Sparse \& dense index};
+    \node[stage] (s4) at (7.35,0) {\textbf{4. Retrieval}\\\tiny Top-$k$ scoring};
+    \node[stage] (s5) at (9.8,0) {\textbf{5. Augment}\\\tiny Context assembly};
+    \node[stage] (s6) at (12.25,0) {\textbf{6. Generation}\\\tiny LLM decoding};
+    
+    \draw[flow] (s1) -- (s2);
+    \draw[flow] (s2) -- (s3);
+    \draw[flow] (s3) -- (s4);
+    \draw[flow] (s4) -- (s5);
+    \draw[flow] (s5) -- (s6);
+  \end{tikzpicture}
+
+  \vspace{0.25cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.25cm}
+    \item \textbf{Pre-Retrieval Failure Points:} OCR noise on scanned documents; premature text splits detaching qualifying exceptions from primary articles.
+    \item \textbf{Retrieval Failure Points:} False negative omissions (gold threshold clauses rank outside top-$k$); lexical distractor confusion.
+    \item \textbf{Post-Retrieval Failure Points:} Context distraction; condition omission; table column misreading; failure to produce verifiable citation IDs.
+  \end{itemize}
+
+  \source{Adapted from Lewis et al. (2020), Figure 1; CS420 S07 Report \S4.2, Figure 1.}
+\end{frame}

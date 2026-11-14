@@ -1,0 +1,16 @@
+% Slide 03: Introduction & Guiding Question
+\begin{frame}{Introduction}
+  \vspace{0.1cm}
+  {\Large\textbf{Does providing external documents eliminate hallucinations?}}
+  \vspace{0.4cm}
+
+  \begin{itemize}
+    \setlength{\itemsep}{0.25cm}
+    \item \textbf{Parametric Memory Limits:} LLM weights encode knowledge statically, leading to factual hallucinations, cut-off staleness, and unverified assertions.
+    \item \textbf{Non-Parametric Grounding:} An external document index provides modular, updatable, and inspectable evidence for factual verification.
+    \item \textbf{The Core Research Question:} Does conditioning generation on retrieved passages eliminate hallucinations, or does it shift error points to the retrieval pipeline?
+    \item \textbf{Seminar Objective:} Combine probabilistic modeling (Lewis et al., 2020) with an empirical audit on 4 official HCMUS academic regulations.
+  \end{itemize}
+
+  \source{Lewis et al. (NeurIPS 2020), \S1; Schneider (2024), GenXAI, \S1.}
+\end{frame}

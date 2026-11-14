@@ -1,0 +1,35 @@
+% Slide 11: Worked Example (Q01): Top-5 Candidate Chunks
+\begin{frame}{Worked Example (Q01): Top-5 Candidate Chunks}
+  \vspace{-0.1cm}
+  {\footnotesize\textbf{Benchmark Query (Q01):} \emph{According to the 2026 Academic Regulations, how does a prerequisite course differ from a pre-learning course?}}
+  \vspace{0.15cm}
+
+  \begin{table}[H]
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{c l c c X}
+      \toprule
+      \rowcolor{tableheader}
+      Rank & Chunk Identifier & Cosine & Page & Content Summary and Regulatory Scope \\
+      \midrule
+      \rowcolor{tablehighlight}
+      \textbf{1} & \chunkid{D01\_regulation\_article\_3\_03} & \textbf{0.6271} & 4 & \textbf{Gold Evidence:} Article 3, Clause 3(c) (Both definitions) \\
+      2 & \chunkid{D01\_regulation\_article\_27\_01} & 0.5813 & 21 & Article 27: Transitional clauses for earlier cohorts \\
+      3 & \chunkid{D01\_regulation\_article\_3\_02} & 0.5704 & 3 & Article 3, Clause 2: Elective and general course definitions \\
+      4 & \chunkid{D01\_regulation\_article\_6\_02} & 0.5643 & 7 & Article 6: Semester scheduling and course limits \\
+      5 & \chunkid{D01\_regulation\_article\_18\_02} & 0.5540 & 16 & Article 18: Credit exemptions and transfer guidelines \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.05cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.18cm}
+    \item \textbf{Successful Top-1 Alignment:} Rank-1 passage provides 100\% of required gold evidence for both course concepts.
+    \item \textbf{Crucial Regulatory Distinction:} Prerequisite requires ``passing'' the exam; pre-learning only requires ``completing the coursework''.
+    \item \textbf{Distractor Risk:} Ranks 2--5 introduce adjacent credit/scheduling rules that risk inducing model confusion.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S4.2, Table 3. Dense ranking log from \texttt{retrieval\_hits.json}.}
+\end{frame}

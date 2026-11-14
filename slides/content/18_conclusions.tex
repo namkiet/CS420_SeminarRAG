@@ -1,0 +1,18 @@
+% Slide 18: Conclusions & Core Takeaways
+\begin{frame}{Conclusions \& Core Takeaways}
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.25cm}
+    \item \textbf{Substantial Accuracy Lift:} RAG elevates core factual correctness from 0\% in an unaugmented baseline to 45--50\% on complex administrative regulations.
+    \item \textbf{Complementary Retrieval Roles:} BM25 delivers highest top-1 precision (Recall@1 = 80.00\%); BGE-M3 provides greatest aggregate coverage (Recall@5 = 89.17\%).
+    \item \textbf{The Verification Imperative:} High recall ($\text{Hit@5} = 95\%$) is insufficient. Generators omit conditions, confuse tables, and fail at citation IDs.
+    \item \textbf{Core Takeaway:} Curing hallucinations requires treating retrieval, structured parsing, and post-generation claim verification as an integrated pipeline.
+  \end{itemize}
+
+  \vfill
+  \begin{center}
+    {\large\bfseries\color{primaryblue} External documents ground LLMs, but only rigorous verification ensures reliability.}
+  \end{center}
+
+  \source{CS420 S07 Seminar Report, Faculty of Information Technology, HCMUS (2026).}
+\end{frame}

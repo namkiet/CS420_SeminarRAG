@@ -1,0 +1,24 @@
+% Slide 17: Proposed Improvements: Verification & Maintenance
+\begin{frame}{Proposed Improvements: Verification \& Maintenance}
+  \vspace{-0.1cm}
+  \begin{block}{1. Post-Generation Verification Loop (Schneider, 2024 --- GenXAI)}
+    \begin{itemize}
+      \setlength{\itemsep}{0.12cm}
+      \item \textbf{Atomic Claim Decomposition:} Deconstruct generated answers into verifiable tuples:
+        \[
+          \langle\text{Claim},\ \text{Applicable Cohort},\ \text{Chunk ID},\ \text{Verbatim Quote}\rangle
+        \]
+      \item \textbf{Natural Language Inference (NLI) Gate:} Automatically audit entailment between claim and quote; trigger safe abstention (``Insufficient information'') if ungrounded.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{2. Tabular Structuring \& Regulatory Maintenance}
+    \begin{itemize}
+      \setlength{\itemsep}{0.12cm}
+      \item \textbf{Structured Table Parsing:} Convert dense multi-column tuition matrices into explicit key-value schemas to eliminate column misalignment (as observed in Q13).
+      \item \textbf{Versioned Corpus Registry:} Track circulars by decision number, effective date, and SHA-256 hash; execute automated diffs to retire obsolete regulatory chunks.
+    \end{itemize}
+  \end{block}
+
+  \source{Schneider (2024), GenXAI, \S3.3; CS420 S07 Report \S6. Proposed architectural improvements.}
+\end{frame}

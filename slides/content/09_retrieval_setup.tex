@@ -1,0 +1,34 @@
+% Slide 09: Retrieval Configurations & Evaluation Protocol
+\begin{frame}{Retrieval Configurations \& Evaluation Protocol}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{>{\bfseries}l l X l}
+      \toprule
+      \rowcolor{tableheader}
+      Retriever & Type & Representation & Hyperparameters \\
+      \midrule
+      TF-IDF & Sparse Lexical & Unigram + bigram frequencies & Sublinear TF, cosine distance \\
+      BM25 & Sparse Lexical & Term frequency saturation \& length penalty & Vietnamese tokens, $k_1=1.5, b=0.75$ \\
+      BGE-M3 & Dense Neural & 1024-dim multilingual dense embeddings & Normalized vectors, cosine similarity \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{Evaluation Metrics (Macro-averaged across 20 queries, 30 gold evidence groups):}
+      \begin{itemize}
+        \item \textbf{Evidence Recall@$k$:} Fraction of necessary gold evidence groups retrieved ($r/m$).
+        \item \textbf{Hit Rate@$k$:} Binary indicator if at least one gold evidence group is found ($r \ge 1$).
+        \item \textbf{All Evidence Hit@$k$:} Binary indicator if all gold evidence groups are retrieved ($r = m$).
+        \item \textbf{MRR@$k$:} Reciprocal rank of the first relevant evidence chunk (0 if not in top-$k$).
+      \end{itemize}
+    \item \textbf{Benchmark Cut-offs:} Evaluated at $k \in \{1, 3, 5\}$ to compare early precision vs.\ multi-hop recall.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S4.1; Retrieval evaluation scripts at commit \commitlink{5771d80}.}
+\end{frame}

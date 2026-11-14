@@ -1,0 +1,29 @@
+% Slide 15: Discussion: Does RAG Eliminate Hallucinations?
+\begin{frame}{Discussion: Does RAG Eliminate Hallucinations?}
+  \vspace{0.1cm}
+  % Part 1: Core Research Question & Immediate Finding
+  {\Large\textbf{Does providing external documents eliminate hallucinations?}}
+  \vspace{0.25cm}
+
+  {\LARGE\textbf{\textcolor{alertred}{NO.}}\quad\normalsize\textbf{RAG transforms the nature and origin of hallucinations.}}
+  \vspace{0.35cm}
+
+  \pause
+  % Part 2: Paradigm Shift & Grounding Fallacy
+  \begin{itemize}
+    \setlength{\itemsep}{0.22cm}
+    \item \textbf{Paradigm Shift in Errors:} RAG resolves the parametric knowledge deficit (jumping from 0\% to 50\% accuracy), but introduces pipeline-dependent vulnerabilities.
+    \item \textbf{The Grounding Fallacy:} Supplying relevant documents is a \emph{necessary} condition, but \emph{not a sufficient} condition to guarantee factual truthfulness.
+  \end{itemize}
+
+  \pause
+  \vspace{0.1cm}
+  % Part 3: Cascading Pipeline Errors & Theoretical Literature
+  \begin{itemize}
+    \setlength{\itemsep}{0.22cm}
+    \item \textbf{Cascading Pipeline Errors:} Hallucinations now emerge from retrieval omissions, adjacent distractors, condition pruning, and tabular distortion.
+    \item \textbf{Literature Corroboration:} Aligns with Schneider (2024, GenXAI) and Niu et al.\ (ACL 2024, RAGTruth): LLMs frequently assert ungrounded claims despite prompt grounding.
+  \end{itemize}
+
+  \source{Schneider (2024), GenXAI, \S1--\S2; Niu et al. (ACL 2024), RAGTruth; CS420 S07 Report \S1, \S6.}
+\end{frame}

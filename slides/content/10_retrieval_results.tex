@@ -1,0 +1,30 @@
+% Slide 10: Experiment 1: Retrieval Performance
+\begin{frame}{Experiment 1: Retrieval Performance}
+  \vspace{-0.1cm}
+  \begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{>{\bfseries\raggedright\arraybackslash}p{2.2cm} *{6}{>{\centering\arraybackslash}X}}
+      \toprule
+      \rowcolor{tableheader}
+      Retriever & Recall@1 & Recall@3 & Recall@5 & Hit@5 & All Evidence@5 & MRR@5 \\
+      \midrule
+      TF-IDF & 70.83\% & 82.50\% & 82.50\% & 90.00\% & 15/20 & 0.8250 \\
+      BM25 & \textbf{80.00\%} & \textbf{84.17\%} & 84.17\% & 90.00\% & \textbf{16/20} & \textbf{0.8667} \\
+      BGE-M3 & 65.00\% & 81.67\% & \textbf{89.17\%} & \textbf{95.00\%} & \textbf{16/20} & 0.7867 \\
+      \bottomrule
+    \end{tabularx}
+  \end{table}
+
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{0.2cm}
+    \item \textbf{Early Precision (BM25):} BM25 dominates top-1 ranking (Recall@1 = 80.00\%) via exact lexical matching of regulatory terms.
+    \item \textbf{High-Cutoff Coverage (BGE-M3):} Dense embeddings lead at $k=5$ (Recall@5 = 89.17\%, Hit@5 = 95.00\%) by capturing semantic paraphrases.
+    \item \textbf{Plateau Effect:} Lexical methods saturate at $k=3$, whereas BGE-M3 gains +7.50 percentage points expanding from $k=3$ to $k=5$.
+    \item \textbf{Crucial Takeaway:} \textcolor{alertred}{\textbf{Hit@5 = 95.00\% does NOT imply 95\% answer accuracy!}} Downstream generation bottlenecks persist.
+  \end{itemize}
+
+  \source{CS420 S07 Report \S5, Table 4. Evaluated on 20 queries, 30 gold evidence groups (commit \commitlink{5771d80}).}
+\end{frame}
